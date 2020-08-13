@@ -5,7 +5,7 @@ date: 2020-08-07
 description: 
 ---
 
-# コマーブルについて
+# Commerbleについて
 
 ## 事業形態
 
