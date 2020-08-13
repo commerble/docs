@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "ja-JP"
-title = "ecspec サンプルだよ"
+title = "Commerble Docs"
 theme = "book"
 
 relativeURLs = true
