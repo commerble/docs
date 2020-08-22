@@ -1,7 +1,7 @@
 # Commerble docs
-Commerbleのドキュメント
+[ドキュメントサイト](https://www.commerble.com/docs)
 
-https://www.commerble.com/docs
+[ドキュメントリスト](./list.md)
 
 ## 始め方
  - Hugo **Extended** を インストールする。  
