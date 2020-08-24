@@ -1,7 +1,6 @@
 ---
 title: "ECの多様な事業形態"
 weight: 1
-date: 2020-08-07
 description: 
 ---
 

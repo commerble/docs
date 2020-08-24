@@ -1,7 +1,6 @@
 ---
 title: "コストについて"
 weight: 1
-date: 2020-08-07
 description: 
 ---
 
