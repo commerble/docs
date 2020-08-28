@@ -42,4 +42,6 @@ CommerbleではECサイトの要件に応じて、Commerble標準の検索機能
 - ポップリンク(BST)
 - ポップファインド(BST)
 - probo(BST)
+- SLI
+- NaviPlusサーチ
 - テナント独自検索サービス
