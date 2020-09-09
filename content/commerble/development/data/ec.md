@@ -1,5 +1,5 @@
 ---
-title: "EC"
+title: "ECデータ"
 weight: 40
 description: 
 ---
@@ -9,8 +9,12 @@ description:
   table td { font-size: 11px; }
 </style>
 
-# EC
-EC データの一覧です。
+# ECデータ
+ECデータとは、Commerbleが定義するECシステムの標準データです。受注情報、在庫情報、商品基本情報などがECデータに該当します。
+ECデータのスキーマ仕様は固定でカスタマイズはできません。  
+ECデータスキーマでは表現できないテナント要件のデータを用意したい場合は、CMSデータとして定義します。
+
+ECデータは、OData API 経由でアクセス可能です。
 
 ## ActiveCampaigns
 現在アクティブなキャンペーン。有効期限内かつ付与商品がある場合は在庫が存在する場合。

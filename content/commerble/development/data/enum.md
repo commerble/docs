@@ -1,5 +1,5 @@
 ---
-title: "Enum"
+title: "定義値"
 weight: 40
 description: 
 ---
@@ -9,8 +9,8 @@ description:
   table td { font-size: 12px; }
 </style>
 
-# Enum
-EC データで利用される定義値の一覧です。
+# 定義値(Enum)
+ECデータスキーマで利用される定義値の一覧です。
 
 ## HumanSexes
 
