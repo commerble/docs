@@ -10,7 +10,7 @@ description:
 </style>
 
 # 定義値(Enum)
-ECデータスキーマで利用される定義値の一覧です。
+[ECデータ]({{< ref "ec" >}}) で利用される定義値の一覧です。
 
 ## HumanSexes
 
