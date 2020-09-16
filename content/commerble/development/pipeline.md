@@ -283,7 +283,7 @@ Amazon Pay決済を実施します。
 |  \#  |   種別   |    モジュール    |                        |
 | ---: | :------: | :--------------- | :--------------------- |
 |    1 | カスタム | CancelToken      | トークン決済キャンセル |
-|    1 |   標準   | CancelToDatabase | データ保存             |
-|   10 |   標準   | CancelSendMail   | メール送信             |
+|    2 |   標準   | CancelToDatabase | データ保存             |
+|    3 |   標準   | CancelSendMail   | メール送信             |
 
 [オーダーカスタム]: ../../features/customization/#オーダーカスタム "オーダーカスタム"
