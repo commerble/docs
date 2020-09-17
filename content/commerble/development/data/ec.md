@@ -13,7 +13,7 @@ description:
 ECデータとは、Commerbleが定義するECシステムの標準データです。  
 受注情報、在庫情報、商品基本情報などがECデータに該当します。
 ECデータのスキーマ仕様は固定でカスタマイズはできません。
-ECデータスキーマでは表現できないテナント要件のデータを用意したい場合は、[CMSデータ]({{< ref "cms" >}})として定義します。
+ECデータスキーマでは表現できないテナント要件のデータを用意したい場合は、[CMSデータ](cms)として定義します。
 
 ECデータは、OData API 経由でアクセス可能です。
 
@@ -43,25 +43,25 @@ ECデータは、OData API 経由でアクセス可能です。
 |     列名      |   型   |      最大長      | 主キー | Identity | NULL許容 |                                      説明                                       |
 | ------------- | ------ | ---------------- | :----: | :------: | :------: | ------------------------------------------------------------------------------- |
 | Id            | Int64  |                  |   O    |    O     |          | 住所ID                                                                          |
-| FirstName     | String | 64               |        |          |          | 名　[PersonName制約]({{< ref "../validation#personname" >}})                    |
-| FirstNameKana | String | 64               |        |          |          | メイ　[PersonNameKana制約]({{< ref "../validation#personnamekana" >}})          |
-| LastName      | String | 64               |        |          |          | 姓　[PersonName制約]({{< ref "../validation#personname" >}})                    |
-| LastNameKana  | String | 64               |        |          |          | セイ　[PersonNameKana制約]({{< ref "../validation#personnamekana" >}})          |
+| FirstName     | String | 64               |        |          |          | 名　[PersonName制約](../validation#personname)                    |
+| FirstNameKana | String | 64               |        |          |          | メイ　[PersonNameKana制約](../validation#personnamekana)          |
+| LastName      | String | 64               |        |          |          | 姓　[PersonName制約](../validation#personname)                    |
+| LastNameKana  | String | 64               |        |          |          | セイ　[PersonNameKana制約](../validation#personnamekana)          |
 | CountryCode   | String | 10(fixed length) |        |          |          | 国コード                                                                        |
-| ZipCode       | String | 10(fixed length) |        |          |          | 郵便番号　[ZipCode制約]({{< ref "../validation#zipcode" >}})                    |
-| Prefecture    | String | 10(fixed length) |        |          |          | 都道府県 [AddressPart制約]({{< ref "../validation#addresspart" >}})             |
-| City          | String | 128              |        |          |          | 市区町村 [AddressPart制約]({{< ref "../validation#addresspart" >}})             |
-| Street        | String | 128              |        |          |          | 番地、丁、号 [AddressTextPart制約]({{< ref "../validation#addresstextpart" >}}) |
+| ZipCode       | String | 10(fixed length) |        |          |          | 郵便番号　[ZipCode制約](../validation#zipcode)                    |
+| Prefecture    | String | 10(fixed length) |        |          |          | 都道府県 [AddressPart制約](../validation#addresspart)             |
+| City          | String | 128              |        |          |          | 市区町村 [AddressPart制約](../validation#addresspart)             |
+| Street        | String | 128              |        |          |          | 番地、丁、号 [AddressTextPart制約](../validation#addresstextpart) |
 | Building      | String | 128              |        |          |    O     | 建物名 部屋番号                                                                 |
-| Tel           | String | 32(fixed length) |        |          |          | 電話番号 [PhoneNumber制約]({{< ref "../validation#phoneNumber" >}})             |
+| Tel           | String | 32(fixed length) |        |          |          | 電話番号 [PhoneNumber制約](../validation#phonenumber)             |
 
 + Parents
 + Children
-	- [AddressesLastUpdate]({{< ref "#addresseslastupdates" >}})(0..1)
-	- [DeliveryOrders]({{< ref "#deliveryorders" >}})(*)
-	- [InvoiceOrderCustomers]({{< ref "#ordercustomers" >}})(*)
-	- [OrderedOrderCustomers]({{< ref "#ordercustomers" >}})(*)
-	- [UserAddresses]({{< ref "#useraddresses" >}})(*)
+	- [AddressesLastUpdate](#addresseslastupdates)(0..1)
+	- [DeliveryOrders](#deliveryorders)(*)
+	- [InvoiceOrderCustomers](#ordercustomers)(*)
+	- [OrderedOrderCustomers](#ordercustomers)(*)
+	- [UserAddresses](#useraddresses)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -74,7 +74,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | LastUpdate | DateTime |        |        |          |    O     | 最終更新日時 |
 
 + Parents
-	- [Address]({{< ref "#addresses" >}})(1) [FK(Id)] 	
+	- [Address](#addresses)(1) [FK(Id)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | ShipmentOperationDate | DateTime |        |   O    |          |          | 配送処理日時 |
 
 + Parents
-	- [Product]({{< ref "#products" >}})(1) [FK(ProductId)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -102,8 +102,8 @@ ECデータは、OData API 経由でアクセス可能です。
 | Amount           | Int32 |        |        |          |    O     | 数量           |
 
 + Parents
-	- [Campaign]({{< ref "#campaigns" >}})(1) [FK(CampaignId)] 	
-	- [Product]({{< ref "#products" >}})(1) [FK(BenefitProductId)] 	
+	- [Campaign](#campaigns)(1) [FK(CampaignId)] 	
+	- [Product](#products)(1) [FK(BenefitProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -120,7 +120,7 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [CampaignActions]({{< ref "#campaignactions" >}})(*)
+	- [CampaignActions](#campaignactions)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -134,8 +134,8 @@ ECデータは、OData API 経由でアクセス可能です。
 | ConfigParameter  | String | Max    |        |          |          | キャンペーンパラメータ   |
 
 + Parents
-	- [Campaign]({{< ref "#campaigns" >}})(1) [FK(CampaignId)] 	
-	- [CampaignActionMaster]({{< ref "#campaignactionmaster" >}})(1) [FK(CampaignActionId)] 	
+	- [Campaign](#campaigns)(1) [FK(CampaignId)] 	
+	- [CampaignActionMaster](#campaignactionmaster)(1) [FK(CampaignActionId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -150,7 +150,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | MaxUsagePerAccount | Int32  | Max    |        |          |    O     | 1アカウント当たりの最大適用数。NULLの場合は無制限 |
 
 + Parents
-	- [Campaign]({{< ref "#campaigns" >}})(1) [FK(CampaignId)]  	
+	- [Campaign](#campaigns)(1) [FK(CampaignId)]  	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -177,20 +177,20 @@ ECデータは、OData API 経由でアクセス可能です。
 | Name         | String   | Max              |        |          |          | キャンペーン名称                                                             |
 | StartDate    | DateTime |                  |        |          |          | 開始日時                                                                     |
 | EndDate      | DateTime |                  |        |          |          | 終了日時                                                                     |
-| CampaignType | Int32    |                  |        |          |          | [CampaignActionMaster.CampaignActionId]({{< ref "#campaignactionmaster" >}}) |
+| CampaignType | Int32    |                  |        |          |          | [CampaignActionMaster.CampaignActionId](#campaignactionmaster) |
 | Count        | String   | 10(fixed length) |        |          |    O     | 未使用                                                                       |
 | MemoId       | Int64    |                  |        |          |    O     | メモID                                                                       |
 | ApplyPrice   | Decimal  |                  |        |          |    O     | 適応価格                                                                     |
 
 + Parents
 + Children
-	- [BenefitItems]({{< ref "#benefititems" >}})(*)
-	- [CampaignActions]({{< ref "#campaignactions" >}})(*)
-	- [CampaignMatches]({{< ref "#campaignmatches" >}})(*)
+	- [BenefitItems](#benefititems)(*)
+	- [CampaignActions](#campaignactions)(*)
+	- [CampaignMatches](#campaignmatches)(*)
 + Realations
-	- [Categories]({{< ref "#categories" >}})(*)
-	- [Products]({{< ref "#products" >}})(*)
-	- [PurchaseOrders]({{< ref "#purchaseorders" >}})(*)
+	- [Categories](#categories)(*)
+	- [Products](#products)(*)
+	- [PurchaseOrders](#purchaseorders)(*)
 ---------------------------------------------------------------------------------------
 
 ## Categories
@@ -206,11 +206,11 @@ ECデータは、OData API 経由でアクセス可能です。
 | MemoId                | Int64  |                  |        |          |    O     | メモID             |
 
 + Parents
-	- [CategoryGroup]({{< ref "#categorygroups" >}})(1) [FK(CategoryGroupId)] 	
+	- [CategoryGroup](#categorygroups)(1) [FK(CategoryGroupId)] 	
 + Children
 + Realations
-	- [Campaigns]({{< ref "#campaigns" >}})(*)
-	- [Products]({{< ref "#products" >}})(*)
+	- [Campaigns](#campaigns)(*)
+	- [Products](#products)(*)
 ---------------------------------------------------------------------------------------
 
 ## CategoryGroups
@@ -223,7 +223,7 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [Categories]({{< ref "#categories" >}})(*)
+	- [Categories](#categories)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -252,8 +252,8 @@ ECデータは、OData API 経由でアクセス可能です。
 | Charge       | Decimal |        |        |          |          | 送料         |
 
 + Parents
-	- [Prefecture]({{< ref "#prefectures" >}})(1) [FK(PrefectureId)] 	
-	- [ShipSource]({{< ref "#shipsources" >}})(1) [FK(ShipSourceId)] 	
+	- [Prefecture](#prefectures)(1) [FK(PrefectureId)] 	
+	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -267,7 +267,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | DeliveryDate   | DateTime |                  |        |          |    O     | 配送日                                                                           |
 | HourRange      | String   | 4(fixed length)  |        |          |    O     | 配送時間 例：午前8時から12時の場合"0812"                                         |
 | WrappingTypeId | Int32    |                  |        |          |    O     | 梱包種ID                                                                         |
-| SenderName     | String   | 20(fixed length) |        |          |    O     | 依頼者名 [PersonName制約]({{< ref "../validation#personname" >}}) 依頼者名印字用 |
+| SenderName     | String   | 20(fixed length) |        |          |    O     | 依頼者名 [PersonName制約](../validation#personname) 依頼者名印字用 |
 | AddressName    | String   | 50               |        |          |          | 配送先名                                                                         |
 | DeliveryNo     | String   | 20(fixed length) |        |          |    O     | 配送番号                                                                         |
 | AddressId      | Int64    |                  |        |          |    O     | 住所ID                                                                           |
@@ -275,10 +275,10 @@ ECデータは、OData API 経由でアクセス可能です。
 | MailAddress    | String   | 256              |        |          |    O     | メールアドレス                                                                   |
 
 + Parents
-	- [Address]({{< ref "#addresses" >}})(0..1) [FK(AddressId)] 	
-	- [PurchaseOrder]({{< ref "#purchaseorders" >}})(1) [FK(OrderId)] 	
-	- [ShipSource]({{< ref "#shipsources" >}})(0..1) [FK(ShipSourceId)] 	
-	- [WrappingType]({{< ref "#wrappingtypes" >}})(0..1) [FK(WrappingTypeId)] 	
+	- [Address](#addresses)(0..1) [FK(AddressId)] 	
+	- [PurchaseOrder](#purchaseorders)(1) [FK(OrderId)] 	
+	- [ShipSource](#shipsources)(0..1) [FK(ShipSourceId)] 	
+	- [WrappingType](#wrappingtypes)(0..1) [FK(WrappingTypeId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -292,11 +292,11 @@ ECデータは、OData API 経由でアクセス可能です。
 | ShipSourceId        | Int32   |        |        |          |          | 配送ソースID                                                      |
 | DeliveryPatternName | String  | 50     |        |          |    O     | 配送パターン名称                                                  |
 | CanMailDelivery     | Boolean |        |        |          |          | メール便可                                                        |
-| TemperatureZone     | Int32   |        |        |          |          | 配送温度帯区分 [TemperatureZone]({{< ref "enum#temperaturezone" >}}) |
+| TemperatureZone     | Int32   |        |        |          |          | 配送温度帯区分 [TemperatureZone](enum#temperaturezone) |
 
 + Parents
 + Children
-	- [Products]({{< ref "#products" >}})(*)
+	- [Products](#products)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -316,7 +316,7 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [Product]({{< ref "#products" >}})(1)
+	- [Product](#products)(1)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -333,7 +333,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | Remains           | Int32    |        |        |          |    O     | 残量         |
 
 + Parents
-	- [Product]({{< ref "#products" >}})(1) [FK(ProductId)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -348,8 +348,8 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [ReserveStocks]({{< ref "#reservestocks" >}})(*)
-	- [SalesStockAllocationPriorities]({{< ref "#salesstockallocationpriorities" >}})(*)
+	- [ReserveStocks](#reservestocks)(*)
+	- [SalesStockAllocationPriorities](#salesstockallocationpriorities)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -363,7 +363,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | RegisterAt | DateTime |        |        |          |          | 登録日時 |
 
 + Parents
-	- [UserAccount]({{< ref "#useraccounts" >}})(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -379,7 +379,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | EndHour       | Int32  |                 |        |          |          | 到着上限                                  |
 
 + Parents
-	- [ShipSource]({{< ref "#shipsources" >}})(1) [FK(ShipSourceId)] 	
+	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -406,7 +406,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | ---------------- | ------- | ---------------- | :----: | :------: | :------: | ----------------------------------------------------------------- |
 | ShipSourceId     | Int32   |                  |   O    |          |          | 配送ソースID                                                      |
 | ZipCode          | String  | 10(fixed length) |   O    |          |          | 郵便番号                                                          |
-| TemperatureZone  | Int32   |                  |   O    |          |          | 配送温度帯区分 [TemperatureZone]({{< ref "enum#temperaturezone" >}}) |
+| TemperatureZone  | Int32   |                  |   O    |          |          | 配送温度帯区分 [TemperatureZone](enum#temperaturezone) |
 | LeadtimeValue    | Int32   |                  |        |          |          | リードタイム[日]                                                  |
 | CanCashOnDeliver | Boolean |                  |        |          |          | 代引き可                                                          |
 | CanCool          | Boolean |                  |        |          |          | クール便可                                                        |
@@ -435,7 +435,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | RelateId     | Int64    |        |        |          |    O     | 受注ID               |
 
 + Parents
-	- [UserAccount]({{< ref "#useraccounts" >}})(0..1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -456,7 +456,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | TemplateData | String   | Max    |        |          |          | テンプレート引数     |
 
 + Parents
-	- [UserAccount]({{< ref "#useraccounts" >}})(0..1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -471,7 +471,7 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [OperationHistories]({{< ref "#operationhistories" >}})(*)
+	- [OperationHistories](#operationhistories)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -505,8 +505,8 @@ ECデータは、OData API 経由でアクセス可能です。
 | MemoId          | Int64    |                  |        |          |    O     | メモID             |
 
 + Parents
-	- [Memo]({{< ref "#memos" >}})(0..1) [FK(MemoId)] 	
-	- [OperationReason]({{< ref "#operationreasons" >}})(1) [FK(Reason)] 	
+	- [Memo](#memos)(0..1) [FK(MemoId)] 	
+	- [OperationReason](#operationreasons)(1) [FK(Reason)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -521,7 +521,7 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [OperationHistories]({{< ref "#operationhistories" >}})(*)
+	- [OperationHistories](#operationhistories)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -550,16 +550,16 @@ ECデータは、OData API 経由でアクセス可能です。
 | IsGuest              | Boolean  |                  |        |          |          | ゲストフラグ                                                                   |
 | UserNo               | Int64    |                  |        |          |    O     | ユーザNo                                                                       |
 | MemberRank           | Int32    |                  |        |          |    O     | 会員ランク                                                                     |
-| MemberStatus         | Int32    |                  |        |          |    O     | 会員ステータス [MemberStatus]({{< ref "enum#memberstatus" >}})                 |
+| MemberStatus         | Int32    |                  |        |          |    O     | 会員ステータス [MemberStatus](enum#memberstatus)                 |
 | OrdererName          | String   | 20(fixed length) |        |          |    O     | 受注者名                                                                       |
 | FirstName            | String   | 50               |        |          |          | 購入者　名                                                                     |
 | LastName             | String   | 50               |        |          |          | 購入者　姓                                                                     |
 | FirstNameKana        | String   | 50               |        |          |          | 購入者　メイ                                                                   |
 | LastNameKana         | String   | 50               |        |          |          | 購入者　セイ                                                                   |
-| MailAddress          | String   | 128              |        |          |          | 購入者メールアドレス [Email制約]({{< ref "../validation#email" >}})            |
-| CreditCardNumber     | String   | 20(fixed length) |        |          |    O     | Deprecate [CreditCardNumber制約]({{< ref "../validation#creditcardnumber" >}}) |
+| MailAddress          | String   | 128              |        |          |          | 購入者メールアドレス [Email制約](../validation#email)            |
+| CreditCardNumber     | String   | 20(fixed length) |        |          |    O     | Deprecate [CreditCardNumber制約](../validation#creditcardnumber) |
 | CreditCardExpire     | String   | 10(fixed length) |        |          |    O     | Deprecate                                                                      |
-| CreditSecurity       | String   | 10(fixed length) |        |          |    O     | Deprecate [CreditSecurity制約]({{< ref "../validation#creditsecurity" >}})     |
+| CreditSecurity       | String   | 10(fixed length) |        |          |    O     | Deprecate [CreditSecurity制約](../validation#creditsecurity)     |
 | AuthorizeNo          | String   | 128              |        |          |    O     | 与信番号                                                                       |
 | AuthorizeAt          | DateTime |                  |        |          |    O     | 与信日時                                                                       |
 | CreditResponseStatus | String   | 10(fixed length) |        |          |    O     | Deprecate                                                                      |
@@ -569,7 +569,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | OrderedAddressId     | Int64    |                  |        |          |    O     | 購入者 住所ID                                                                  |
 | InvoiceAddressId     | Int64    |                  |        |          |    O     | 請求書 住所ID                                                                  |
 | Birthday             | DateTime |                  |        |          |    O     | 購入者 誕生日                                                                  |
-| Sex                  | Int32    |                  |        |          |    O     | 購入者 性別 [HumanSexes]({{< ref "enum#humansexes" >}})                        |
+| Sex                  | Int32    |                  |        |          |    O     | 購入者 性別 [HumanSexes](enum#humansexes)                        |
 | OriginalOrderId      | String   | 128              |        |          |    O     | 複製元受注ID                                                                   |
 | PaymentDetail        | String   | 128              |        |          |    O     | 支払詳細                                                                       |
 | PaymentSlipNumber    | String   | 128              |        |          |    O     | 支払票番号                                                                     |
@@ -580,11 +580,11 @@ ECデータは、OData API 経由でアクセス可能です。
 | AutoCancelDate       | DateTime |                  |        |          |    O     | 自動キャンセル日時                                                             |
 
 + Parents
-	- [InvoiceAddress]({{< ref "#addresses" >}})(0..1) [FK(InvoiceAddressId)] 	
-	- [OrderedAddress]({{< ref "#addresses" >}})(0..1) [FK(OrderedAddressId)] 	
-	- [UserAccount]({{< ref "#useraccounts" >}})(0..1) [FK(UserNo)] 	
+	- [InvoiceAddress](#addresses)(0..1) [FK(InvoiceAddressId)] 	
+	- [OrderedAddress](#addresses)(0..1) [FK(OrderedAddressId)] 	
+	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
 + Children
-	- [PurchaseOrders]({{< ref "#purchaseorders" >}})(*)
+	- [PurchaseOrders](#purchaseorders)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -594,7 +594,7 @@ ECデータは、OData API 経由でアクセス可能です。
 |         列名         |    型    | 最大長 | 主キー | Identity | NULL許容 |                             説明                              |
 | -------------------- | -------- | ------ | :----: | :------: | :------: | ------------------------------------------------------------- |
 | Id                   | Int64    |        |   O    |    O     |          | 受注明細ID                                                    |
-| OrderLineType        | Int32    |        |        |          |          | 受注明細タイプ [OrderLineType]({{< ref "enum#orderlinetype" >}}) |
+| OrderLineType        | Int32    |        |        |          |          | 受注明細タイプ [OrderLineType](enum#orderlinetype) |
 | OrderId              | Int64    |        |        |          |          | 受注ID                                                        |
 | ReserveId            | Int64    |        |        |          |    O     | 予約ID                                                        |
 | ArriveNoticeId       | Int64    |        |        |          |    O     | 着荷ID                                                        |
@@ -620,11 +620,11 @@ ECデータは、OData API 経由でアクセス可能です。
 | Description          | String   | 256    |        |          |    O     | 説明 (カートイン時に付与可能)                                 |
 
 + Parents
-	- [Product]({{< ref "#products" >}})(1) [FK(ProductId)] 	
-	- [PurchaseOrder]({{< ref "#purchaseorders" >}})(1) [FK(OrderId)] 	
-	- [ReserveStock]({{< ref "#reservestocks" >}})(0..1) [FK(ReserveId)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
+	- [PurchaseOrder](#purchaseorders)(1) [FK(OrderId)] 	
+	- [ReserveStock](#reservestocks)(0..1) [FK(ReserveId)] 	
 + Children
-	- [ReturnOrderLines]({{< ref "#returnorderlines" >}})(*)
+	- [ReturnOrderLines](#returnorderlines)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -654,10 +654,10 @@ ECデータは、OData API 経由でアクセス可能です。
 | CreateDate     | DateTime |                  |        |          |          | 最終作成日時        |
 
 + Parents
-	- [UserAccount]({{< ref "#useraccounts" >}})(1) 	
+	- [UserAccount](#useraccounts)(1) 	
 + Children
-	- [PointBankAllocates]({{< ref "#pointbankallocates" >}})(*)
-	- [PointBankTransactions]({{< ref "#pointbanktransactions" >}})(*)
+	- [PointBankAllocates](#pointbankallocates)(*)
+	- [PointBankTransactions](#pointbanktransactions)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -669,7 +669,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | TransactionNo   | Int64    |                  |   O    |          |          | ポイントトランザクションNo                            |
 | UserNo          | Int64    |                  |        |          |          | ユーザNo                                              |
 | BankCode        | String   | 32(fixed length) |        |          |          | バンクコード="Modd"                                   |
-| PointType       | Int32    |                  |        |          |          | ポイントタイプ [PointType]({{< ref "enum#pointtype" >}}) |
+| PointType       | Int32    |                  |        |          |          | ポイントタイプ [PointType](enum#pointtype) |
 | PointValue      | Int64    |                  |        |          |          | ポイント値                                            |
 | CreateDate      | DateTime |                  |        |          |          | 作成日時                                              |
 | ActivateDate    | DateTime |                  |        |          |    O     | アクティベート日時                                    |
@@ -680,7 +680,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | AllocateDate    | DateTime |                  |        |          |    O     | アーカイブ日時                                        |
 
 + Parents
-	- [PointBankAccount]({{< ref "#pointbankaccounts" >}})(1) [FK(UserNo)] 	
+	- [PointBankAccount](#pointbankaccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -724,7 +724,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | TransactionNo   | Int64    |                  |   O    |    O     |          | ポイントトランザクションID                            |
 | UserNo          | Int64    |                  |        |          |          | ユーザNo                                              |
 | BankCode        | String   | 32(fixed length) |        |          |          | バンクコード=Modd                                     |
-| PointType       | Int32    |                  |        |          |          | ポイントタイプ [PointType]({{< ref "enum#pointtype" >}}) |
+| PointType       | Int32    |                  |        |          |          | ポイントタイプ [PointType](enum#pointtype) |
 | PointValue      | Int64    |                  |        |          |          | ポイント値                                            |
 | CreateDate      | DateTime |                  |        |          |          | 作成日時                                              |
 | ActivateDate    | DateTime |                  |        |          |    O     | 本付与日時                                            |
@@ -734,7 +734,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | RelateKey       | String   | 64(fixed length) |        |          |          | 受注Id                                                |
 
 + Parents
-	- [PointBankAccount]({{< ref "#pointbankaccounts" >}})(1) [FK(UserNo)] 	
+	- [PointBankAccount](#pointbankaccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -749,8 +749,8 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [DeliveryCharges]({{< ref "#deliverycharges" >}})(*)
-	- [ZipCodes]({{< ref "#zipcodes" >}})(*)
+	- [DeliveryCharges](#deliverycharges)(*)
+	- [ZipCodes](#zipcodes)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -763,7 +763,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | LimitAmount | Int32 |        |        |          |          | 販売可能数 |
 
 + Parents
-	- [Product]({{< ref "#products" >}})(1) [FK(ProductId)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -804,7 +804,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | ----------------- | -------- | ---------------- | :----: | :------: | :------: | --------------------------------------------------------- |
 | Id                | Int32    |                  |   O    |    O     |          | 商品ID                                                    |
 | Name              | String   | 200              |        |          |          | 商品名                                                    |
-| ProductType       | Int32    |                  |        |          |          | 商品タイプ [ProductType]({{< ref "enum#producttype" >}})     |
+| ProductType       | Int32    |                  |        |          |          | 商品タイプ [ProductType](enum#producttype)     |
 | SalesStart        | DateTime |                  |        |          |          | 販売開始日時                                              |
 | SalesEnd          | DateTime |                  |        |          |    O     | 販売終了日時                                              |
 | ReleaseDate       | DateTime |                  |        |          |    O     | 発売日                                                    |
@@ -819,29 +819,29 @@ ECデータは、OData API 経由でアクセス可能です。
 | SetOnly           | Boolean  |                  |        |          |    O     | セット販売のみ可                                          |
 | Cero              | Int32    |                  |        |          |    O     | CERO区分                                                  |
 | MemoId            | Int64    |                  |        |          |    O     | メモID                                                    |
-| SalesStatus       | Int32    |                  |        |          |    O     | 販売ステータス [SalesStatus]({{< ref "enum#salesstatus" >}}) |
+| SalesStatus       | Int32    |                  |        |          |    O     | 販売ステータス [SalesStatus](enum#salesstatus) |
 | TaxationPrice     | Decimal  |                  |        |          |    O     | 課税対象単価                                              |
 | OrderedProduct    | Boolean  |                  |        |          |    O     | 受注生産品フラグ                                          |
 
 + Parents
-	- [DeliveryPattern]({{< ref "#deliverypatterns" >}})(0..1) [FK(DeliveryPatternId)] 	
-	- [SalesPattern]({{< ref "#salespatterns" >}})(0..1) [FK(SalesPatternId)] 	
+	- [DeliveryPattern](#deliverypatterns)(0..1) [FK(DeliveryPatternId)] 	
+	- [SalesPattern](#salespatterns)(0..1) [FK(SalesPatternId)] 	
 + Children
-	- [BeginingSalesControls]({{< ref "#beginingsalescontrols" >}})(*)
-	- [BenefitItems]({{< ref "#benefititems" >}})(*)
-	- [Children]({{< ref "#setproductchildren" >}})(*)
-	- [DeliveryStock]({{< ref "#deliverystocks" >}})(0..1)
-	- [ExternalStockCounts]({{< ref "#externalstockcounts" >}})(*)
-	- [OrderLines]({{< ref "#orderlines" >}})(*)
-	- [Parents]({{< ref "#setproductchildren" >}})(*)
-	- [ProductStockSummary]({{< ref "#productstocksummaries" >}})(0..1)
-	- [ReserveRequests]({{< ref "#reserverequests" >}})(*)
-	- [ReserveStocks]({{< ref "#reservestocks" >}})(*)
-	- [ReturnOrderLines]({{< ref "#returnorderlines" >}})(*)
-	- [SalesProduct]({{< ref "#salesproducts" >}})(0..1)
+	- [BeginingSalesControls](#beginingsalescontrols)(*)
+	- [BenefitItems](#benefititems)(*)
+	- [Children](#setproductchildren)(*)
+	- [DeliveryStock](#deliverystocks)(0..1)
+	- [ExternalStockCounts](#externalstockcounts)(*)
+	- [OrderLines](#orderlines)(*)
+	- [Parents](#setproductchildren)(*)
+	- [ProductStockSummary](#productstocksummaries)(0..1)
+	- [ReserveRequests](#reserverequests)(*)
+	- [ReserveStocks](#reservestocks)(*)
+	- [ReturnOrderLines](#returnorderlines)(*)
+	- [SalesProduct](#salesproducts)(0..1)
 + Realations
-	- [Campaigns]({{< ref "#campaigns" >}})(0..1)
-	- [Categories]({{< ref "#categories" >}})(0..1)
+	- [Campaigns](#campaigns)(0..1)
+	- [Categories](#categories)(0..1)
 ---------------------------------------------------------------------------------------
 
 ## PurchaseHistories
@@ -855,7 +855,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | SerializeData | String   | Max    |        |          |          | シリアライズデータ |
 
 + Parents
-	- [UserAccount]({{< ref "#useraccounts" >}})(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -883,7 +883,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | Value   | String | Max    |        |          |    O     | 値     |
 
 + Parents
-	- [PurchaseOrder]({{< ref "#purchaseorders" >}})(1) [FK(OrderId)] 	
+	- [PurchaseOrder](#purchaseorders)(1) [FK(OrderId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -910,15 +910,15 @@ ECデータは、OData API 経由でアクセス可能です。
 |             列名              |    型    |     最大長      | 主キー | Identity | NULL許容 |                               説明                               |
 | ----------------------------- | -------- | --------------- | :----: | :------: | :------: | ---------------------------------------------------------------- |
 | Id                            | Int64    |                 |   O    |    O     |          | 受注ID                                                           |
-| OrderType                     | Int32    |                 |        |          |    O     | 受注タイプ [OrderType]({{< ref "enum#ordertype" >}})                |
-| OrderStatus                   | Int32    |                 |        |          |          | 受注ステータス [OrderStatus]({{< ref "enum#orderstatus" >}})        |
+| OrderType                     | Int32    |                 |        |          |    O     | 受注タイプ [OrderType](enum#ordertype)                |
+| OrderStatus                   | Int32    |                 |        |          |          | 受注ステータス [OrderStatus](enum#orderstatus)        |
 | OrderDate                     | DateTime |                 |        |          |          | 受注日時                                                         |
 | ShipRequestDate               | DateTime |                 |        |          |    O     | 配送要求日時                                                     |
 | ShipDate                      | DateTime |                 |        |          |    O     | 配送日時                                                         |
 | DeliveryCompleteDate          | DateTime |                 |        |          |    O     | 着荷日時                                                         |
 | CustomerId                    | Int32    |                 |        |          |          | 購入者ID                                                         |
-| PaymentMethod                 | Int32    |                 |        |          |          | 支払方法 [PaymentMethod]({{< ref "enum#paymentmethod" >}})          |
-| PaymentStatus                 | Int32    |                 |        |          |          | 支払ステータス [PaymentStatus]({{< ref "enum#paymentstatus" >}})    |
+| PaymentMethod                 | Int32    |                 |        |          |          | 支払方法 [PaymentMethod](enum#paymentmethod)          |
+| PaymentStatus                 | Int32    |                 |        |          |          | 支払ステータス [PaymentStatus](enum#paymentstatus)    |
 | TaxRate                       | Int32    |                 |        |          |          | 税率                                                             |
 | DeliveryCharge                | Decimal  |                 |        |          |          | 税込送料                                                         |
 | PointPaymentForDeliveryCharge | Decimal  |                 |        |          |          | TotalUsagePointの内、送料に使用した量                            |
@@ -947,20 +947,20 @@ ECデータは、OData API 経由でアクセス可能です。
 | PointPaymentForPaymentCharge  | Decimal  |                 |        |          |          | TotalUsagePointの内、決済手数料に使用した量                      |
 
 + Parents
-	- [OrderCustomer]({{< ref "#ordercustomers" >}})(1) [FK(CustomerId)] 	
+	- [OrderCustomer](#ordercustomers)(1) [FK(CustomerId)] 	
 + Children
-	- [DeliveryOrder]({{< ref "#deliveryorders" >}})(0..1)
-	- [OrderLines]({{< ref "#orderlines" >}})(*)
-	- [OrdersLastUpdate]({{< ref "#orderslastupdates" >}})(0..1)
-	- [OriginalPurchaseOrder]({{< ref "#purchaseorders" >}})(*)
-	- [PurchaseOrderImport]({{< ref "#purchaseorderimports" >}})(0..1)
-	- [RelatePurchaseOrders]({{< ref "#purchaseorders" >}})(*)
-	- [ReserveRequests]({{< ref "#reserverequests" >}})(*)
-	- [ReserveStocks]({{< ref "#reservestocks" >}})(*)
-	- [ReturnOrders]({{< ref "#returnorders" >}})(*)
-	- [ServiceValues]({{< ref "#purchaseorderservices" >}})(*)
+	- [DeliveryOrder](#deliveryorders)(0..1)
+	- [OrderLines](#orderlines)(*)
+	- [OrdersLastUpdate](#orderslastupdates)(0..1)
+	- [OriginalPurchaseOrder](#purchaseorders)(*)
+	- [PurchaseOrderImport](#purchaseorderimports)(0..1)
+	- [RelatePurchaseOrders](#purchaseorders)(*)
+	- [ReserveRequests](#reserverequests)(*)
+	- [ReserveStocks](#reservestocks)(*)
+	- [ReturnOrders](#returnorders)(*)
+	- [ServiceValues](#purchaseorderservices)(*)
 + Realations
-	- [Campaigns]({{< ref "#campaigns" >}})(*)
+	- [Campaigns](#campaigns)(*)
 ---------------------------------------------------------------------------------------
 
 ## ReserveRequestStatusCounts
@@ -969,7 +969,7 @@ ECデータは、OData API 経由でアクセス可能です。
 |   列名    |  型   | 最大長 | 主キー | Identity | NULL許容 |                                  説明                                   |
 | --------- | ----- | ------ | :----: | :------: | :------: | ----------------------------------------------------------------------- |
 | ProductId | Int32 |        |   O    |          |          | 商品ID                                                                  |
-| Status    | Int32 |        |   O    |          |          | ステータス [ReserveRequestStatus]({{< ref "enum#reserverequeststatus" >}}) |
+| Status    | Int32 |        |   O    |          |          | ステータス [ReserveRequestStatus](enum#reserverequeststatus) |
 | Count     | Int32 |        |        |          |    O     | 数量                                                                    |
 
 + Parents
@@ -987,17 +987,17 @@ ECデータは、OData API 経由でアクセス可能です。
 | UserNo         | Int64    |        |        |          |          | ユーザNo                                                                |
 | ProductId      | Int32    |        |        |          |          | 商品ID                                                                  |
 | Amount         | Int32    |        |        |          |          | 数量                                                                    |
-| Status         | Int32    |        |        |          |          | ステータス [ReserveRequestStatus]({{< ref "enum#reserverequeststatus" >}}) |
+| Status         | Int32    |        |        |          |          | ステータス [ReserveRequestStatus](enum#reserverequeststatus) |
 | OrderId        | Int64    |        |        |          |    O     | 受注ID                                                                  |
 | ReserveStockId | Int64    |        |        |          |    O     | 仮予約在庫ID                                                            |
 | MailAddress    | String   | 128    |        |          |    O     | メールアドレス                                                          |
 | SiteId         | Int32    |        |        |          |          | サイトID                                                                |
 
 + Parents
-	- [Product]({{< ref "#products" >}})(1) [FK(ProductId)] 	
-	- [PurchaseOrder]({{< ref "#purchaseorders" >}})(0..1) 	
-	- [ReserveStock]({{< ref "#reservestocks" >}})(0..1) [FK(ReserveStockId)] 	
-	- [UserAccount]({{< ref "#useraccounts" >}})(1) [FK(UserNo)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
+	- [PurchaseOrder](#purchaseorders)(0..1) 	
+	- [ReserveStock](#reservestocks)(0..1) [FK(ReserveStockId)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1017,14 +1017,14 @@ ECデータは、OData API 経由でアクセス可能です。
 | ExternalSourceId | Int32    |        |        |          |    O     | NULLの場合内部在庫ストア |
 
 + Parents
-	- [ExternalStockSource]({{< ref "#externalstocksources" >}})(0..1) 	
-	- [Product]({{< ref "#products" >}})(0..1) [FK(ProductId)] 	
-	- [PurchaseOrder]({{< ref "#purchaseorders" >}})(0..1) 	
-	- [UserAccount]({{< ref "#useraccounts" >}})(0..1) [FK(UserNo)] 	
+	- [ExternalStockSource](#externalstocksources)(0..1) 	
+	- [Product](#products)(0..1) [FK(ProductId)] 	
+	- [PurchaseOrder](#purchaseorders)(0..1) 	
+	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
 + Children
-	- [OrderLines]({{< ref "#orderlines" >}})(*)
-	- [ReserveRequests]({{< ref "#reserverequests" >}})(*)
-	- [ReturnOrderLines]({{< ref "#returnorderlines" >}})(*)
+	- [OrderLines](#orderlines)(*)
+	- [ReserveRequests](#reserverequests)(*)
+	- [ReturnOrderLines](#returnorderlines)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1034,7 +1034,7 @@ ECデータは、OData API 経由でアクセス可能です。
 |         列名         |    型    | 最大長 | 主キー | Identity | NULL許容 |                           説明                            |
 | -------------------- | -------- | ------ | :----: | :------: | :------: | --------------------------------------------------------- |
 | Id                   | Int64    |        |   O    |    O     |          | 返品ID                                                    |
-| OrderLineType        | Int32    |        |        |          |          | 明細タイプ [OrderLineType]({{< ref "enum#orderlinetype" >}}) |
+| OrderLineType        | Int32    |        |        |          |          | 明細タイプ [OrderLineType](enum#orderlinetype) |
 | OrderId              | Int64    |        |        |          |          | 受注ID                                                    |
 | ReserveId            | Int64    |        |        |          |    O     | 予約ID                                                    |
 | ArriveNoticeId       | Int64    |        |        |          |    O     | 着荷ID                                                    |
@@ -1061,13 +1061,13 @@ ECデータは、OData API 経由でアクセス可能です。
 | Description          | String   | 256    |        |          |    O     | 説明                                                      |
 
 + Parents
-	- [OrderLine]({{< ref "#orderlines" >}})(0..1) [FK(PurchaseOrderLineId)] 	
-	- [Product]({{< ref "#products" >}})(1) [FK(ProductId)] 	
-	- [ReserveStock]({{< ref "#reservestocks" >}})(0..1) [FK(ReserveId)] 	
-	- [ReturnOrder]({{< ref "#returnorders" >}})(1) 	
+	- [OrderLine](#orderlines)(0..1) [FK(PurchaseOrderLineId)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
+	- [ReserveStock](#reservestocks)(0..1) [FK(ReserveId)] 	
+	- [ReturnOrder](#returnorders)(1) 	
 + Children
-	- [ParentReturnOrderLine]({{< ref "#returnorderlines" >}})(*)
-	- [RelateReturnOrderLines]({{< ref "#returnorderlines" >}})(*)
+	- [ParentReturnOrderLine](#returnorderlines)(*)
+	- [RelateReturnOrderLines](#returnorderlines)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1077,15 +1077,15 @@ ECデータは、OData API 経由でアクセス可能です。
 |             列名              |    型    | 最大長 | 主キー | Identity | NULL許容 |                           説明                            |
 | ----------------------------- | -------- | ------ | :----: | :------: | :------: | --------------------------------------------------------- |
 | Id                            | Int64    |        |   O    |    O     |          | 受注ID                                                    |
-| OrderType                     | Int32    |        |        |          |    O     | 受注タイプ [OrderType]({{< ref "enum#ordertype" >}})         |
-| OrderStatus                   | Int32    |        |        |          |          | 受注ステータス [OrderStatus]({{< ref "enum#orderstatus" >}}) |
+| OrderType                     | Int32    |        |        |          |    O     | 受注タイプ [OrderType](enum#ordertype)         |
+| OrderStatus                   | Int32    |        |        |          |          | 受注ステータス [OrderStatus](enum#orderstatus) |
 | OrderDate                     | DateTime |        |        |          |          | 受注日時                                                  |
 | ShipRequestDate               | DateTime |        |        |          |    O     | 配送要求日時                                              |
 | ShipDate                      | DateTime |        |        |          |    O     | 配送日時                                                  |
 | DeliveryCompleteDate          | DateTime |        |        |          |    O     | 着荷日時                                                  |
 | CustomerId                    | Int32    |        |        |          |          | 購入者ID                                                  |
-| PaymentMethod                 | Int32    |        |        |          |          | 支払方法 [PaymentMethod]({{< ref "enum#paymentmethod" >}})   |
-| PaymentStatus                 | Int32    |        |        |          |          | 支払状況 [PaymentStatus]({{< ref "enum#paymentstatus" >}})   |
+| PaymentMethod                 | Int32    |        |        |          |          | 支払方法 [PaymentMethod](enum#paymentmethod)   |
+| PaymentStatus                 | Int32    |        |        |          |          | 支払状況 [PaymentStatus](enum#paymentstatus)   |
 | TaxRate                       | Int32    |        |        |          |          | 税率                                                      |
 | DeliveryCharge                | Decimal  |        |        |          |          | 送料                                                      |
 | PointPaymentForDeliveryCharge | Decimal  |        |        |          |          | 使用ポイント 送料分                                       |
@@ -1115,12 +1115,12 @@ ECデータは、OData API 経由でアクセス可能です。
 | PointPaymentForPaymentCharge  | Decimal  |        |        |          |          | ポイント使用額　手数料分                                  |
 
 + Parents
-	- [PurchaseOrder]({{< ref "#purchaseorders" >}})(1) [FK(PurchaseOrderId)] 	
-	- [ReturnReason]({{< ref "#returnreasons" >}})(1) [FK(ReturnReasonId)] 	
+	- [PurchaseOrder](#purchaseorders)(1) [FK(PurchaseOrderId)] 	
+	- [ReturnReason](#returnreasons)(1) [FK(ReturnReasonId)] 	
 + Children
-	- [OriginalReturnOrder]({{< ref "#returnorders" >}})(*)
-	- [RelateReturnOrders]({{< ref "#returnorders" >}})(*)
-	- [ReturnOrderLines]({{< ref "#returnorderlines" >}})(*)
+	- [OriginalReturnOrder](#returnorders)(*)
+	- [RelateReturnOrders](#returnorders)(*)
+	- [ReturnOrderLines](#returnorderlines)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1144,7 +1144,7 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [ReturnOrders]({{< ref "#returnorders" >}})(*)
+	- [ReturnOrders](#returnorders)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1182,15 +1182,15 @@ ECデータは、OData API 経由でアクセス可能です。
 | MaxPurchasePerOrder     | Int32   |        |        |          |    O     | 受注毎最大購入数                                          |
 | InternalStockPriority   | Int32   |        |        |          |    O     | 内部在庫優先順序                                          |
 | EnableUserCancel        | Boolean |        |        |          |    O     | ユーザキャンセル許可                                      |
-| TaxRoundMode            | Int32   |        |        |          |    O     | 税丸めモード [TaxRoundMode]({{< ref "enum#taxroundmode" >}}) |
+| TaxRoundMode            | Int32   |        |        |          |    O     | 税丸めモード [TaxRoundMode](enum#taxroundmode) |
 | EnableReserveOrder      | Boolean |        |        |          |    O     | 仮予約可                                                  |
 | MaxMailDeliveryPerOrder | Int32   |        |        |          |    O     | 受注毎最大メール便数                                      |
 
 + Parents
-	- [StockControl]({{< ref "#stockcontrols" >}})(1) [FK(StockControlMode)] 	
+	- [StockControl](#stockcontrols)(1) [FK(StockControlMode)] 	
 + Children
-	- [Products]({{< ref "#products" >}})(*)
-	- [SalesStockAllocationPriorities]({{< ref "#salesstockallocationpriorities" >}})(*)
+	- [Products](#products)(*)
+	- [SalesStockAllocationPriorities](#salesstockallocationpriorities)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1214,13 +1214,13 @@ ECデータは、OData API 経由でアクセス可能です。
 | MaxPurchasePerOrder     | Int32   |        |        |          |    O     |                                              |
 | InternalStockPriority   | Int32   |        |        |          |    O     |                                              |
 | EnableUserCancel        | Boolean |        |        |          |    O     |                                              |
-| TaxRoundMode            | Int32   |        |        |          |    O     | [TaxRoundMode]({{< ref "enum#taxroundmode" >}}) |
+| TaxRoundMode            | Int32   |        |        |          |    O     | [TaxRoundMode](enum#taxroundmode) |
 | EnableReserveOrder      | Boolean |        |        |          |    O     |                                              |
 | MaxMailDeliveryPerOrder | Int32   |        |        |          |    O     |                                              |
 
 + Parents
 + Children
-	- [Product]({{< ref "#products" >}})(1)
+	- [Product](#products)(1)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1247,8 +1247,8 @@ ECデータは、OData API 経由でアクセス可能です。
 | Priority         | Int32 |        |        |          |          | 優先順位           |
 
 + Parents
-	- [ExternalStockSource]({{< ref "#externalstocksources" >}})(1) 	
-	- [SalesPattern]({{< ref "#salespatterns" >}})(1) [FK(SalesPatternId)] 	
+	- [ExternalStockSource](#externalstocksources)(1) 	
+	- [SalesPattern](#salespatterns)(1) [FK(SalesPatternId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1280,8 +1280,8 @@ ECデータは、OData API 経由でアクセス可能です。
 | DividePrice    | Decimal |        |        |          |          | 分割価格     |
 
 + Parents
-	- [ChildProduct]({{< ref "#products" >}})(1) [FK(ChildProductId)] 	
-	- [ParentProduct]({{< ref "#products" >}})(1) [FK(SetProductId)] 	
+	- [ChildProduct](#products)(1) [FK(ChildProductId)] 	
+	- [ParentProduct](#products)(1) [FK(SetProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1295,7 +1295,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | Holiday      | DateTime |        |   O    |          |          | 休日         |
 
 + Parents
-	- [ShipSource]({{< ref "#shipsources" >}})(1) [FK(ShipSourceId)] 	
+	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1310,7 +1310,7 @@ ECデータは、OData API 経由でアクセス可能です。
 | ZipCode         | String | 10(fixed length) |   O    |          |          | 郵便番号       |
 
 + Parents
-	- [ShipSource]({{< ref "#shipsources" >}})(1) [FK(ShipSourceId)] 	
+	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1328,11 +1328,11 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [DeliveryCharges]({{< ref "#deliverycharges" >}})(*)
-	- [DeliveryOrders]({{< ref "#deliveryorders" >}})(*)
-	- [HourRanges]({{< ref "#hourranges" >}})(*)
-	- [ShipSourceHolidays]({{< ref "#shipsourceholidays" >}})(*)
-	- [ShipSourceUnavailables]({{< ref "#shipsourceunavailables" >}})(*)
+	- [DeliveryCharges](#deliverycharges)(*)
+	- [DeliveryOrders](#deliveryorders)(*)
+	- [HourRanges](#hourranges)(*)
+	- [ShipSourceHolidays](#shipsourceholidays)(*)
+	- [ShipSourceUnavailables](#shipsourceunavailables)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1346,7 +1346,7 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [SalesPatterns]({{< ref "#salespatterns" >}})(*)
+	- [SalesPatterns](#salespatterns)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1378,19 +1378,19 @@ ECデータは、OData API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [Favorites]({{< ref "#favorites" >}})(*)
-	- [MailHistories]({{< ref "#mailhistories" >}})(*)
-	- [MailRequests]({{< ref "#mailrequests" >}})(*)
-	- [OrderCustomers]({{< ref "#ordercustomers" >}})(*)
-	- [PointBankAccounts]({{< ref "#pointbankaccounts" >}})(*)
-	- [PurchaseHistories]({{< ref "#purchasehistories" >}})(*)
-	- [ReserveRequests]({{< ref "#reserverequests" >}})(*)
-	- [ReserveStocks]({{< ref "#reservestocks" >}})(*)
-	- [UserAddresses]({{< ref "#useraddresses" >}})(*)
-	- [UserExternalKeys]({{< ref "#userexternalkeys" >}})(*)
-	- [UserProperty]({{< ref "#userproperties" >}})(0..1)
-	- [UserRole]({{< ref "#userroles" >}})(*)
-	- [UsersLastUpdate]({{< ref "#userslastupdates" >}})(0..1)
+	- [Favorites](#favorites)(*)
+	- [MailHistories](#mailhistories)(*)
+	- [MailRequests](#mailrequests)(*)
+	- [OrderCustomers](#ordercustomers)(*)
+	- [PointBankAccounts](#pointbankaccounts)(*)
+	- [PurchaseHistories](#purchasehistories)(*)
+	- [ReserveRequests](#reserverequests)(*)
+	- [ReserveStocks](#reservestocks)(*)
+	- [UserAddresses](#useraddresses)(*)
+	- [UserExternalKeys](#userexternalkeys)(*)
+	- [UserProperty](#userproperties)(0..1)
+	- [UserRole](#userroles)(*)
+	- [UsersLastUpdate](#userslastupdates)(0..1)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1401,11 +1401,11 @@ ECデータは、OData API 経由でアクセス可能です。
 | ----------- | ------ | ------ | :----: | :------: | :------: | ---------------------------------------------------------------- |
 | UserNo      | Int64  |        |   O    |          |          | ユーザNo                                                         |
 | AddressId   | Int64  |        |   O    |          |          | 住所ID                                                           |
-| AddressName | String | 128    |        |          |          | 住所名[AddressName制約]({{< ref "../validation#addressname" >}}) |
+| AddressName | String | 128    |        |          |          | 住所名[AddressName制約](../validation#addressname) |
 
 + Parents
-	- [Address]({{< ref "#addresses" >}})(1) [FK(AddressId)] 	
-	- [UserAccount]({{< ref "#useraccounts" >}})(1) [FK(UserNo)] 	
+	- [Address](#addresses)(1) [FK(AddressId)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1447,7 +1447,7 @@ Deprecate
 | --------- | ------ | ------ | :----: | :------: | :------: | -------------------------------------------------------------------- |
 | UserNo    | Int64  |        |   O    |          |          |                                                                      |
 | DisplayNo | Int64  |        |   O    |          |          |                                                                      |
-| Number    | String | 128    |        |          |          | [CreditCardNumber制約]({{< ref "../validation#creditcardnumber" >}}) |
+| Number    | String | 128    |        |          |          | [CreditCardNumber制約](../validation#creditcardnumber) |
 | Expire    | String | 128    |        |          |          |                                                                      |
 
 + Parents
@@ -1467,7 +1467,7 @@ Deprecate
 | LastLoginDate    | DateTime |        |        |          |    O     | 最終ログイン日時 |
 
 + Parents
-	- [UserAccount]({{< ref "#useraccounts" >}})(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1493,10 +1493,10 @@ Deprecate
 | LastDepositDate  | DateTime |                  |        |          |    O     | 最終付与日時                                                          |
 | LastWithdrawDate | DateTime |                  |        |          |    O     | 最終使用日時                                                          |
 | UserRole         | String   | Max              |        |          |    O     | ユーザーロール                                                        |
-| LastName         | String   | 64               |        |          |    O     | 姓 [PersonName制約]({{< ref "../validation#personname" >}})           |
-| FirstName        | String   | 64               |        |          |    O     | 名 [PersonNameKana制約]({{< ref "../validation#personnamekana" >}})   |
-| LastNameKana     | String   | 64               |        |          |    O     | セイ [PersonName制約]({{< ref "../validation#personname" >}})         |
-| FirstNameKana    | String   | 64               |        |          |    O     | メイ [PersonNameKana制約]({{< ref "../validation#personnamekana" >}}) |
+| LastName         | String   | 64               |        |          |    O     | 姓 [PersonName制約](../validation#personname)           |
+| FirstName        | String   | 64               |        |          |    O     | 名 [PersonNameKana制約](../validation#personnamekana)   |
+| LastNameKana     | String   | 64               |        |          |    O     | セイ [PersonName制約](../validation#personname)         |
+| FirstNameKana    | String   | 64               |        |          |    O     | メイ [PersonNameKana制約](../validation#personnamekana) |
 | Subscribe        | Boolean  |                  |        |          |          | メルマガ許可                                                          |
 | Birthday         | DateTime |                  |        |          |    O     | 誕生日                                                                |
 | Sex              | Int32    |                  |        |          |          | 性別                                                                  |
@@ -1534,8 +1534,8 @@ Deprecate
 | Token         | String   | 32(fixed length) |        |          |    O     | トークン         |
 
 + Parents
-	- [Address]({{< ref "#addresses" >}})(1) [FK(AddressId)] 	
-	- [UserAccount]({{< ref "#useraccounts" >}})(1) [FK(UserNo)] 	
+	- [Address](#addresses)(1) [FK(AddressId)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1550,7 +1550,7 @@ Deprecate
 | RoleParameter | String | 1024   |        |          |    O     | ロール引数 |
 
 + Parents
-	- [UserAccount]({{< ref "#useraccounts" >}})(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1564,7 +1564,7 @@ Deprecate
 | LastUpdate | DateTime |        |        |          |    O     | 最終更新日時 |
 
 + Parents
-	- [UserAccount]({{< ref "#useraccounts" >}})(1) [FK(Id)] 	
+	- [UserAccount](#useraccounts)(1) [FK(Id)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1579,7 +1579,7 @@ Deprecate
 
 + Parents
 + Children
-	- [DeliveryOrders]({{< ref "#deliveryorders" >}})(*)
+	- [DeliveryOrders](#deliveryorders)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1595,7 +1595,7 @@ Deprecate
 | Street        | String | 128              |        |          |          | 通り       |
 
 + Parents
-	- [ZipCode]({{< ref "#zipcodes" >}})(1) [FK()] 	
+	- [ZipCode](#zipcodes)(1) [FK()] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1610,10 +1610,10 @@ Deprecate
 | PrefectureId | Int32  |                  |        |          |          | 都道府県  |
 
 + Parents
-	- [Prefecture]({{< ref "#prefectures" >}})(1) [FK(PrefectureId)] 	
+	- [Prefecture](#prefectures)(1) [FK(PrefectureId)] 	
 + Children
-	- [DstZipCode]({{< ref "#zipcodes" >}})(0..1)
-	- [SrcZipCode]({{< ref "#zipcodes" >}})(0..1)
-	- [ZipCodeAddrs]({{< ref "#zipcodeaddrs" >}})(*)
+	- [DstZipCode](#zipcodes)(0..1)
+	- [SrcZipCode](#zipcodes)(0..1)
+	- [ZipCodeAddrs](#zipcodeaddrs)(*)
 + Realations
 ---------------------------------------------------------------------------------------

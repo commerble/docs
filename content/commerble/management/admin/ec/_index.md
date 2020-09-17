@@ -7,21 +7,21 @@ description:
 # EC管理サイト
 
 ## EC管理ページ一覧
-- [トップ]({{< ref "top" >}})
+- [トップ](top)
 - 受注管理
-  - [受注]({{< ref "order" >}})
-  - [仮予約]({{< ref "reserve-order" >}})
+  - [受注](order)
+  - [仮予約](reserve-order)
 - 商品管理
-  - [商品]({{< ref "product" >}})
-  - [カテゴリ]({{< ref "category" >}})
-  - [販売パターン]({{< ref "sales-pattern" >}})
-  - [お気に入り]({{< ref "favorite" >}})
+  - [商品](product)
+  - [カテゴリ](category)
+  - [販売パターン](sales-pattern)
+  - [お気に入り](favorite)
 - 会員管理
-  - [会員]({{< ref "customer" >}})
+  - [会員](customer)
 - 販促管理
-  - [キャンペーン]({{< ref "campaign" >}})
+  - [キャンペーン](campaign)
 - 在庫管理
-  - [在庫]({{< ref "stock" >}})
+  - [在庫](stock)
 
 ## 一括アップロード
 EC管理サイトでの一括アップロードの共通仕様を説明します。  
@@ -33,7 +33,7 @@ EC管理サイトでは、一部のデータを**TSV(Tab-separated values)ファ
 - 複数行のデータ登録は不可
 - カラム名の変更が可能（オーダーカスタム）
 
-[受注]({{< ref "order" >}})ページで、受注＋受注明細の同時登録を行う場合は
+[受注](order)ページで、受注＋受注明細の同時登録を行う場合は
 受注TSVファイル、受注明細TSVファイルを用意しZIP圧縮してアップロードを行います。
 
 ## 検索
