@@ -228,7 +228,7 @@ Commerble標準のポイント機能を利用している場合、*お客様が�
 ![返品明細作成後](./return-detail-created.png)
 
 {{< hint warning >}}
-在庫数の調整は、[在庫]({{< ref "stock" >}})ページから編集作業を行って下さい。
+在庫数の調整は、[在庫]({{< ref "../stock" >}})ページから編集作業を行って下さい。
 
 受注に対するポイントの調整を**手動**で行う必要があります。会員のポイント情報を変更して下さい。
 ポイントの有効期限を編集する場合も同様です。
@@ -255,12 +255,12 @@ TSVファイルをアップロードして一括でデータを登録します�
 
 一括アップロードで登録できることは以下になります。
 
-### 受注＋受注明細 追加
+### 受注＋受注明細
 受注情報と受注明細情報を一緒に追加します。  
 TSVファイル名は固定で、受注情報は **Order.txt** 受注明細情報は **OrderLine.txt** で用意し
 ２つのファイルをまとめてZIP圧縮してアップロードします。
 
-### 受注明細 追加
+### 受注明細
 受注明細情報を追加します。TSVファイルをアップロードします。
 
 ### 受注情報 TSV
@@ -269,19 +269,19 @@ TSVファイル名は固定で、受注情報は **Order.txt** 受注明細情�
 | :------------------------- | :---: | :---------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------- |
 | OriginalOrderId            |   O   | 数値                                                                                | 受注シーケンス番号、受注明細CSVでの明細のグルーピングに使用する                            |
 | IsGuest                    |   O   | 真偽値                                                                              | ゲスト購入フラグ                                                                           |
-| MemberRank                 |       | 数値                                                                                | 会員ランク [MemberStatus]({{< ref "../../../development/data/enum#memberstatus" >}})       |
-| OrdererName                |   O   | [PersonName]({{< ref "../../../development/validation#personname" >}})              | 受注者                                                                                     |
-| FirstName                  |   O   | [PersonName]({{< ref "../../../development/validation#personname" >}})              | 名                                                                                         |
-| LastName                   |   O   | [PersonName]({{< ref "../../../development/validation#personname" >}})              | 姓                                                                                         |
-| FirstNameKana              |   O   | [PersonNameKana]({{< ref "../../../development/validation#personnamekana" >}})      | メイ                                                                                       |
-| LastNameKana               |   O   | [PersonNameKana]({{< ref "../../../development/validation#personnamekana" >}})      | セイ                                                                                       |
+| MemberRank                 |       | 数値                                                                                | 会員ランク [MemberStatus]({{< ref "../../../../development/data/enum#memberstatus" >}})       |
+| OrdererName                |   O   | [PersonName]({{< ref "../../../../development/validation#personname" >}})              | 受注者                                                                                     |
+| FirstName                  |   O   | [PersonName]({{< ref "../../../../development/validation#personname" >}})              | 名                                                                                         |
+| LastName                   |   O   | [PersonName]({{< ref "../../../../development/validation#personname" >}})              | 姓                                                                                         |
+| FirstNameKana              |   O   | [PersonNameKana]({{< ref "../../../../development/validation#personnamekana" >}})      | メイ                                                                                       |
+| LastNameKana               |   O   | [PersonNameKana]({{< ref "../../../../development/validation#personnamekana" >}})      | セイ                                                                                       |
 | EmailAddr                  |   O   |                                                                                     | 注文者メールアドレス                                                                       |
 | Birthday                   |       | 日付                                                                                | 注文者誕生日                                                                               |
-| Sex                        |   O   | 数値                                                                                | 性別 [HumanSexes]({{< ref "../../../development/data/enum#humansexes" >}})                 |
+| Sex                        |   O   | 数値                                                                                | 性別 [HumanSexes]({{< ref "../../../../development/data/enum#humansexes" >}})                 |
 | UserNo                     |       | 数値                                                                                | ユーザ番号                                                                                 |
 | UserName                   |       | 文字列                                                                              |                                                                                            |
-| OrderType                  |   O   | 数値                                                                                | 受注タイプ [OrderType]({{< ref "../../../development/data/enum#ordertype" >}})             |
-| OrderStatus                |   O   | 数値                                                                                | 受注ステータス [OrderStatus]({{< ref "../../../development/data/enum#orderstatus" >}})     |
+| OrderType                  |   O   | 数値                                                                                | 受注タイプ [OrderType]({{< ref "../../../../development/data/enum#ordertype" >}})             |
+| OrderStatus                |   O   | 数値                                                                                | 受注ステータス [OrderStatus]({{< ref "../../../../development/data/enum#orderstatus" >}})     |
 | OrderDate                  |       | 日付時間                                                                            | 受注日時                                                                                   |
 | AllocationCompleteDate     |       | 日付時間                                                                            | 引当完了日                                                                                 |
 | ShipRequestDate            |       | 日付時間                                                                            | 出荷指示日                                                                                 |
@@ -292,8 +292,8 @@ TSVファイル名は固定で、受注情報は **Order.txt** 受注明細情�
 | ReturnDate                 |       | 日付時間                                                                            | 返品日                                                                                     |
 | ShipBookAt                 |       | 日付時間                                                                            | 出荷計上日                                                                                 |
 | DeliveryBookAt             |       | 日付時間                                                                            | 着荷計上日                                                                                 |
-| PaymentMethod              |       | 数値                                                                                | 決済方法 [PaymentMethod]({{< ref "../../../development/data/enum#paymentmethod" >}})       |
-| PaymentStatus              |       | 数値                                                                                | 決済ステータス [PaymentStatus]({{< ref "../../../development/data/enum#paymentstatus" >}}) |
+| PaymentMethod              |       | 数値                                                                                | 決済方法 [PaymentMethod]({{< ref "../../../../development/data/enum#paymentmethod" >}})       |
+| PaymentStatus              |       | 数値                                                                                | 決済ステータス [PaymentStatus]({{< ref "../../../../development/data/enum#paymentstatus" >}}) |
 | TaxRate                    |   O   | 数値                                                                                | 税率                                                                                       |
 | DeliveryCharge             |   O   | 数値                                                                                | 配送料                                                                                     |
 | PointPaymentForDelivCharge |   O   | 数値                                                                                | 使用ポイント（配送料分）                                                                   |
@@ -311,16 +311,16 @@ TSVファイル名は固定で、受注情報は **Order.txt** 受注明細情�
 | SenderName                 |       | `.{20}`                                                                             | ラッピング種別（1:明細書へ金額印字しない, 2:明細書へ金額印字する）                         |
 | DeliveryNo                 |       | `^\w{0,20}$`                                                                        | ラッピング種別（1:明細書へ金額印字しない, 2:明細書へ金額印字する）                         |
 | DeliveryMailAddr           |   O   | メールアドレス                                                                      | 配送先メールアドレス                                                                       |
-| RecipientFirstName         |   O   | [PersonName]({{< ref "../../../development/validation#personname" >}})              | 配送先 名                                                                                  |
-| RecipientFirstNameKana     |   O   | [PersonNameKana]({{< ref "../../../development/validation#personnamekana" >}})      | 配送先 メイ                                                                                |
-| RecipientLastName          |   O   | [PersonName]({{< ref "../../../development/validation#personname" >}})              | 配送先 姓                                                                                  |
-| RecipientLastNameKana      |   O   | [PersonNameKana]({{< ref "../../../development/validation#personnamekana" >}})      | 配送先 セイ                                                                                |
+| RecipientFirstName         |   O   | [PersonName]({{< ref "../../../../development/validation#personname" >}})              | 配送先 名                                                                                  |
+| RecipientFirstNameKana     |   O   | [PersonNameKana]({{< ref "../../../../development/validation#personnamekana" >}})      | 配送先 メイ                                                                                |
+| RecipientLastName          |   O   | [PersonName]({{< ref "../../../../development/validation#personname" >}})              | 配送先 姓                                                                                  |
+| RecipientLastNameKana      |   O   | [PersonNameKana]({{< ref "../../../../development/validation#personnamekana" >}})      | 配送先 セイ                                                                                |
 | CountryCode                |   O   | `^[A-Za-z]{2}$`                                                                     | 配送先国 (例：JP)                                                                          |
 | ZipCode                    |   O   | `^\d{7}$`                                                                           | 配送先郵便番号                                                                             |
-| Pref                       |   O   | [AddressPart]({{< ref "../../../development/validation#addresspart" >}})  1-10文字  | 配送先都道府県                                                                             |
-| City                       |   O   | [AddressPart]({{< ref "../../../development/validation#addresspart" >}})  1-128文字 | 配送先市区町村名                                                                           |
-| Street                     |   O   | [AddressPart]({{< ref "../../../development/validation#addresspart" >}})  1-128文字 | 配送先番地                                                                                 |
-| Building                   |       | [AddressPart]({{< ref "../../../development/validation#addresspart" >}})  1-128文字 | 配送先ビル名等                                                                             |
+| Pref                       |   O   | [AddressPart]({{< ref "../../../../development/validation#addresspart" >}})  1-10文字  | 配送先都道府県                                                                             |
+| City                       |   O   | [AddressPart]({{< ref "../../../../development/validation#addresspart" >}})  1-128文字 | 配送先市区町村名                                                                           |
+| Street                     |   O   | [AddressPart]({{< ref "../../../../development/validation#addresspart" >}})  1-128文字 | 配送先番地                                                                                 |
+| Building                   |       | [AddressPart]({{< ref "../../../../development/validation#addresspart" >}})  1-128文字 | 配送先ビル名等                                                                             |
 | Tel                        |       | `^[0-9]{0,11}$`                                                                     | 配送先電話番号                                                                             |
 | ShipSourceId               |       | 数値                                                                                | 配送元ID                                                                                   |
 | AuthorizeNo                |       | 文字列 最大128文字                                                                  | 承認番号                                                                                   |
@@ -337,7 +337,7 @@ TSVファイル名は固定で、受注情報は **Order.txt** 受注明細情�
 |       カラム名       | 必須  |    フォーマット    |                             説明                             |
 | :------------------- | :---: | :----------------- | :----------------------------------------------------------- |
 | OriginalOrderId      |   O   | 数値               | 受注シーケンス番号、もしくは、受注番号                       |
-| OrderLineType        |   O   | 数値               | 受注タイプ [OrderLineType]({{< ref "../../../development/data/enum#orderlinetype" >}}) |
+| OrderLineType        |   O   | 数値               | 受注タイプ [OrderLineType]({{< ref "../../../../development/data/enum#orderlinetype" >}}) |
 | ProductId            |   O   | 数値               | 内部商品ID                                                   |
 | OrderAmount          |   O   | 数値               | 受注数                                                       |
 | AllocateAmount       |   O   | 数値               | 引当数                                                       |
@@ -354,6 +354,4 @@ TSVファイル名は固定で、受注情報は **Order.txt** 受注明細情�
 | DiscountPrice        |   O   | 数値               | 値引額                                                       |
 | AllocateCompleteDate |       | 日付時間           | 引当完了日時                                                 |
 | Description          |       | 文字列 最大256文字 | 補足                                                         |
-
-
 
