@@ -10,7 +10,7 @@ description:
 </style>
 
 # 定義値(Enum)
-ECデータスキーマで利用される定義値の一覧です。
+[ECデータ](ec) で利用される定義値の一覧です。
 
 ## HumanSexes
 
@@ -22,7 +22,7 @@ ECデータスキーマで利用される定義値の一覧です。
 |    9 | NotApplicable | 適用不能 |      |
 
 対象カラム  
-[OrderCustomer.Sex]({{< ref "ec#ordercustomers" >}})
+[OrderCustomer.Sex](ec#ordercustomers)
 
 ## OrderLineType
 
@@ -38,8 +38,8 @@ ECデータスキーマで利用される定義値の一覧です。
 |    7 | Additional       | 追加商品   |      |
 
 対象カラム  
-[OrderLine.OrderType]({{< ref "ec#orderlines" >}}), 
-[ReturnOrderLine.OrderType]({{< ref "ec#returnorderlines" >}})
+[OrderLine.OrderType](ec#orderlines), 
+[ReturnOrderLine.OrderType](ec#returnorderlines)
 
 ## OrderType
 
@@ -52,8 +52,8 @@ ECデータスキーマで利用される定義値の一覧です。
 |    4 | ReSend  | 返品再送   |      |
 
 対象カラム  
-[PurchaseOrder.OrderType]({{< ref "ec#purchaseorders" >}}), 
-[ReturnOrder.OrderType]({{< ref "ec#returnorders" >}})
+[PurchaseOrder.OrderType](ec#purchaseorders), 
+[ReturnOrder.OrderType](ec#returnorders)
 
 ## OrderStatus
 
@@ -72,8 +72,8 @@ ECデータスキーマで利用される定義値の一覧です。
 |   12 | WorkerProcessing | バッチ処理中 |      |
 
 対象カラム  
-[PurchaseOrder.OrderStatus]({{< ref "ec#purchaseorders" >}}), 
-[ReturnOrder.OrderStatus]({{< ref "ec#returnorders" >}})
+[PurchaseOrder.OrderStatus](ec#purchaseorders), 
+[ReturnOrder.OrderStatus](ec#returnorders)
 
 ## PaymentMethod
 
@@ -90,8 +90,8 @@ ECデータスキーマで利用される定義値の一覧です。
 |   -1 | None           | None             |                                                                 |
 
 対象カラム  
-[PurchaseOrder.PaymentMethod]({{< ref "ec#purchaseorders" >}}), 
-[ReturnOrder.PaymentMethod]({{< ref "ec#returnorders" >}})
+[PurchaseOrder.PaymentMethod](ec#purchaseorders), 
+[ReturnOrder.PaymentMethod](ec#returnorders)
 
 ## DeliveryMethod
 
@@ -126,8 +126,8 @@ ECデータスキーマで利用される定義値の一覧です。
 |    4 | Cancel     | キャンセル |      |
 
 対象カラム  
-[PurchaseOrder.PaymentStatus]({{< ref "ec#purchaseorders" >}}),
-[ReturnOrder.PaymentStatus]({{< ref "ec#returnorders" >}})
+[PurchaseOrder.PaymentStatus](ec#purchaseorders),
+[ReturnOrder.PaymentStatus](ec#returnorders)
 
 ## ProductType
 
@@ -138,7 +138,7 @@ ECデータスキーマで利用される定義値の一覧です。
 |    3 | Benefit | 副資材その他 |      |
 
 対象カラム  
-[Product.ProductType]({{< ref "ec#products" >}})
+[Product.ProductType](ec#products)
 
 ## SalesStatus
 
@@ -149,7 +149,7 @@ ECデータスキーマで利用される定義値の一覧です。
 |    2 | End  | 販売終了 |      |
 
 対象カラム  
-[Product.SalesStatus]({{< ref "ec#products" >}})
+[Product.SalesStatus](ec#products)
 
 ## StockOperation
 
@@ -160,7 +160,7 @@ ECデータスキーマで利用される定義値の一覧です。
 |    2 |      | 不良在庫戻し       |      |
 
 対象カラム  
-[ReturnReason.StockOperation]({{< ref "ec#returnreasons" >}})
+[ReturnReason.StockOperation](ec#returnreasons)
 
 ## TaxRoundMode
 
@@ -185,7 +185,7 @@ ECデータスキーマで利用される定義値の一覧です。
 
 
 対象カラム  
-[SalesProduct.TaxRoundMode]({{< ref "ec#salesproducts" >}})
+[SalesProduct.TaxRoundMode](ec#salesproducts)
 
 ## PointType
 
@@ -199,8 +199,8 @@ ECデータスキーマで利用される定義値の一覧です。
 |    5 | Lapsed         | 失効           |      |
 
 対象カラム  
-[PointBankTransaction.PointType]({{< ref "ec#pointbanktransactions" >}}),
-[PointBankAllocates.PointType]({{< ref "ec#pointbankallocates" >}})
+[PointBankTransaction.PointType](ec#pointbanktransactions),
+[PointBankAllocates.PointType](ec#pointbankallocates)
 
 ## MemberStatus
 
@@ -211,7 +211,7 @@ ECデータスキーマで利用される定義値の一覧です。
 |    2 | Warning   | 警告 |      |
 
 対象カラム  
-[OrderCustomers.MemberStatus]({{< ref "ec#ordercustomers" >}})
+[OrderCustomers.MemberStatus](ec#ordercustomers)
 
 ## TemperatureZone
 
@@ -223,8 +223,8 @@ ECデータスキーマで利用される定義値の一覧です。
 |    4 | Ice    | アイス |      |
 
 対象カラム  
-[DeliveryPatterns.TemperatureZone]({{< ref "ec#deliverypatterns" >}}),
-[Leadtime.TemperatureZone]({{< ref "ec#temperaturezone" >}})
+[DeliveryPatterns.TemperatureZone](ec#deliverypatterns),
+[Leadtime.TemperatureZone](ec#temperaturezone)
 
 ## ReserveRequestStatus
 
@@ -236,8 +236,8 @@ ECデータスキーマで利用される定義値の一覧です。
 |    3 | Cancel    | キャンセル |                                                                              |
 
 対象カラム  
-[ReserveRequests.Status]({{< ref "ec#reserverequests" >}}),
-[ReserveRequestStatusCounts.Status]({{< ref "ec#reserverequeststatuscounts" >}})
+[ReserveRequests.Status](ec#reserverequests),
+[ReserveRequestStatusCounts.Status](ec#reserverequeststatuscounts)
 
 ## MailType
 
@@ -250,5 +250,5 @@ ECデータスキーマで利用される定義値の一覧です。
 
 対象カラム  
 
-[MailRequests.MailType]({{< ref "ec#mailrequests" >}}),
-[MailHistory.MailType]({{< ref "ec#mailhistory" >}})
+[MailRequests.MailType](ec#mailrequests),
+[MailHistory.MailType](ec#mailhistory)
