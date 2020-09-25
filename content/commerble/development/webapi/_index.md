@@ -38,13 +38,22 @@ ODataのバージョンは旧フィードAPIがV3、現行API(data)がV4を提�
 | ~/data/query/validate            | Query Template Validator |        -        |          |
 | ~/data/mail/validate             | Mail Template Validator  |        -        |          |
 
-- EC Feed : 共通スキーマのデータにアクセスできます
-- CMS Feed : 各テナントごとに設定したスキーマのデータにアクセスできます
-- Meta Feed : テンプレートデータ及びルーティングにアクセスできます
-- Custom View : カスタムビューテンプレートを実行できます
-- Front Template Validator : フロントテンプレートを検証できます
-- Query Template Validator : カスタムビューテンプレートを検証できます
-- Mail Template Validator : カスタムビューテンプレートを検証できます
+<dl>
+    <dt>EC Feed</dt>
+    <dd>共通スキーマのデータにアクセスできます</dd>
+    <dt>CMS Feed</dt>
+    <dd>各テナントごとに設定したスキーマのデータにアクセスできます</dd>
+    <dt>Meta Feed</dt>
+    <dd>テンプレートデータ及びルーティングデータにアクセスできます</dd>
+    <dt>Custom View</dt>
+    <dd>カスタムビューテンプレートを実行できます</dd>
+    <dt>Front Template Validator</dt>
+    <dd>フロントテンプレートを検証できます</dd>
+    <dt>Query Template Validator</dt>
+    <dd>カスタムビューテンプレートを検証できます</dd>
+    <dt>Mail Template Validator</dt>
+    <dd>メールテンプレートを検証できます</dd>
+</dl>
 
 エンドポイントのフルURLと認証情報は契約後にご提供いたします。
 
