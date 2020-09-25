@@ -14,14 +14,18 @@ ECデータ の一部のカラムには次の制約が設けられいます。�
 
 ## AddressName
 バリデーション  
-`[\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}|\p{IsCJKUnifiedIdeographsExtensionA}|\p{IsCJKCompatibilityIdeographs}|０-９Ａ-Ｚａ-ｚ|－|―|ー|‐|ヽ|ヾ|ゝ|ゞ|〃|仝|々|〆|〇]*`
+```
+[\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}|\p{IsCJKUnifiedIdeographsExtensionA}|\p{IsCJKCompatibilityIdeographs}|０-９Ａ-Ｚａ-ｚ|－|―|ー|‐|ヽ|ヾ|ゝ|ゞ|〃|仝|々|〆|〇]*
+```
 
 対象カラム  
 [UserAddress.AddressName](data/ec#useraddresses)
 
 ## AddressPart
 バリデーション  
-`[\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}|\p{IsCJKUnifiedIdeographsExtensionA}|\p{IsCJKCompatibilityIdeographs}|０-９Ａ-Ｚａ-ｚ|－|―|ー|‐|ヽ|ヾ|ゝ|ゞ|〃|仝|々|〆|〇]*`
+```
+[\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}|\p{IsCJKUnifiedIdeographsExtensionA}|\p{IsCJKCompatibilityIdeographs}|０-９Ａ-Ｚａ-ｚ|－|―|ー|‐|ヽ|ヾ|ゝ|ゞ|〃|仝|々|〆|〇]*
+```
 
 対象カラム  
 [Address.Prefecture](data/ec#addresses), 
@@ -29,7 +33,9 @@ ECデータ の一部のカラムには次の制約が設けられいます。�
 
 ## AddressTextPart
 バリデーション  
-`[\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}|\p{IsCJKUnifiedIdeographsExtensionA}|\p{IsCJKCompatibilityIdeographs}|０-９Ａ-Ｚａ-ｚ|－|―|ー|‐|ヽ|ヾ|ゝ|ゞ|〃|仝|々|〆|〇|　|＆|（|）]*`
+```
+[\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}|\p{IsCJKUnifiedIdeographsExtensionA}|\p{IsCJKCompatibilityIdeographs}|０-９Ａ-Ｚａ-ｚ|－|―|ー|‐|ヽ|ヾ|ゝ|ゞ|〃|仝|々|〆|〇|　|＆|（|）]*
+```
 
 対象カラム  
 [Address.Streat](data/ec#addresses)
@@ -67,8 +73,9 @@ ECデータ の一部のカラムには次の制約が設けられいます。�
 
 ## PersonName
 バリデーション  
-`[\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}|\p{IsCJKUnifiedIdeographsExtensionA}|\p{IsCJKCompatibilityIdeographs}|０-９Ａ-Ｚａ-ｚ|－|―|ー|‐|ヽ|ヾ|ゝ|ゞ|〃|仝|々|〆|〇]*`
-
+```
+[\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}|\p{IsCJKUnifiedIdeographsExtensionA}|\p{IsCJKCompatibilityIdeographs}|０-９Ａ-Ｚａ-ｚ|－|―|ー|‐|ヽ|ヾ|ゝ|ゞ|〃|仝|々|〆|〇]*
+```
 対象カラム  
 [Address.LastName](data/ec#addresses), 
 [Address.FirstName](data/ec#addresses), 
@@ -93,16 +100,9 @@ ECデータ の一部のカラムには次の制約が設けられいます。�
 対象カラム  
 [Address.Tel](data/ec#addresses)
 
-## WideJapaneseCharacter
-バリデーション  
-`[\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}|\p{IsCJKUnifiedIdeographsExtensionA}|\p{IsCJKCompatibilityIdeographs}|０-９Ａ-Ｚａ-ｚ|－|―|ー|‐|ヽ|ヾ|ゝ|ゞ|〃|仝|々|〆|〇]*`
-
-対象カラム  
-
-
 ## ZipCode
 バリデーション  
-`[\d]{7}`
+`[0-9]{7}`
 
 対象カラム  
 [Address.ZipCode](data/ec#addresses)
