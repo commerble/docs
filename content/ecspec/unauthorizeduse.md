@@ -4,8 +4,6 @@ weight: 1
 description: 
 ---
 
-![不正利用と対策](../media/unauthorizeduse.jpg)
-
 ## クレジットカードの不正利用
 
 - 犯罪者は他人のクレジットカードを不正に入手して商品購入に利用します。
