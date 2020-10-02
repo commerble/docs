@@ -1,6 +1,6 @@
 ---
 title: "テンプレート"
-weight: 30
+weight: 20
 description: 
 ---
 
