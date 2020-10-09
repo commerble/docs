@@ -14,7 +14,7 @@ enableGitInfo = true
 
 # (Optional) Set Google Analytics if you use it to track your website.
 # Always put it on the top of the configuration file, otherwise it won't work
-googleAnalytics = "UA-XXXXXXXXX-X"
+googleAnalytics = "UA-58587912-1"
 
 # Needed for mermaid/katex shortcodes
 [markup]
@@ -26,10 +26,9 @@ googleAnalytics = "UA-XXXXXXXXX-X"
 
 [menu]
 # [[menu.before]]
-[[menu.after]]
-  name = "Github"
-  url = "https://github.com/commerble/docs"
-  weight = 1000
+# [[menu.after]]
+#   name = "Github"
+#   url = "https://github.com/commerble/docs"
 
 
 
@@ -86,3 +85,5 @@ googleAnalytics = "UA-XXXXXXXXX-X"
   # /!\ This is an experimental feature, might be removed or changed at any time
   # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
   BookServiceWorker = true
+
+  SitemapBaseUrl = "https://www.commerble.com/docs"
