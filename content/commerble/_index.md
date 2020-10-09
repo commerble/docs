@@ -5,5 +5,3 @@ description:
 ---
 
 # Commerbleについて
-
-ドキュメントリストは、 [github](https://github.com/commerble/docs/blob/master/list.md) に移行しました。
