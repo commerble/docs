@@ -25,7 +25,7 @@ description:
 }
 </style>
 
-<div class="hero" style="background-image:url('commerble_logo.jpeg')">
+<div class="hero" style="background-image:url('commerble_hero.jpeg')">
   <h2>
     <span class="hero-span">Commerble について</span>
   </h2>
@@ -61,7 +61,7 @@ APIやWebhookの利用方法など開発者向け情報を記載しています�
 {{< /columns >}}
 
 
-<div class="hero" style="background-image:url('ecspec_logo.jpeg')">
+<div class="hero" style="background-image:url('ecspec_hero.jpeg')">
   <h2 class="hero-title">
     <span class="hero-span">自社ECについて学ぼう</span>
   </h2>
