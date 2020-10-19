@@ -4,6 +4,7 @@ weight: 1
 description: 
 ---
 # Commerble Docs へようこそ
+Commerble Docs では、Eコマースに特化したクラウドプラットフォームの  **Commerble EC PaaS** の特徴・仕様と、自社Eコマースの分析の手引きとなる **自社ECについて学ぼう** という２つのコンテンツを提供しています。
 
 <style>
 .hero {
@@ -31,8 +32,8 @@ description:
   </h2>
 </div>
 
-ここでは、Commerbleについて各種ドキュメントを集めています。
-製品コンセプトや仕様、導入手順、マニュアルについて記載します。
+「Commerbleについて」では、Commerbleの各種ドキュメントを提供しています。
+製品コンセプトや仕様、導入手順、マニュアルなどがご確認頂けます。
 
 #### 対象読者
 - Commerbleの製品仕様を知りたい方
@@ -40,14 +41,16 @@ description:
 - Commerbleの導入手順を知りたい方
 - Commerbleのマニュアルを読みたい方
 
+#### コンテンツ
+
 {{< columns >}}
 # [特徴](./commerble/features)
-Commerbleの特徴、CommerbleにフィットするECサイトについて記載しています。
+Commerbleのコンセプトや特徴、Commerbleを導入するECサイトの規模間などについて記載しています。
 
 <---> 
 
 # [導入](./commerble/introduction)
-Commerbleの導入手順、プロジェクトの進め方について記載しています。
+Commerbleの導入時の手順、プロジェクトの進め方について記載しています。
 {{< /columns >}}
 
 {{< columns >}}
@@ -57,9 +60,8 @@ Commerbleの機能、提供している機能の利用方法について記載�
 <---> 
 
 # [開発](./commerble/development)
-APIやWebhookの利用方法など開発者向け情報を記載しています。
+APIやWebhookの利用方法など開発者向けの情報を記載しています。
 {{< /columns >}}
-
 
 <div class="hero" style="background-image:url('ecspec_hero.jpeg')">
   <h2 class="hero-title">
@@ -67,12 +69,15 @@ APIやWebhookの利用方法など開発者向け情報を記載しています�
   </h2>
 </div>
 
-ここでは、Commerbleとは別に一般的な自社ECの仕様についてまとめています。
+「自社ECについて学ぼう」では、Commerbleとは別に一般的な自社ECの仕様についてまとめています。
 自社ECとは何か、どのようなシステムか、どういった連携先があるか、受注ステータスとは何か
 商品とは何か等について、説明します。
+
 #### 対象読者
 - 自社ECの仕組みや仕様を学びたい方
 
-*TODO: 自社ECについて学ぼうの目次を載せる*
+#### コンテンツ
+
+{{< childLinks "/ecspec" >}}
 
 
