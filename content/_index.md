@@ -11,7 +11,7 @@ Commerble Docs では、Eコマースに特化したクラウドプラットフ�
  width: 100%;
  padding: 70px 0;
  background-repeat:no-repeat;
- background-position : center;
+ background-position : 50% 30%;
  background-size: cover;
 }
 .hero-span {
