@@ -35,26 +35,25 @@ Commerble Docs では、Eコマースに特化したクラウドプラットフ�
 「Commerbleについて」では、Commerbleの各種ドキュメントを提供しています。
 製品コンセプトや仕様、導入手順、マニュアルなどがご確認頂けます。
 
-#### 対象読者
-- Commerbleの製品仕様を知りたい方
-- Commerbleのカスタマイズ方法を知りたい方
-- Commerbleの導入手順を知りたい方
-- Commerbleのマニュアルを読みたい方
+
 
 #### コンテンツ
 
 {{< columns >}}
 # [特徴](./commerble/features)
+**製品仕様を知りたい方はこちら。**  
 Commerbleのコンセプトや特徴、Commerbleを導入するECサイトの規模間などについて記載しています。
 
 <---> 
 
 # [導入](./commerble/introduction)
+**Commerbleの導入手順を知りたい方はこちら。**  
 Commerbleの導入時の手順、プロジェクトの進め方について記載しています。
 {{< /columns >}}
 
 {{< columns >}}
 # [運用](./commerble/management)
+**Commerbleの製品仕様、運用について知りたい方はこちら。**  
 Commerbleの機能、提供している機能の利用方法について記載しています。
 
 <---> 
