@@ -6,25 +6,7 @@ description:
 # Commerble Docs へようこそ
 Commerble Docs では、Eコマースに特化したクラウドプラットフォームの  **Commerble EC PaaS** の特徴・仕様と、自社Eコマースの分析の手引きとなる **自社ECについて学ぼう** という２つのコンテンツを提供しています。
 
-<style>
-.hero {
- width: 100%;
- padding: 70px 0;
- background-repeat:no-repeat;
- background-position : 50% 30%;
- background-size: cover;
-}
-.hero-span {
- display: inline-block;
- color: #073b4c;
- font-size: 2.6rem;
- font-weight: bold;
- padding: 20px 30px;
- border-top: 2px solid #fff;
- border-bottom: 2px solid #fff;
- background-color: rgba(255, 255, 255, 0.6);
-}
-</style>
+
 
 <div class="hero" style="background-image:url('commerble_hero.jpeg')">
   <h2>

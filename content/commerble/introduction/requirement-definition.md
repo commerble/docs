@@ -10,6 +10,12 @@ description:
 ここでは一番重要となる要件定義のフェーズについて紹介します。
 要件定義以外のフェーズについては、別途重要なポイントを紹介します。
 
+<div class="hero" style="background-image:url('../requirement-definition.jpeg')">
+  <h2>
+    <span class="hero-span">要件定義</span>
+  </h2>
+</div>
+
 ## 要件定義の進め方
 
 一般的なシステムの要件定義に加えて、EC特有の要件定義を検討していく形になります。

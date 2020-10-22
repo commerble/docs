@@ -4,7 +4,7 @@ weight: 10
 description: 
 ---
 
-<div class="hero" style="background-image:url('introduction.jpeg')">
+<div class="hero" style="background-image:url('feature.jpeg')">
   <h2>
     <span class="hero-span">特徴</span>
   </h2>
