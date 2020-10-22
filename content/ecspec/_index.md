@@ -4,7 +4,7 @@ weight: 20
 type: docs
 ---
 
-<div class="hero" style="background-image:url('ecspec_hero.jpeg')">
+<div class="hero" style="background-image:url('../ecspec_hero.jpeg')">
   <h2 class="hero-title">
     <span class="hero-span">自社ECについて学ぼう</span>
   </h2>
