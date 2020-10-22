@@ -4,6 +4,12 @@ weight: 20
 type: docs
 ---
 
+<div class="hero" style="background-image:url('ecspec_hero.jpeg')">
+  <h2 class="hero-title">
+    <span class="hero-span">自社ECについて学ぼう</span>
+  </h2>
+</div>
+
 ## はじめに
 
 自社ECを構築、運用する際に必要な、業務の精度向上につなげる仕様、ノウハウを「EC仕様を学ぼう」としてGitHubに公開します。自社EC業務に携わるEC担当者からEC開発者にとっての、要件定義から設計、運用フェーズの知見として参考資料になることを目指しています。
