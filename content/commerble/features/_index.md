@@ -15,6 +15,6 @@ description:
 - [カスタマイズ](customization/)
 - [コストについて](cost/)
 - [システムスコープ](system-scope/)
-- [システム接続性](conntectability/)
+- [システム接続性](connectability/)
 - [テナントの商規模について](tenant-scale/)
 - [非機能要件について](non-functional-requirement/)
