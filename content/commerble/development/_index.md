@@ -16,9 +16,12 @@ description:
 - [テンプレートヘルパー](template-helper/)
 - [パイプライン](pipeline/)
 - [Web API](webapi/)
-- [データAPI](webapi/data/)
-- [テンプレートAPI](webapi/template/)
-- [クエリAPI](webapi/query/)
+
+    - [データAPI](webapi/data/) 
+
+    - [テンプレートAPI](webapi/template/) 
+
+    - [クエリAPI](webapi/query/) 
 
 データ
 - [CMSデータ](data/cms/)
