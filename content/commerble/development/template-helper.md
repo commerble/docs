@@ -184,13 +184,60 @@ SSLを使用するかを真偽値で渡し、ホストURLを取得します。
 ```
 
 ## GetModdUser
-ユーザ情報を取得します。
+ユーザ情報を取得します。 認証情報等を持つため、本番環境で`ModdMembershipUser`をそのままJSON等にシリアライズすることは避ける必要があります。
 #### 型：() => ModdMembershipUser
 
 #### 例：
 ```
 @{
     var user = Page.Template.GetModdUser();
+    /* ModdMembershipUserの構造
+    {
+        IsAnonymous: bool,
+        IsApproved: bool,
+        LastLoginDate: DateTime,
+        LastActivityDate: DateTime,
+        CreationDate: DateTime,
+        Account: {
+            IsActive: bool,
+            IsAnonymous: bool,
+            UserNo: long,
+            ExternalKeys: [
+                {
+                    RelateDate: DateTime,
+                    UserNo: long,
+                    AuthenticateType: Crosswarp.Modd.Account.ExternalAuthType(Local|CustomApi|OpenID),
+                    LastLoginDate: DateTime?,
+                    ExternalKey: string
+                }
+            ],
+            Credential: {
+                PasswardHashType: Crosswarp.Modd.Account.HashType(Clear|Encrypted|Hashed),
+                Password: string
+            },
+            ExtendProperties: {
+                Subscribe: true,
+                AddressId: 3,
+                MemberStatus: Crosswarp.Modd.Account.MemberStatus(Normal|Attention|Warning|Critical),
+                Sex: Crosswarp.Modd.Account.HumanSexes(NotKnown|Male|Female|NotApplicable),
+                Birthday: DateTime?,
+                Token: string,
+                FirstNameKana: string,
+                LastNameKana: string,
+                FirstName: string,
+                LastName: string,
+                Email: string
+            },
+            GetCustomApiExternalKey: string,
+            QuitDate: DateTime?,
+            ActivateDate: DateTime?,
+            UserName: string
+        },
+        ProviderUserKey: object,
+        UserName: string,
+        Email: string
+    }
+    */
 }
 ```
 
@@ -202,6 +249,63 @@ SSLを使用するかを真偽値で渡し、ホストURLを取得します。
 ```
 @{
     var product = Page.Template.GetProduct(1);
+    /* Product
+    {
+        ProductId: int,
+        Name: string,
+        ExternalId: string, // ExternalId1と等価
+        ExternalId1: string,
+        ExternalId2: string,
+        ExternalId3: string,
+        ExternalId4: string,
+        UnitPrice: decimal,
+        TaxationPrice: decimal,
+        SalesPatternID: int,
+        SalesPattern: {
+            SalesPatternId: int,
+            PatternName: string
+            CansetDeliveryHour: bool,
+            CansetDeliveryDate: bool,
+            CanGuestPurchase: bool,
+            SinglePurchaseOnly: bool,
+            StockControlMode: int,
+            PointChargeRate: int,
+            CartId: int,
+            CartDefinition: {
+                CartId: int
+            },
+            TaxRoundMode: Crosswarp.Modd.Models.TaxRoundMode,
+            PaymentMethodBits: int,
+            PaymentMethods: Flags,
+            MaxMailDeliveryPerOrder: int?,
+            InternalStockPriority: int,
+            MaxPurchasePerOrder: int?,
+            MaxPurchasePerAccount: int?,
+            MaxReserveRequestAmount: int?,
+            EnableReserveOrder: bool,
+            UserCancelEnable: bool,
+            MemberRank: int?,
+        },
+        SetOnly: false,
+        SetProductChildren: [],
+        SalesStatus: 0,
+        ProductSalesStatus: "Sale",
+        SalesEnd: null,
+        SalesStart: "/Date(1603724400000)/",
+        ReleaseDate: "/Date(1603724400000)/",
+        ReReleaseDate: null,
+        Cero: null,
+        Categories: [
+            {
+                CategoryID: int,
+                CategoryGroupID: int,
+                Name: string,
+                ExternalCategoryName1: string,
+                ExternalCategoryName2: string,
+            },
+        ]
+    }
+    */
 }
 ```
 
@@ -224,6 +328,33 @@ SSLを使用するかを真偽値で渡し、ホストURLを取得します。
 ```
 @{
     var salesPattern = Page.Template.GetProductSalesPattern(1);
+    /* SalesPattern
+    {
+        SalesPatternId: int,
+        PatternName: string
+        CansetDeliveryHour: bool,
+        CansetDeliveryDate: bool,
+        CanGuestPurchase: bool,
+        SinglePurchaseOnly: bool,
+        StockControlMode: int,
+        PointChargeRate: int,
+        CartId: int,
+        CartDefinition: {
+            CartId: int
+        },
+        TaxRoundMode: Crosswarp.Modd.Models.TaxRoundMode,
+        PaymentMethodBits: int,
+        PaymentMethods: Flags,
+        MaxMailDeliveryPerOrder: int?,
+        InternalStockPriority: int,
+        MaxPurchasePerOrder: int?,
+        MaxPurchasePerAccount: int?,
+        MaxReserveRequestAmount: int?,
+        EnableReserveOrder: bool,
+        UserCancelEnable: bool,
+        MemberRank: int?,
+    }
+    */
 }
 ```
 
@@ -378,6 +509,19 @@ SSLを使用するかを真偽値で渡し、ホストURLを取得します。
 ```
 @{
     var campaigns = Page.Template.GetProductCampaigns(1);
+    /*
+    {
+        CampaignId: int,
+        CampaignName: string,
+        StartDate: DateTime,
+        EndDate: DateTime,
+        CampaignType: int,
+        ApplyPrice: decimal?,
+        BenefitItemCount: int,
+        RemainItemCount: int,
+        ConfigParameter: string
+    }
+    */
 }
 ```
 
