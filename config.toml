@@ -1,7 +1,8 @@
 baseURL = "/"
 languageCode = "ja-JP"
 title = "Commerble Docs"
-theme = "book"
+#theme = "book"
+theme = "hugo-material-docs"
 
 relativeURLs = true
 
@@ -24,11 +25,17 @@ googleAnalytics = "UA-58587912-1"
 [markup.tableOfContents]
   startLevel = 1
 
-[menu]
+#[menu]
 # [[menu.before]]
 # [[menu.after]]
 #   name = "Github"
 #   url = "https://github.com/commerble/docs"
+
+
+[[menu.main]]
+	name   = "Material"
+	url    = "/"
+	weight = 0
 
 
 
