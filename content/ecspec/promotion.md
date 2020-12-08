@@ -1,6 +1,6 @@
 ---
-title: "販促活動"
-weight: 1
+title: "売上を伸ばすには"
+weight: 14
 description: 
 ---
 

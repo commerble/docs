@@ -1,6 +1,6 @@
 ---
-title: "注文"
-weight: 1
+title: "カート注文（受注完了まで）について"
+weight: 7
 description: 
 ---
 

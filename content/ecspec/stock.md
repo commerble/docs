@@ -1,6 +1,6 @@
 ---
-title: "在庫"
-weight: 1
+title: "在庫について"
+weight: 4
 description: 
 ---
 

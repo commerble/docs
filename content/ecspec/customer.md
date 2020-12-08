@@ -1,6 +1,6 @@
 ---
-title: "顧客"
-weight: 1
+title: "顧客情報について"
+weight: 5
 description: 
 ---
 
