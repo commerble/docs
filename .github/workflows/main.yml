@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: github pages
+name: docs workflow
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -22,6 +22,13 @@ jobs:
         with:
           submodules: true  # Fetch Hugo themes
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      
+      - run: npm install
 
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2
