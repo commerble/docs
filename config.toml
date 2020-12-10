@@ -1,7 +1,12 @@
 baseURL = "/"
 languageCode = "ja-JP"
 title = "Commerble Docs"
-theme = "book"
+theme = "docsy"
+
+[[menu.main]]
+    name = "HOME"
+    weight = 50
+    url = "https://www.commerble.com/"
 
 relativeURLs = true
 

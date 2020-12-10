@@ -1,7 +1,11 @@
 ---
 title: "自社ECの仕様を学ぼう"
 weight: 20
-type: docs
+menu:
+  main:
+    weight: 10
+cascade:
+  type: docs
 ---
 
 <div class="hero" style="background-image:url('../ecspec_hero.jpeg')">
