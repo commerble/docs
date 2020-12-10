@@ -18,6 +18,7 @@
   git clone https://github.com/commerble/docs.git
   cd docs
   git submodule update --init --recursive
+  npm install
   ```
 - ローカル環境で動かす
   ```
