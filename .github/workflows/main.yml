@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: docs workflow
 
 # Controls when the action will run. Triggers the workflow on push or pull request
@@ -40,6 +38,8 @@ jobs:
 
       - name: Build
         run: hugo --minify
+        env:
+          HUGO_ENV: production
     
       - name: Deploy s3
         uses: jakejarvis/s3-sync-action@master
