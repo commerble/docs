@@ -21,6 +21,10 @@ enableGitInfo = true
 # Always put it on the top of the configuration file, otherwise it won't work
 googleAnalytics = "UA-58587912-1"
 
+[params.mermaid]
+enable = true
+theme = "neutral"
+
 # Needed for mermaid/katex shortcodes
 [markup]
 [markup.goldmark.renderer]
