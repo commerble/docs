@@ -4,8 +4,6 @@ weight: 30
 description: 
 ---
 
-# CMS管理サイト
-
 - メタデータ管理
   - [テンプレート](./template)
   - [URL](./url)

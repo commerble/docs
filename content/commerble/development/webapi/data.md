@@ -4,8 +4,6 @@ weight: 1
 description: 
 ---
 
-# データAPI
-
 この章では、Commerbleの提供するWeb APIのうちデータAPIについて説明します。
 
 データAPIでは、Commerbleに保存されているデータにアクセスすることができます。

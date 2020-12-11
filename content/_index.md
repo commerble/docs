@@ -4,20 +4,15 @@ weight: 1
 description: 
 
 ---
-# Commerble Docs へようこそ
+
 Commerble Docs では、Eコマースに特化したクラウドプラットフォームの  **Commerble EC PaaS** の特徴・仕様と、自社Eコマースの分析の手引きとなる **自社ECについて学ぼう** という２つのコンテンツを提供しています。
 
+## Commerble について
 
-
-<div class="hero" style="background-image:url('commerble_hero.jpeg')">
-  <h2>
-    <span class="hero-span">Commerble について</span>
-  </h2>
-</div>
+![Commerble について](commerble_hero.jpeg)
 
 「Commerbleについて」では、Commerbleの各種ドキュメントを提供しています。
 製品コンセプトや仕様、導入手順、マニュアルなどがご確認頂けます。
-
 
 
 #### コンテンツ
@@ -45,11 +40,9 @@ Commerbleの機能、提供している機能の利用方法について記載�
 APIやWebhookの利用方法など開発者向けの情報を記載しています。
 {{< /columns >}}
 
-<div class="hero" style="background-image:url('ecspec_hero.jpeg')">
-  <h2 class="hero-title">
-    <span class="hero-span">自社ECについて学ぼう</span>
-  </h2>
-</div>
+## 自社ECについて学ぼう
+
+![自社ECについて学ぼう](ecspec_hero.jpeg)
 
 「自社ECについて学ぼう」では、Commerbleとは別に一般的な自社ECの仕様についてまとめています。
 自社ECとは何か、どのようなシステムか、どういった連携先があるか、受注ステータスとは何か

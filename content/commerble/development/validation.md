@@ -4,12 +4,6 @@ weight: 40
 description: 
 ---
 
-<style>
-  code { word-wrap: break-word; }
-</style>
-
-# 入力バリデーション
-
 ECデータ の一部のカラムには次の制約が設けられいます。この制約はカスタマイズすることもできますが、配送業者システム、伝票システム、基幹システムで文字化けやエラーが発生しないようにデータが流れるすべて経路の最大公約数をとる必要があります。
 
 ## AddressName
@@ -19,7 +13,7 @@ ECデータ の一部のカラムには次の制約が設けられいます。�
 ```
 
 対象カラム  
-[UserAddress.AddressName](data/ec#useraddresses)
+[UserAddress.AddressName](../data/ec#useraddresses)
 
 ## AddressPart
 バリデーション  
@@ -28,8 +22,8 @@ ECデータ の一部のカラムには次の制約が設けられいます。�
 ```
 
 対象カラム  
-[Address.Prefecture](data/ec#addresses), 
-[Address.City](data/ec#addresses)
+[Address.Prefecture](../data/ec#addresses), 
+[Address.City](../data/ec#addresses)
 
 ## AddressTextPart
 バリデーション  
@@ -38,22 +32,22 @@ ECデータ の一部のカラムには次の制約が設けられいます。�
 ```
 
 対象カラム  
-[Address.Streat](data/ec#addresses)
+[Address.Streat](../data/ec#addresses)
 
 ## CreditCardNumber
 バリデーション  
 `[0-9]{13,16}`
 
 対象カラム  
-[OrderCustomer.CreditCardNumber](data/ec#ordercustomers), 
-[UserCreditCard.Number](data/ec#usercreditcards)
+[OrderCustomer.CreditCardNumber](../data/ec#ordercustomers), 
+[UserCreditCard.Number](../data/ec#usercreditcards)
 
 ## CreditSecurity
 バリデーション  
 `[0-9]{3,4}`
 
 対象カラム 
-[OrderCustomer.CreditSecurity](data/ec#ordercustomers) 
+[OrderCustomer.CreditSecurity](../data/ec#ordercustomers) 
 
 ## Email
 バリデーション  
@@ -62,7 +56,7 @@ ECデータ の一部のカラムには次の制約が設けられいます。�
 ```
 
 対象カラム  
-[OrderCustomer.MailAddress](data/ec#ordercustomers)
+[OrderCustomer.MailAddress](../data/ec#ordercustomers)
 
 ## PaymentNumeric
 バリデーション  
@@ -77,32 +71,32 @@ ECデータ の一部のカラムには次の制約が設けられいます。�
 [\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}|\p{IsCJKUnifiedIdeographsExtensionA}|\p{IsCJKCompatibilityIdeographs}|０-９Ａ-Ｚａ-ｚ|－|―|ー|‐|ヽ|ヾ|ゝ|ゞ|〃|仝|々|〆|〇]*
 ```
 対象カラム  
-[Address.LastName](data/ec#addresses), 
-[Address.FirstName](data/ec#addresses), 
-[DeliveryOrder.SenderName](data/ec#deliveryorders), 
-[UserManages.LastName](data/ec#usermanages), 
-[UserManages.FirstName](data/ec#usermanages)
+[Address.LastName](../data/ec#addresses), 
+[Address.FirstName](../data/ec#addresses), 
+[DeliveryOrder.SenderName](../data/ec#deliveryorders), 
+[UserManages.LastName](../data/ec#usermanages), 
+[UserManages.FirstName](../data/ec#usermanages)
 
 ## PersonNameKana
 バリデーション  
 `[\p{IsKatakana}]*`
 
 対象カラム  
-[Address.LastNameKana](data/ec#addresses), 
-[Address.FirstNameKana](data/ec#addresses), 
-[UserManages.LastNameKana](data/ec#usermanages), 
-[UserManages.FirstNameKana](data/ec#usermanages)
+[Address.LastNameKana](../data/ec#addresses), 
+[Address.FirstNameKana](../data/ec#addresses), 
+[UserManages.LastNameKana](../data/ec#usermanages), 
+[UserManages.FirstNameKana](../data/ec#usermanages)
 
 ## PhoneNumber
 バリデーション  
 `[0-9]{10,11}`
 
 対象カラム  
-[Address.Tel](data/ec#addresses)
+[Address.Tel](../data/ec#addresses)
 
 ## ZipCode
 バリデーション  
 `[0-9]{7}`
 
 対象カラム  
-[Address.ZipCode](data/ec#addresses)
+[Address.ZipCode](../data/ec#addresses)

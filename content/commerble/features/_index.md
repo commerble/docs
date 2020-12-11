@@ -4,17 +4,7 @@ weight: 10
 description: 
 ---
 
-<div class="hero" style="background-image:url('feature.jpeg')">
-  <h2>
-    <span class="hero-span">特徴</span>
-  </h2>
-</div>
+![特徴](feature.jpeg)
 
-この章では、Commerbleの最大の特徴であるカスタマイズ性をはじめとする特徴について説明します。
+この章では、Commerbleの最大の特徴であるカスタマイズ性等について説明します。
 
-- [カスタマイズ](customization/)
-- [コストについて](cost/)
-- [システムスコープ](system-scope/)
-- [システム接続性](connectability/)
-- [テナントの商規模について](tenant-scale/)
-- [非機能要件について](non-functional-requirement/)

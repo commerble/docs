@@ -4,11 +4,6 @@ weight: 40
 description: 
 ---
 
-<style>
-  table th { font-size: 12px; }
-  table td { font-size: 12px; }
-</style>
-
 # 定義値(Enum)
 [ECデータ](ec) で利用される定義値の一覧です。
 

@@ -8,11 +8,7 @@ cascade:
   type: docs
 ---
 
-<div class="hero" style="background-image:url('../ecspec_hero.jpeg')">
-  <h2 class="hero-title">
-    <span class="hero-span">自社ECについて学ぼう</span>
-  </h2>
-</div>
+![自社ECについて学ぼう](../ecspec_hero.jpeg)
 
 ## はじめに
 

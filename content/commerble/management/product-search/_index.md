@@ -5,8 +5,6 @@ headless: true
 description: 
 ---
 
-# 商品検索
-
 ![検索ページ](searchpage.png)
 
 CommerbleではECサイトの要件に応じて、Commerble標準の検索機能か外部検索サービスを利用するかを決定しています。  

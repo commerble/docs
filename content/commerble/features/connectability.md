@@ -4,7 +4,6 @@ weight: 1
 description: 
 ---
 
-# システム接続性
 この章ではCommerbleの接続性について説明します。
 
 Commerbleで外部システムと連携するために接続ポイントは以下の4つがあります。

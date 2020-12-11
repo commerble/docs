@@ -5,8 +5,6 @@ headless: true
 description: 
 ---
 
-# 購入フロー
-
 ## 商品の購入制限はできますか？
 Commerbleでは商品の購入制限の方法がいくつかあります。
 

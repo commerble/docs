@@ -4,8 +4,6 @@ weight: 1
 description: 
 ---
 
-# コストについて
-
 ## 月額費用の費用感
 
 月額については[料金表](https://www.commerble.com/price)の通り、*受注数による課金*になります。

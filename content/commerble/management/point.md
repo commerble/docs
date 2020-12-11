@@ -5,8 +5,6 @@ headless: true
 description: 
 ---
 
-# ポイント
-
 この章では、Commerble標準のポイント機能について説明します。
 
 ## 計算式

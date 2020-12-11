@@ -7,5 +7,3 @@ menu:
 cascade:
   type: docs
 ---
-
-# Commerbleについて
