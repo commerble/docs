@@ -1,7 +1,8 @@
-baseURL = "/"
+baseURL = ""
 languageCode = "ja-JP"
 title = "Commerble Docs"
 theme = "docsy"
+publishDir = "public/docs"
 
 [[menu.main]]
     name = "HOME"
