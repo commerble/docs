@@ -1,3 +1,15 @@
-header nav span.text-uppercase {
-  color: green;
+
+h2,
+.h2 {
+  padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #eff2f3;/*背景色*/
+  border-left: solid 5px #ba0aca;/*左線（実線 太さ 色）*/
+}
+
+h3,
+.h3 {
+  padding: 0.5em;/*文字周りの余白*/
+  border-left: solid 5px #ba0aca;/*左線（実線 太さ 色）*/
+>>>>>>> Stashed changes
 }
