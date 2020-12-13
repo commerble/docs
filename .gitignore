@@ -1,3 +1,6 @@
+.DS_Store
+node_modules/
+
 # Created by https://www.toptal.com/developers/gitignore/api/hugo
 # Edit at https://www.toptal.com/developers/gitignore?templates=hugo
 
@@ -11,7 +14,5 @@ hugo_stats.json
 hugo.exe
 hugo.darwin
 hugo.linux
-
-node_modules/
 
 # End of https://www.toptal.com/developers/gitignore/api/hugo
