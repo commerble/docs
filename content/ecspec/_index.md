@@ -1,5 +1,5 @@
 ---
-title: "自社ECの仕様を学ぼう"
+title: "自社ECを学ぼう"
 weight: 20
 menu:
   main:
@@ -8,7 +8,7 @@ cascade:
   type: docs
 ---
 
-![自社ECについて学ぼう](../ecspec_hero.jpeg)
+![自社ECを学ぼう](../ecspec_hero.jpeg)
 
 ## はじめに
 
