@@ -1086,7 +1086,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | TotalPayment                  | Decimal  |        |        |          |          | 支払合計                                                  |
 | TotalUsagePoint               | Decimal  |        |        |          |          | 使用ポイント合計                                          |
 | ReturnPrice                   | Decimal  |        |        |          |          | 返金額                                                    |
-| CaseOnDeliveryCharge          | Decimal  |        |        |          |          | 手数料                                                    |
+| CashOnDeliveryCharge          | Decimal  |        |        |          |          | 手数料                                                    |
 | CardPayment                   | Decimal  |        |        |          |          | Deprecate                                                 |
 | totalAmount                   | Int32    |        |        |          |          | 数量                                                      |
 | CancelBeforeStatus            | Int32    |        |        |          |    O     | キャンセル前ステータス                                    |
