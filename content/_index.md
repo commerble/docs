@@ -17,13 +17,13 @@ Commerble Docs は、Eコマースに特化したクラウドプラットフォ�
     <h1>Commerble について</h1>
     <p>「Commerbleについて」ではCommerble EC PaaS の製品コンセプト、仕様、導入手順、マニュアルについて説明しています。</p>
     <dl>
-      <dt><a href="commerble/features"><i class="fa fa-shopping-cart"></i> 特徴</a></dt>
+      <dt><a href="commerble/features"><i class="fa fa-shopping-cart"></i>&nbsp;特徴</a></dt>
       <dd>Commerbleのコンセプト、特徴、導入ECサイトの規模などについて記載しています。</dd>
-      <dt><a href="commerble/introduction"><i class="fa fa-play"></i> 導入</a></dt>
+      <dt><a href="commerble/introduction"><i class="fa fa-play"></i>&nbsp;導入</a></dt>
       <dd>Commerbleの導入時の手順、プロジェクトの進め方について記載しています。</dd>
-      <dt><a href="commerble/management"><i class="fa fa-chart-bar"></i> 運用</a></dt>
+      <dt><a href="commerble/management"><i class="fa fa-chart-bar"></i>&nbsp;運用</a></dt>
       <dd>Commerbleの機能、利用方法について記載しています。</dd>
-      <dt><a href="commerble/development"><i class="fa fa-code"></i> 開発</a></dt>
+      <dt><a href="commerble/development"><i class="fa fa-code"></i>&nbsp;開発</a></dt>
       <dd>APIやWebhookの利用方法など開発者向けの情報を記載しています。</dd>
     </dl>
   </div>
