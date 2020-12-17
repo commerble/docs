@@ -3,18 +3,28 @@ languageCode = "ja-JP"
 title = "Commerble Docs"
 theme = "docsy"
 
+enableRobotsTXT = true
+
 # Will give values to .Lastmod etc.
 enableGitInfo = true
 
 defaultContentLanguage = "ja"
-copyright = "this is sample"
+defaultContentLanguageInSubdir = false
 
 # (Optional) Set Google Analytics if you use it to track your website.
 # Always put it on the top of the configuration file, otherwise it won't work
 googleAnalytics = "UA-58587912-1"
 
+
+[services]
+[services.googleAnalytics]
+id = "UA-58587912-1"
+
+
 [params]
 time_format_default = "2006-01-02"
+copyright = "Commerble Inc. "
+
 
 
 [params.mermaid]
@@ -30,7 +40,7 @@ theme = "neutral"
       # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
       style = "tango"
       # Uncomment if you want your chosen highlight style used for code blocks without a specified language
-      # guessSyntax = "true"
+      guessSyntax = "true"
 
 
 [[menu.main]]
