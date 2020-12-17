@@ -11,9 +11,15 @@ enableGitInfo = true
 defaultContentLanguage = "ja"
 defaultContentLanguageInSubdir = false
 
-# (Optional) Set Google Analytics if you use it to track your website.
-# Always put it on the top of the configuration file, otherwise it won't work
 googleAnalytics = "UA-58587912-1"
+
+
+## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
+[blackfriday]
+plainIDAnchors = true
+hrefTargetBlank = true
+angledQuotes = false
+latexDashes = true
 
 
 [services]
