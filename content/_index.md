@@ -3,6 +3,9 @@ title: "Commerble Docs へようこそ"
 weight: 1
 description: 
 
+cascade:
+  no_list: true
+
 ---
 
 {{< blocks/lead color="primary" >}}
