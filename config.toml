@@ -26,11 +26,10 @@ latexDashes = true
 [services.googleAnalytics]
 id = "UA-58587912-1"
 
-
 [params]
 time_format_default = "2006-01-02"
 copyright = "Commerble Inc. "
-
+baseUrl = "https://www.commerble.com/docs/"
 
 
 [params.mermaid]
