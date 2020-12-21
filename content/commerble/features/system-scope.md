@@ -300,4 +300,4 @@ Commebleでは決済代行の管理機能を提供しておりません。キャ
 [isotc321]: https://www.iso.org/committee/7145156.html "Transaction assurance in E-commerce"
 [denshi]: https://www.meti.go.jp/statistics/tyo/denshi/pdf/21yougo.pdf "消費者向け電子商取引の定義"
 [metisearch]: https://www.meti.go.jp/press/2019/05/20190516002/20190516002-1.pdf "平成 30 年度 我が国におけるデータ駆動型社会に係る基盤整備（電子商取引に関する市場調査）"
-[api]: ../api/ "接続性"
+[api]: ../../development/webapi/ "接続性"
