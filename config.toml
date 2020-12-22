@@ -13,7 +13,6 @@ defaultContentLanguageInSubdir = false
 
 googleAnalytics = "UA-58587912-1"
 
-
 ## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
 [blackfriday]
 plainIDAnchors = true
@@ -30,6 +29,29 @@ id = "UA-58587912-1"
 time_format_default = "2006-01-02"
 copyright = "Commerble Inc. "
 baseUrl = "https://www.commerble.com/docs/"
+
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+# gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+gcs_engine_id = "f468d8f73b829f44e"
+
+# Enable Algolia DocSearch
+algolia_docsearch = false
+
+# Enable Lunr.js offline search
+offlineSearch = false
+
+# User interface configuration
+[params.ui]
+# Enable to show the side bar menu in its compact state.
+sidebar_menu_compact = false
+#  Set to true to disable breadcrumb navigation.
+breadcrumb_disable = false
+#  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
+sidebar_search_disable = false
+#  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
+navbar_logo = true
+# Set to true to disable the About link in the site footer
+footer_about_disable = false
 
 
 [params.mermaid]
