@@ -1,4 +1,4 @@
 ---
-title: Search Results
+title: Commerble Docs 検索
 layout: search
 ---
