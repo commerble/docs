@@ -15,7 +15,7 @@ Commerble Docs は、Eコマースに特化したクラウドプラットフォ�
 
 {{< /blocks/lead >}}
 
-<section class="row td-box td-box--4 td-box--gradient td-box--height-auto linkbox">
+<section class="row td-box td-box--gradient td-box--height-auto linkbox">
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
     <h1>Commerble について</h1>
     <p>「Commerbleについて」ではCommerble EC PaaS の製品コンセプト、仕様、導入手順、マニュアルについて説明しています。</p>
