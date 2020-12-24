@@ -8,12 +8,12 @@ cascade:
 
 ---
 
-{{< blocks/lead color="primary" >}}
+{{< blocks/cover height="min" >}}
 <h1 class="display-1 mt-0 mt-md-5 pb-4">Commerble Docs とは</h1>
 
 Commerble Docs は、Eコマースに特化したクラウドプラットフォームの  **Commerble EC PaaS** の特徴・仕様と、自社Eコマースの分析の手引きとなる **自社ECを学ぼう** という２つのコンテンツを提供しています。
 
-{{< /blocks/lead >}}
+{{< /blocks/cover >}}
 
 <section class="row td-box td-box--gradient td-box--height-auto linkbox">
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
