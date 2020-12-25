@@ -1,7 +1,6 @@
 ---
 title: "カスタム管理"
 weight: 9999
-headless: true
 description: 
 ---
 

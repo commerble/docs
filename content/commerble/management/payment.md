@@ -1,5 +1,5 @@
 ---
-title: "SNS連携"
+title: "決済"
 weight: 9999
 description: 
 ---
