@@ -4,16 +4,10 @@ weight: 40
 description: 
 ---
 
-<style>
-  table th { font-size: 11px; }
-  table td { font-size: 11px; }
-</style>
-
-# ECデータ
 ECデータとは、Commerbleが定義するECシステムの標準データです。  
 受注情報、在庫情報、商品基本情報などがECデータに該当します。
 ECデータのスキーマ仕様は固定でカスタマイズはできません。
-ECデータスキーマでは表現できないテナント要件のデータを用意したい場合は、[CMSデータ](cms)として定義します。
+ECデータスキーマでは表現できないテナント要件のデータを用意したい場合は、[CMSデータ](../cms)として定義します。
 
 ECデータは、Web API 経由でアクセス可能です。
 
@@ -43,25 +37,25 @@ ECデータは、Web API 経由でアクセス可能です。
 |     列名      |   型   |      最大長      | 主キー | Identity | NULL許容 |                                      説明                                       |
 | ------------- | ------ | ---------------- | :----: | :------: | :------: | ------------------------------------------------------------------------------- |
 | Id            | Int64  |                  |   O    |    O     |          | 住所ID                                                                          |
-| FirstName     | String | 64               |        |          |          | 名　[PersonName制約](../validation#personname)                    |
-| FirstNameKana | String | 64               |        |          |          | メイ　[PersonNameKana制約](../validation#personnamekana)          |
-| LastName      | String | 64               |        |          |          | 姓　[PersonName制約](../validation#personname)                    |
-| LastNameKana  | String | 64               |        |          |          | セイ　[PersonNameKana制約](../validation#personnamekana)          |
+| FirstName     | String | 64               |        |          |          | 名　[PersonName制約](../../validation#personname)                    |
+| FirstNameKana | String | 64               |        |          |          | メイ　[PersonNameKana制約](../../validation#personnamekana)          |
+| LastName      | String | 64               |        |          |          | 姓　[PersonName制約](../../validation#personname)                    |
+| LastNameKana  | String | 64               |        |          |          | セイ　[PersonNameKana制約](../../validation#personnamekana)          |
 | CountryCode   | String | 10(fixed length) |        |          |          | 国コード                                                                        |
-| ZipCode       | String | 10(fixed length) |        |          |          | 郵便番号　[ZipCode制約](../validation#zipcode)                    |
-| Prefecture    | String | 10(fixed length) |        |          |          | 都道府県 [AddressPart制約](../validation#addresspart)             |
-| City          | String | 128              |        |          |          | 市区町村 [AddressPart制約](../validation#addresspart)             |
-| Street        | String | 128              |        |          |          | 番地、丁、号 [AddressTextPart制約](../validation#addresstextpart) |
+| ZipCode       | String | 10(fixed length) |        |          |          | 郵便番号　[ZipCode制約](../../validation#zipcode)                    |
+| Prefecture    | String | 10(fixed length) |        |          |          | 都道府県 [AddressPart制約](../../validation#addresspart)             |
+| City          | String | 128              |        |          |          | 市区町村 [AddressPart制約](../../validation#addresspart)             |
+| Street        | String | 128              |        |          |          | 番地、丁、号 [AddressTextPart制約](../../validation#addresstextpart) |
 | Building      | String | 128              |        |          |    O     | 建物名 部屋番号                                                                 |
-| Tel           | String | 32(fixed length) |        |          |          | 電話番号 [PhoneNumber制約](../validation#phonenumber)             |
+| Tel           | String | 32(fixed length) |        |          |          | 電話番号 [PhoneNumber制約](../../validation#phonenumber)             |
 
 + Parents
 + Children
-	- [AddressesLastUpdate](ec#addresseslastupdates)(0..1)
-	- [DeliveryOrders](ec#deliveryorders)(*)
-	- [InvoiceOrderCustomers](ec#ordercustomers)(*)
-	- [OrderedOrderCustomers](ec#ordercustomers)(*)
-	- [UserAddresses](ec#useraddresses)(*)
+	- [AddressesLastUpdate](#addresseslastupdates)(0..1)
+	- [DeliveryOrders](#deliveryorders)(*)
+	- [InvoiceOrderCustomers](#ordercustomers)(*)
+	- [OrderedOrderCustomers](#ordercustomers)(*)
+	- [UserAddresses](#useraddresses)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -74,7 +68,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | LastUpdate | DateTime |        |        |          |    O     | 最終更新日時 |
 
 + Parents
-	- [Address](ec#addresses)(1) [FK(Id)] 	
+	- [Address](#addresses)(1) [FK(Id)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -87,7 +81,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | ShipmentOperationDate | DateTime |        |   O    |          |          | 配送処理日時 |
 
 + Parents
-	- [Product](ec#products)(1) [FK(ProductId)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -102,8 +96,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | Amount           | Int32 |        |        |          |    O     | 数量           |
 
 + Parents
-	- [Campaign](ec#campaigns)(1) [FK(CampaignId)] 	
-	- [Product](ec#products)(1) [FK(BenefitProductId)] 	
+	- [Campaign](#campaigns)(1) [FK(CampaignId)] 	
+	- [Product](#products)(1) [FK(BenefitProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -120,7 +114,7 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [CampaignActions](ec#campaignactions)(*)
+	- [CampaignActions](#campaignactions)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -134,8 +128,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | ConfigParameter  | String | Max    |        |          |          | キャンペーンパラメータ   |
 
 + Parents
-	- [Campaign](ec#campaigns)(1) [FK(CampaignId)] 	
-	- [CampaignActionMaster](ec#campaignactionmaster)(1) [FK(CampaignActionId)] 	
+	- [Campaign](#campaigns)(1) [FK(CampaignId)] 	
+	- [CampaignActionMaster](#campaignactionmaster)(1) [FK(CampaignActionId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -150,7 +144,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | MaxUsagePerAccount | Int32  | Max    |        |          |    O     | 1アカウント当たりの最大適用数。NULLの場合は無制限 |
 
 + Parents
-	- [Campaign](ec#campaigns)(1) [FK(CampaignId)]  	
+	- [Campaign](#campaigns)(1) [FK(CampaignId)]  	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -177,20 +171,20 @@ ECデータは、Web API 経由でアクセス可能です。
 | Name         | String   | Max              |        |          |          | キャンペーン名称                                                             |
 | StartDate    | DateTime |                  |        |          |          | 開始日時                                                                     |
 | EndDate      | DateTime |                  |        |          |          | 終了日時                                                                     |
-| CampaignType | Int32    |                  |        |          |          | [CampaignActionMaster.CampaignActionId](ec#campaignactionmaster) |
+| CampaignType | Int32    |                  |        |          |          | [CampaignActionMaster.CampaignActionId](#campaignactionmaster) |
 | Count        | String   | 10(fixed length) |        |          |    O     | 未使用                                                                       |
 | MemoId       | Int64    |                  |        |          |    O     | メモID                                                                       |
 | ApplyPrice   | Decimal  |                  |        |          |    O     | 適応価格                                                                     |
 
 + Parents
 + Children
-	- [BenefitItems](ec#benefititems)(*)
-	- [CampaignActions](ec#campaignactions)(*)
-	- [CampaignMatches](ec#campaignmatches)(*)
+	- [BenefitItems](#benefititems)(*)
+	- [CampaignActions](#campaignactions)(*)
+	- [CampaignMatches](#campaignmatches)(*)
 + Realations
-	- [Categories](ec#categories)(*)
-	- [Products](ec#products)(*)
-	- [PurchaseOrders](ec#purchaseorders)(*)
+	- [Categories](#categories)(*)
+	- [Products](#products)(*)
+	- [PurchaseOrders](#purchaseorders)(*)
 ---------------------------------------------------------------------------------------
 
 ## Categories
@@ -206,11 +200,11 @@ ECデータは、Web API 経由でアクセス可能です。
 | MemoId                | Int64  |                  |        |          |    O     | メモID             |
 
 + Parents
-	- [CategoryGroup](ec#categorygroups)(1) [FK(CategoryGroupId)] 	
+	- [CategoryGroup](#categorygroups)(1) [FK(CategoryGroupId)] 	
 + Children
 + Realations
-	- [Campaigns](ec#campaigns)(*)
-	- [Products](ec#products)(*)
+	- [Campaigns](#campaigns)(*)
+	- [Products](#products)(*)
 ---------------------------------------------------------------------------------------
 
 ## CategoryGroups
@@ -223,7 +217,7 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [Categories](ec#categories)(*)
+	- [Categories](#categories)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -252,8 +246,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | Charge       | Decimal |        |        |          |          | 送料         |
 
 + Parents
-	- [Prefecture](ec#prefectures)(1) [FK(PrefectureId)] 	
-	- [ShipSource](ec#shipsources)(1) [FK(ShipSourceId)] 	
+	- [Prefecture](#prefectures)(1) [FK(PrefectureId)] 	
+	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -267,7 +261,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | DeliveryDate   | DateTime |                  |        |          |    O     | 配送日                                                                           |
 | HourRange      | String   | 4(fixed length)  |        |          |    O     | 配送時間 例：午前8時から12時の場合"0812"                                         |
 | WrappingTypeId | Int32    |                  |        |          |    O     | 梱包種ID                                                                         |
-| SenderName     | String   | 20(fixed length) |        |          |    O     | 依頼者名 [PersonName制約](../validation#personname) 依頼者名印字用 |
+| SenderName     | String   | 20(fixed length) |        |          |    O     | 依頼者名 [PersonName制約](../../validation#personname) 依頼者名印字用 |
 | AddressName    | String   | 50               |        |          |          | 配送先名                                                                         |
 | DeliveryNo     | String   | 20(fixed length) |        |          |    O     | 配送番号                                                                         |
 | AddressId      | Int64    |                  |        |          |    O     | 住所ID                                                                           |
@@ -275,10 +269,10 @@ ECデータは、Web API 経由でアクセス可能です。
 | MailAddress    | String   | 256              |        |          |    O     | メールアドレス                                                                   |
 
 + Parents
-	- [Address](ec#addresses)(0..1) [FK(AddressId)] 	
-	- [PurchaseOrder](ec#purchaseorders)(1) [FK(OrderId)] 	
-	- [ShipSource](ec#shipsources)(0..1) [FK(ShipSourceId)] 	
-	- [WrappingType](ec#wrappingtypes)(0..1) [FK(WrappingTypeId)] 	
+	- [Address](#addresses)(0..1) [FK(AddressId)] 	
+	- [PurchaseOrder](#purchaseorders)(1) [FK(OrderId)] 	
+	- [ShipSource](#shipsources)(0..1) [FK(ShipSourceId)] 	
+	- [WrappingType](#wrappingtypes)(0..1) [FK(WrappingTypeId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -296,7 +290,7 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [Products](ec#products)(*)
+	- [Products](#products)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -316,7 +310,7 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [Product](ec#products)(1)
+	- [Product](#products)(1)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -333,7 +327,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | Remains           | Int32    |        |        |          |    O     | 残量         |
 
 + Parents
-	- [Product](ec#products)(1) [FK(ProductId)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -348,8 +342,8 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [ReserveStocks](ec#reservestocks)(*)
-	- [SalesStockAllocationPriorities](ec#salesstockallocationpriorities)(*)
+	- [ReserveStocks](#reservestocks)(*)
+	- [SalesStockAllocationPriorities](#salesstockallocationpriorities)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -363,7 +357,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | RegisterAt | DateTime |        |        |          |          | 登録日時 |
 
 + Parents
-	- [UserAccount](ec#useraccounts)(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -379,7 +373,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | EndHour       | Int32  |                 |        |          |          | 到着上限                                  |
 
 + Parents
-	- [ShipSource](ec#shipsources)(1) [FK(ShipSourceId)] 	
+	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -435,7 +429,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | RelateId     | Int64    |        |        |          |    O     | 受注ID               |
 
 + Parents
-	- [UserAccount](ec#useraccounts)(0..1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -456,7 +450,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | TemplateData | String   | Max    |        |          |          | テンプレート引数     |
 
 + Parents
-	- [UserAccount](ec#useraccounts)(0..1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -471,7 +465,7 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [OperationHistories](ec#operationhistories)(*)
+	- [OperationHistories](#operationhistories)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -505,8 +499,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | MemoId          | Int64    |                  |        |          |    O     | メモID             |
 
 + Parents
-	- [Memo](ec#memos)(0..1) [FK(MemoId)] 	
-	- [OperationReason](ec#operationreasons)(1) [FK(Reason)] 	
+	- [Memo](#memos)(0..1) [FK(MemoId)] 	
+	- [OperationReason](#operationreasons)(1) [FK(Reason)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -521,7 +515,7 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [OperationHistories](ec#operationhistories)(*)
+	- [OperationHistories](#operationhistories)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -556,10 +550,10 @@ ECデータは、Web API 経由でアクセス可能です。
 | LastName             | String   | 50               |        |          |          | 購入者　姓                                                                     |
 | FirstNameKana        | String   | 50               |        |          |          | 購入者　メイ                                                                   |
 | LastNameKana         | String   | 50               |        |          |          | 購入者　セイ                                                                   |
-| MailAddress          | String   | 128              |        |          |          | 購入者メールアドレス [Email制約](../validation#email)            |
-| CreditCardNumber     | String   | 20(fixed length) |        |          |    O     | Deprecate [CreditCardNumber制約](../validation#creditcardnumber) |
+| MailAddress          | String   | 128              |        |          |          | 購入者メールアドレス [Email制約](../../validation#email)            |
+| CreditCardNumber     | String   | 20(fixed length) |        |          |    O     | Deprecate [CreditCardNumber制約](../../validation#creditcardnumber) |
 | CreditCardExpire     | String   | 10(fixed length) |        |          |    O     | Deprecate                                                                      |
-| CreditSecurity       | String   | 10(fixed length) |        |          |    O     | Deprecate [CreditSecurity制約](../validation#creditsecurity)     |
+| CreditSecurity       | String   | 10(fixed length) |        |          |    O     | Deprecate [CreditSecurity制約](../../validation#creditsecurity)     |
 | AuthorizeNo          | String   | 128              |        |          |    O     | 与信番号                                                                       |
 | AuthorizeAt          | DateTime |                  |        |          |    O     | 与信日時                                                                       |
 | CreditResponseStatus | String   | 10(fixed length) |        |          |    O     | Deprecate                                                                      |
@@ -580,11 +574,11 @@ ECデータは、Web API 経由でアクセス可能です。
 | AutoCancelDate       | DateTime |                  |        |          |    O     | 自動キャンセル日時                                                             |
 
 + Parents
-	- [InvoiceAddress](ec#addresses)(0..1) [FK(InvoiceAddressId)] 	
-	- [OrderedAddress](ec#addresses)(0..1) [FK(OrderedAddressId)] 	
-	- [UserAccount](ec#useraccounts)(0..1) [FK(UserNo)] 	
+	- [InvoiceAddress](#addresses)(0..1) [FK(InvoiceAddressId)] 	
+	- [OrderedAddress](#addresses)(0..1) [FK(OrderedAddressId)] 	
+	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
 + Children
-	- [PurchaseOrders](ec#purchaseorders)(*)
+	- [PurchaseOrders](#purchaseorders)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -620,11 +614,11 @@ ECデータは、Web API 経由でアクセス可能です。
 | Description          | String   | 256    |        |          |    O     | 説明 (カートイン時に付与可能)                                 |
 
 + Parents
-	- [Product](ec#products)(1) [FK(ProductId)] 	
-	- [PurchaseOrder](ec#purchaseorders)(1) [FK(OrderId)] 	
-	- [ReserveStock](ec#reservestocks)(0..1) [FK(ReserveId)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
+	- [PurchaseOrder](#purchaseorders)(1) [FK(OrderId)] 	
+	- [ReserveStock](#reservestocks)(0..1) [FK(ReserveId)] 	
 + Children
-	- [ReturnOrderLines](ec#returnorderlines)(*)
+	- [ReturnOrderLines](#returnorderlines)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -654,10 +648,10 @@ ECデータは、Web API 経由でアクセス可能です。
 | CreateDate     | DateTime |                  |        |          |          | 最終作成日時        |
 
 + Parents
-	- [UserAccount](ec#useraccounts)(1) 	
+	- [UserAccount](#useraccounts)(1) 	
 + Children
-	- [PointBankAllocates](ec#pointbankallocates)(*)
-	- [PointBankTransactions](ec#pointbanktransactions)(*)
+	- [PointBankAllocates](#pointbankallocates)(*)
+	- [PointBankTransactions](#pointbanktransactions)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -680,7 +674,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | AllocateDate    | DateTime |                  |        |          |    O     | アーカイブ日時                                        |
 
 + Parents
-	- [PointBankAccount](ec#pointbankaccounts)(1) [FK(UserNo)] 	
+	- [PointBankAccount](#pointbankaccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -734,7 +728,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | RelateKey       | String   | 64(fixed length) |        |          |          | 受注Id                                                |
 
 + Parents
-	- [PointBankAccount](ec#pointbankaccounts)(1) [FK(UserNo)] 	
+	- [PointBankAccount](#pointbankaccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -749,8 +743,8 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [DeliveryCharges](ec#deliverycharges)(*)
-	- [ZipCodes](ec#zipcodes)(*)
+	- [DeliveryCharges](#deliverycharges)(*)
+	- [ZipCodes](#zipcodes)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -763,7 +757,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | LimitAmount | Int32 |        |        |          |          | 販売可能数 |
 
 + Parents
-	- [Product](ec#products)(1) [FK(ProductId)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -824,24 +818,24 @@ ECデータは、Web API 経由でアクセス可能です。
 | OrderedProduct    | Boolean  |                  |        |          |    O     | 受注生産品フラグ                                          |
 
 + Parents
-	- [DeliveryPattern](ec#deliverypatterns)(0..1) [FK(DeliveryPatternId)] 	
-	- [SalesPattern](ec#salespatterns)(0..1) [FK(SalesPatternId)] 	
+	- [DeliveryPattern](#deliverypatterns)(0..1) [FK(DeliveryPatternId)] 	
+	- [SalesPattern](#salespatterns)(0..1) [FK(SalesPatternId)] 	
 + Children
-	- [BeginingSalesControls](ec#beginingsalescontrols)(*)
-	- [BenefitItems](ec#benefititems)(*)
-	- [Children](ec#setproductchildren)(*)
-	- [DeliveryStock](ec#deliverystocks)(0..1)
-	- [ExternalStockCounts](ec#externalstockcounts)(*)
-	- [OrderLines](ec#orderlines)(*)
-	- [Parents](ec#setproductchildren)(*)
-	- [ProductStockSummary](ec#productstocksummaries)(0..1)
-	- [ReserveRequests](ec#reserverequests)(*)
-	- [ReserveStocks](ec#reservestocks)(*)
-	- [ReturnOrderLines](ec#returnorderlines)(*)
-	- [SalesProduct](ec#salesproducts)(0..1)
+	- [BeginingSalesControls](#beginingsalescontrols)(*)
+	- [BenefitItems](#benefititems)(*)
+	- [Children](#setproductchildren)(*)
+	- [DeliveryStock](#deliverystocks)(0..1)
+	- [ExternalStockCounts](#externalstockcounts)(*)
+	- [OrderLines](#orderlines)(*)
+	- [Parents](#setproductchildren)(*)
+	- [ProductStockSummary](#productstocksummaries)(0..1)
+	- [ReserveRequests](#reserverequests)(*)
+	- [ReserveStocks](#reservestocks)(*)
+	- [ReturnOrderLines](#returnorderlines)(*)
+	- [SalesProduct](#salesproducts)(0..1)
 + Realations
-	- [Campaigns](ec#campaigns)(0..1)
-	- [Categories](ec#categories)(0..1)
+	- [Campaigns](#campaigns)(0..1)
+	- [Categories](#categories)(0..1)
 ---------------------------------------------------------------------------------------
 
 ## PurchaseHistories
@@ -855,7 +849,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | SerializeData | String   | Max    |        |          |          | シリアライズデータ |
 
 + Parents
-	- [UserAccount](ec#useraccounts)(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -883,7 +877,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | Value   | String | Max    |        |          |    O     | 値     |
 
 + Parents
-	- [PurchaseOrder](ec#purchaseorders)(1) [FK(OrderId)] 	
+	- [PurchaseOrder](#purchaseorders)(1) [FK(OrderId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -947,20 +941,20 @@ ECデータは、Web API 経由でアクセス可能です。
 | PointPaymentForPaymentCharge  | Decimal  |                 |        |          |          | TotalUsagePointの内、決済手数料に使用した量                      |
 
 + Parents
-	- [OrderCustomer](ec#ordercustomers)(1) [FK(CustomerId)] 	
+	- [OrderCustomer](#ordercustomers)(1) [FK(CustomerId)] 	
 + Children
-	- [DeliveryOrder](ec#deliveryorders)(0..1)
-	- [OrderLines](ec#orderlines)(*)
-	- [OrdersLastUpdate](ec#orderslastupdates)(0..1)
-	- [OriginalPurchaseOrder](ec#purchaseorders)(*)
-	- [PurchaseOrderImport](ec#purchaseorderimports)(0..1)
-	- [RelatePurchaseOrders](ec#purchaseorders)(*)
-	- [ReserveRequests](ec#reserverequests)(*)
-	- [ReserveStocks](ec#reservestocks)(*)
-	- [ReturnOrders](ec#returnorders)(*)
-	- [ServiceValues](ec#purchaseorderservices)(*)
+	- [DeliveryOrder](#deliveryorders)(0..1)
+	- [OrderLines](#orderlines)(*)
+	- [OrdersLastUpdate](#orderslastupdates)(0..1)
+	- [OriginalPurchaseOrder](#purchaseorders)(*)
+	- [PurchaseOrderImport](#purchaseorderimports)(0..1)
+	- [RelatePurchaseOrders](#purchaseorders)(*)
+	- [ReserveRequests](#reserverequests)(*)
+	- [ReserveStocks](#reservestocks)(*)
+	- [ReturnOrders](#returnorders)(*)
+	- [ServiceValues](#purchaseorderservices)(*)
 + Realations
-	- [Campaigns](ec#campaigns)(*)
+	- [Campaigns](#campaigns)(*)
 ---------------------------------------------------------------------------------------
 
 ## ReserveRequestStatusCounts
@@ -994,10 +988,10 @@ ECデータは、Web API 経由でアクセス可能です。
 | SiteId         | Int32    |        |        |          |          | サイトID                                                                |
 
 + Parents
-	- [Product](ec#products)(1) [FK(ProductId)] 	
-	- [PurchaseOrder](ec#purchaseorders)(0..1) 	
-	- [ReserveStock](ec#reservestocks)(0..1) [FK(ReserveStockId)] 	
-	- [UserAccount](ec#useraccounts)(1) [FK(UserNo)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
+	- [PurchaseOrder](#purchaseorders)(0..1) 	
+	- [ReserveStock](#reservestocks)(0..1) [FK(ReserveStockId)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1017,14 +1011,14 @@ ECデータは、Web API 経由でアクセス可能です。
 | ExternalSourceId | Int32    |        |        |          |    O     | NULLの場合内部在庫ストア |
 
 + Parents
-	- [ExternalStockSource](ec#externalstocksources)(0..1) 	
-	- [Product](ec#products)(0..1) [FK(ProductId)] 	
-	- [PurchaseOrder](ec#purchaseorders)(0..1) 	
-	- [UserAccount](ec#useraccounts)(0..1) [FK(UserNo)] 	
+	- [ExternalStockSource](#externalstocksources)(0..1) 	
+	- [Product](#products)(0..1) [FK(ProductId)] 	
+	- [PurchaseOrder](#purchaseorders)(0..1) 	
+	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
 + Children
-	- [OrderLines](ec#orderlines)(*)
-	- [ReserveRequests](ec#reserverequests)(*)
-	- [ReturnOrderLines](ec#returnorderlines)(*)
+	- [OrderLines](#orderlines)(*)
+	- [ReserveRequests](#reserverequests)(*)
+	- [ReturnOrderLines](#returnorderlines)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1061,13 +1055,13 @@ ECデータは、Web API 経由でアクセス可能です。
 | Description          | String   | 256    |        |          |    O     | 説明                                                      |
 
 + Parents
-	- [OrderLine](ec#orderlines)(0..1) [FK(PurchaseOrderLineId)] 	
-	- [Product](ec#products)(1) [FK(ProductId)] 	
-	- [ReserveStock](ec#reservestocks)(0..1) [FK(ReserveId)] 	
-	- [ReturnOrder](ec#returnorders)(1) 	
+	- [OrderLine](#orderlines)(0..1) [FK(PurchaseOrderLineId)] 	
+	- [Product](#products)(1) [FK(ProductId)] 	
+	- [ReserveStock](#reservestocks)(0..1) [FK(ReserveId)] 	
+	- [ReturnOrder](#returnorders)(1) 	
 + Children
-	- [ParentReturnOrderLine](ec#returnorderlines)(*)
-	- [RelateReturnOrderLines](ec#returnorderlines)(*)
+	- [ParentReturnOrderLine](#returnorderlines)(*)
+	- [RelateReturnOrderLines](#returnorderlines)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1092,7 +1086,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | TotalPayment                  | Decimal  |        |        |          |          | 支払合計                                                  |
 | TotalUsagePoint               | Decimal  |        |        |          |          | 使用ポイント合計                                          |
 | ReturnPrice                   | Decimal  |        |        |          |          | 返金額                                                    |
-| CaseOnDeliveryCharge          | Decimal  |        |        |          |          | 手数料                                                    |
+| CashOnDeliveryCharge          | Decimal  |        |        |          |          | 手数料                                                    |
 | CardPayment                   | Decimal  |        |        |          |          | Deprecate                                                 |
 | totalAmount                   | Int32    |        |        |          |          | 数量                                                      |
 | CancelBeforeStatus            | Int32    |        |        |          |    O     | キャンセル前ステータス                                    |
@@ -1115,12 +1109,12 @@ ECデータは、Web API 経由でアクセス可能です。
 | PointPaymentForPaymentCharge  | Decimal  |        |        |          |          | ポイント使用額　手数料分                                  |
 
 + Parents
-	- [PurchaseOrder](ec#purchaseorders)(1) [FK(PurchaseOrderId)] 	
-	- [ReturnReason](ec#returnreasons)(1) [FK(ReturnReasonId)] 	
+	- [PurchaseOrder](#purchaseorders)(1) [FK(PurchaseOrderId)] 	
+	- [ReturnReason](#returnreasons)(1) [FK(ReturnReasonId)] 	
 + Children
-	- [OriginalReturnOrder](ec#returnorders)(*)
-	- [RelateReturnOrders](ec#returnorders)(*)
-	- [ReturnOrderLines](ec#returnorderlines)(*)
+	- [OriginalReturnOrder](#returnorders)(*)
+	- [RelateReturnOrders](#returnorders)(*)
+	- [ReturnOrderLines](#returnorderlines)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1144,7 +1138,7 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [ReturnOrders](ec#returnorders)(*)
+	- [ReturnOrders](#returnorders)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1187,10 +1181,10 @@ ECデータは、Web API 経由でアクセス可能です。
 | MaxMailDeliveryPerOrder | Int32   |        |        |          |    O     | 受注毎最大メール便数                                      |
 
 + Parents
-	- [StockControl](ec#stockcontrols)(1) [FK(StockControlMode)] 	
+	- [StockControl](#stockcontrols)(1) [FK(StockControlMode)] 	
 + Children
-	- [Products](ec#products)(*)
-	- [SalesStockAllocationPriorities](ec#salesstockallocationpriorities)(*)
+	- [Products](#products)(*)
+	- [SalesStockAllocationPriorities](#salesstockallocationpriorities)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1220,7 +1214,7 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [Product](ec#products)(1)
+	- [Product](#products)(1)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1247,8 +1241,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | Priority         | Int32 |        |        |          |          | 優先順位           |
 
 + Parents
-	- [ExternalStockSource](ec#externalstocksources)(1) 	
-	- [SalesPattern](ec#salespatterns)(1) [FK(SalesPatternId)] 	
+	- [ExternalStockSource](#externalstocksources)(1) 	
+	- [SalesPattern](#salespatterns)(1) [FK(SalesPatternId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1280,8 +1274,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | DividePrice    | Decimal |        |        |          |          | 分割価格     |
 
 + Parents
-	- [ChildProduct](ec#products)(1) [FK(ChildProductId)] 	
-	- [ParentProduct](ec#products)(1) [FK(SetProductId)] 	
+	- [ChildProduct](#products)(1) [FK(ChildProductId)] 	
+	- [ParentProduct](#products)(1) [FK(SetProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1295,7 +1289,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | Holiday      | DateTime |        |   O    |          |          | 休日         |
 
 + Parents
-	- [ShipSource](ec#shipsources)(1) [FK(ShipSourceId)] 	
+	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1310,7 +1304,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | ZipCode         | String | 10(fixed length) |   O    |          |          | 郵便番号       |
 
 + Parents
-	- [ShipSource](ec#shipsources)(1) [FK(ShipSourceId)] 	
+	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1328,11 +1322,11 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [DeliveryCharges](ec#deliverycharges)(*)
-	- [DeliveryOrders](ec#deliveryorders)(*)
-	- [HourRanges](ec#hourranges)(*)
-	- [ShipSourceHolidays](ec#shipsourceholidays)(*)
-	- [ShipSourceUnavailables](ec#shipsourceunavailables)(*)
+	- [DeliveryCharges](#deliverycharges)(*)
+	- [DeliveryOrders](#deliveryorders)(*)
+	- [HourRanges](#hourranges)(*)
+	- [ShipSourceHolidays](#shipsourceholidays)(*)
+	- [ShipSourceUnavailables](#shipsourceunavailables)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1346,7 +1340,7 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [SalesPatterns](ec#salespatterns)(*)
+	- [SalesPatterns](#salespatterns)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1378,19 +1372,19 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 + Children
-	- [Favorites](ec#favorites)(*)
-	- [MailHistories](ec#mailhistories)(*)
-	- [MailRequests](ec#mailrequests)(*)
-	- [OrderCustomers](ec#ordercustomers)(*)
-	- [PointBankAccounts](ec#pointbankaccounts)(*)
-	- [PurchaseHistories](ec#purchasehistories)(*)
-	- [ReserveRequests](ec#reserverequests)(*)
-	- [ReserveStocks](ec#reservestocks)(*)
-	- [UserAddresses](ec#useraddresses)(*)
-	- [UserExternalKeys](ec#userexternalkeys)(*)
-	- [UserProperty](ec#userproperties)(0..1)
-	- [UserRole](ec#userroles)(*)
-	- [UsersLastUpdate](ec#userslastupdates)(0..1)
+	- [Favorites](#favorites)(*)
+	- [MailHistories](#mailhistories)(*)
+	- [MailRequests](#mailrequests)(*)
+	- [OrderCustomers](#ordercustomers)(*)
+	- [PointBankAccounts](#pointbankaccounts)(*)
+	- [PurchaseHistories](#purchasehistories)(*)
+	- [ReserveRequests](#reserverequests)(*)
+	- [ReserveStocks](#reservestocks)(*)
+	- [UserAddresses](#useraddresses)(*)
+	- [UserExternalKeys](#userexternalkeys)(*)
+	- [UserProperty](#userproperties)(0..1)
+	- [UserRole](#userroles)(*)
+	- [UsersLastUpdate](#userslastupdates)(0..1)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1401,11 +1395,11 @@ ECデータは、Web API 経由でアクセス可能です。
 | ----------- | ------ | ------ | :----: | :------: | :------: | ---------------------------------------------------------------- |
 | UserNo      | Int64  |        |   O    |          |          | ユーザNo                                                         |
 | AddressId   | Int64  |        |   O    |          |          | 住所ID                                                           |
-| AddressName | String | 128    |        |          |          | 住所名[AddressName制約](../validation#addressname) |
+| AddressName | String | 128    |        |          |          | 住所名[AddressName制約](../../validation#addressname) |
 
 + Parents
-	- [Address](ec#addresses)(1) [FK(AddressId)] 	
-	- [UserAccount](ec#useraccounts)(1) [FK(UserNo)] 	
+	- [Address](#addresses)(1) [FK(AddressId)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1447,7 +1441,7 @@ Deprecate
 | --------- | ------ | ------ | :----: | :------: | :------: | -------------------------------------------------------------------- |
 | UserNo    | Int64  |        |   O    |          |          |                                                                      |
 | DisplayNo | Int64  |        |   O    |          |          |                                                                      |
-| Number    | String | 128    |        |          |          | [CreditCardNumber制約](../validation#creditcardnumber) |
+| Number    | String | 128    |        |          |          | [CreditCardNumber制約](../../validation#creditcardnumber) |
 | Expire    | String | 128    |        |          |          |                                                                      |
 
 + Parents
@@ -1467,7 +1461,7 @@ Deprecate
 | LastLoginDate    | DateTime |        |        |          |    O     | 最終ログイン日時 |
 
 + Parents
-	- [UserAccount](ec#useraccounts)(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1493,10 +1487,10 @@ Deprecate
 | LastDepositDate  | DateTime |                  |        |          |    O     | 最終付与日時                                                          |
 | LastWithdrawDate | DateTime |                  |        |          |    O     | 最終使用日時                                                          |
 | UserRole         | String   | Max              |        |          |    O     | ユーザーロール                                                        |
-| LastName         | String   | 64               |        |          |    O     | 姓 [PersonName制約](../validation#personname)           |
-| FirstName        | String   | 64               |        |          |    O     | 名 [PersonNameKana制約](../validation#personnamekana)   |
-| LastNameKana     | String   | 64               |        |          |    O     | セイ [PersonName制約](../validation#personname)         |
-| FirstNameKana    | String   | 64               |        |          |    O     | メイ [PersonNameKana制約](../validation#personnamekana) |
+| LastName         | String   | 64               |        |          |    O     | 姓 [PersonName制約](../../validation#personname)           |
+| FirstName        | String   | 64               |        |          |    O     | 名 [PersonNameKana制約](../../validation#personnamekana)   |
+| LastNameKana     | String   | 64               |        |          |    O     | セイ [PersonName制約](../../validation#personname)         |
+| FirstNameKana    | String   | 64               |        |          |    O     | メイ [PersonNameKana制約](../../validation#personnamekana) |
 | Subscribe        | Boolean  |                  |        |          |          | メルマガ許可                                                          |
 | Birthday         | DateTime |                  |        |          |    O     | 誕生日                                                                |
 | Sex              | Int32    |                  |        |          |          | 性別                                                                  |
@@ -1534,8 +1528,8 @@ Deprecate
 | Token         | String   | 32(fixed length) |        |          |    O     | トークン         |
 
 + Parents
-	- [Address](ec#addresses)(1) [FK(AddressId)] 	
-	- [UserAccount](ec#useraccounts)(1) [FK(UserNo)] 	
+	- [Address](#addresses)(1) [FK(AddressId)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1550,7 +1544,7 @@ Deprecate
 | RoleParameter | String | 1024   |        |          |    O     | ロール引数 |
 
 + Parents
-	- [UserAccount](ec#useraccounts)(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1564,7 +1558,7 @@ Deprecate
 | LastUpdate | DateTime |        |        |          |    O     | 最終更新日時 |
 
 + Parents
-	- [UserAccount](ec#useraccounts)(1) [FK(Id)] 	
+	- [UserAccount](#useraccounts)(1) [FK(Id)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1579,7 +1573,7 @@ Deprecate
 
 + Parents
 + Children
-	- [DeliveryOrders](ec#deliveryorders)(*)
+	- [DeliveryOrders](#deliveryorders)(*)
 + Realations
 ---------------------------------------------------------------------------------------
 
@@ -1595,7 +1589,7 @@ Deprecate
 | Street        | String | 128              |        |          |          | 通り       |
 
 + Parents
-	- [ZipCode](ec#zipcodes)(1) [FK()] 	
+	- [ZipCode](#zipcodes)(1) [FK()] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1610,10 +1604,10 @@ Deprecate
 | PrefectureId | Int32  |                  |        |          |          | 都道府県  |
 
 + Parents
-	- [Prefecture](ec#prefectures)(1) [FK(PrefectureId)] 	
+	- [Prefecture](#prefectures)(1) [FK(PrefectureId)] 	
 + Children
-	- [DstZipCode](ec#zipcodes)(0..1)
-	- [SrcZipCode](ec#zipcodes)(0..1)
-	- [ZipCodeAddrs](ec#zipcodeaddrs)(*)
+	- [DstZipCode](#zipcodes)(0..1)
+	- [SrcZipCode](#zipcodes)(0..1)
+	- [ZipCodeAddrs](#zipcodeaddrs)(*)
 + Realations
 ---------------------------------------------------------------------------------------

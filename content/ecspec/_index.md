@@ -1,14 +1,14 @@
 ---
-title: "自社ECの仕様を学ぼう"
+title: "自社のECを学ぼう"
 weight: 20
-type: docs
+menu:
+  main:
+    weight: 10
+cascade:
+  type: docs
 ---
 
-<div class="hero" style="background-image:url('../ecspec_hero.jpeg')">
-  <h2 class="hero-title">
-    <span class="hero-span">自社ECについて学ぼう</span>
-  </h2>
-</div>
+![自社のECを学ぼう](../ecspec_hero.jpeg)
 
 ## はじめに
 
@@ -31,13 +31,13 @@ type: docs
 
 - [自社ECを取り巻く要素](ec/)
 - [受注後のステータスフロー](orderstatus/)
-- [カート注文(受注するまで)について](order/)
+- [カート注文（受注完了まで）について](order/)
 - [支払い方法について](payment/)
-- [商品について](product/)
+- [商品情報について](product/)
 - [顧客情報について](customer/)
 - [在庫について](stock/)
 - [倉庫(WMS)連携](wms/)
-- [基幹システム連携](federation/)
+- [基幹システム(外部システム)との連携](federation/)
 
 
 ## 目次(システム編)

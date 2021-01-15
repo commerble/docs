@@ -1,6 +1,6 @@
 ---
 title: "支払方法"
-weight: 1
+weight: 6
 description: 
 ---
 

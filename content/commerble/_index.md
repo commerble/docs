@@ -1,7 +1,10 @@
 ---
 title: "Commerbleについて"
 weight: 1
-description: 
+no_list: false
+menu:
+  main:
+    weight: 10
+cascade:
+  type: docs
 ---
-
-# Commerbleについて

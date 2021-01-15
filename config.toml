@@ -1,89 +1,88 @@
-baseURL = "/"
+baseURL = "https://www.commerble.com/docs/"
 languageCode = "ja-JP"
 title = "Commerble Docs"
-theme = "book"
+theme = "docsy"
 
-relativeURLs = true
+enableRobotsTXT = true
 
-defaultContentLanguage = "ja"
-copyright = "this is sample"
-
-# Book configuration
-disablePathToLower = true
+# Will give values to .Lastmod etc.
 enableGitInfo = true
 
-# (Optional) Set Google Analytics if you use it to track your website.
-# Always put it on the top of the configuration file, otherwise it won't work
+defaultContentLanguage = "ja"
+defaultContentLanguageInSubdir = false
+
 googleAnalytics = "UA-58587912-1"
 
-# Needed for mermaid/katex shortcodes
-[markup]
-[markup.goldmark.renderer]
-  unsafe = true
+# Highlighting config
+pygmentsCodeFences = true
+pygmentsUseClasses = false
+# Use the new Chroma Go highlighter in Hugo.
+pygmentsUseClassic = false
+#pygmentsOptions = "linenos=table"
+# See https://help.farbox.com/pygments.html
+pygmentsStyle = "tango"
 
-[markup.tableOfContents]
-  startLevel = 1
-
-[menu]
-# [[menu.before]]
-# [[menu.after]]
-#   name = "Github"
-#   url = "https://github.com/commerble/docs"
+## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
+[blackfriday]
+plainIDAnchors = true
+hrefTargetBlank = true
+angledQuotes = false
+latexDashes = true
 
 
+[services]
+[services.googleAnalytics]
+id = "UA-58587912-1"
 
 [params]
-  # (Optional, default true) Controls table of contents visibility on right side of pages.
-  # Start and end levels can be controlled with markup.tableOfContents setting.
-  # You can also specify this parameter per page in front matter.
-  BookToC = true
+time_format_default = "2006-01-02"
+copyright = "Commerble Inc. "
 
-  # (Optional, default none) Set the path to a logo for the book. If the logo is
-  # /static/logo.png then the path would be logo.png
-  # BookLogo = 'logo.png'
+baseUrl = "https://www.commerble.com/docs/"
 
-  # (Optional, default none) Set leaf bundle to render as side menu
-  # When not specified file structure and weights will be used
-  # BookMenuBundle = '/menu'
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+# gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+gcs_engine_id = "f468d8f73b829f44e"
 
-  # (Optional, default docs) Specify root page to render child pages as menu.
-  # Page is resoled by .GetPage function: https://gohugo.io/functions/getpage/
-  # For backward compatibility you can set '*' to render all sections to menu. Acts same as '/'
-  BookSection = '*'
+# Enable Algolia DocSearch
+algolia_docsearch = false
 
-  # Set source repository location.
-  # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo = 'https://github.com/commerble/docs'
+# Enable Lunr.js offline search
+offlineSearch = false
 
-  # Enable "Edit this page" links for 'doc' page type.
-  # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
-  # Edit path must point to root directory of repo.
-  #BookEditPath = 'edit/master'
+prism_syntax_highlighting = true
 
-  # Configure the date format used on the pages
-  # - In git information
-  # - In blog posts
-  BookDateFormat = 'January 2, 2006'
+# User interface configuration
+[params.ui]
+# Enable to show the side bar menu in its compact state.
+sidebar_menu_compact = false
+#  Set to true to disable breadcrumb navigation.
+breadcrumb_disable = false
+#  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
+sidebar_search_disable = false
+#  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
+navbar_logo = false
+# Set to true to disable the About link in the site footer
+footer_about_disable = false
 
-  # (Optional, default true) Enables search function with flexsearch,
-  # Index is built on fly, therefore it might slowdown your website.
-  # Configuration for indexing can be adjusted in i18n folder per language.
-  BookSearch = true
 
-  # (Optional, default true) Enables comments template on pages
-  # By default partals/docs/comments.html includes Disqus template
-  # See https://gohugo.io/content-management/comments/#configure-disqus
-  # Can be overwritten by same param in page frontmatter
-  BookComments = true
+[params.mermaid]
+enable = true
+theme = "neutral"
 
-  # /!\ This is an experimental feature, might be removed or changed at any time
-  # (Optional, experimental, default false) Enables portable links and link checks in markdown pages.
-  # Portable links meant to work with text editors and let you write markdown without {{< relref >}} shortcode
-  # Theme will print warning if page referenced in markdown does not exists.
-  BookPortableLinks = true
 
-  # /!\ This is an experimental feature, might be removed or changed at any time
-  # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
-  BookServiceWorker = true
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+      # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
+      style = "tango"
+      # Uncomment if you want your chosen highlight style used for code blocks without a specified language
+      guessSyntax = "true"
 
-  SitemapBaseUrl = "https://www.commerble.com/docs"
+
+[[menu.main]]
+  name = "HOME"
+  weight = 50
+  url = "https://www.commerble.com/"

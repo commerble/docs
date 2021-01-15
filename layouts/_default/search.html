@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section class="row td-search-result">
+  <div class="col-12 col-md-8 offset-md-2">
+  <h4>{{ .Title }}</h4>
+
+    <script async src="https://cse.google.com/cse.js?cx={{ .Site.Params.gcs_engine_id }}"></script>
+
+    <div class="gcse-searchbox"
+      data-enableHistory="true"
+      data-autoCompleteMaxCompletions="5"
+      data-autoCompleteMatchType="any"
+      data-autoCompleteValidLanguages="ja,en">
+    </div>
+
+    <div class="gcse-searchresults"
+      data-refinementStyle="link"
+      data-linkTarget="_self">
+    </div>
+  </div>
+</section>
+{{ end }}

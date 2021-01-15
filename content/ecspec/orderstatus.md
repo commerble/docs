@@ -1,6 +1,6 @@
 ---
-title: "受注ステータス"
-weight: 1
+title: "受注後のステータスフロー"
+weight: 8
 description: 
 ---
 

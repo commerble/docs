@@ -4,14 +4,21 @@
 [ドキュメント一覧](./list.md)
 
 ## 始め方
- - Hugo **Extended** を インストールする。  
+
+### 必要なもの
+ - Hugo **Extended**  
   Binaryバージョンは [Hugo リリース](https://github.com/gohugoio/hugo/releases) よりダウンロード可能。  
   hugo コマンドのパスを通しておくと便利。
+ - [NodeJS](https://nodejs.org/en)  
+  docsy theme で PostCSS が必要。 
+
+### ローカル環境で動かす
 - ローカル環境にダウンロード
   ```
   git clone https://github.com/commerble/docs.git
   cd docs
   git submodule update --init --recursive
+  npm install
   ```
 - ローカル環境で動かす
   ```

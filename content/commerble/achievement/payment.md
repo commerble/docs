@@ -4,8 +4,6 @@ weight: 3
 description: 
 ---
 
-# 決済手段の拡張
-
 ## Amazon Pay
 ## 楽天ペイ
 ## メルペイ

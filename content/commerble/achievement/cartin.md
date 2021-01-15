@@ -4,8 +4,6 @@ weight: 6
 description: 
 ---
 
-# 商品オプション
-
 この章では、商品にオプションを付けてカートインできるECサイトを構築するときのカスタマイズについて説明します。
 
 ## オプション商品
@@ -38,7 +36,7 @@ Commerbleのカートは商品IDが明細において一意である必要があ
 
 このカスタムを実現するには、カートインの前に、カート内のすべての明細をクリアし、対象商品加算された明細データを丸ごと入れなおす必要があります。
 
-{{<mermaid align="center">}}
+```mermaid
 sequenceDiagram
     ブラウザ->>+Order/Cart: POST itemclear, AntiForgeryToken, returnUrl=全明細カートイン 
     Order/Cart->>Order/Cart: カートクリア
@@ -48,7 +46,7 @@ sequenceDiagram
     deactivate ブラウザ
     Order/Cart->>Order/Cart: 加算された全明細を入れ直し
     Order/Cart-->>-ブラウザ: 200 カート画面 
-{{< /mermaid >}}
+```
 
 ## カスタマイズ実績2 フロントカート方式
 

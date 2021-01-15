@@ -1,0 +1,24 @@
+
+h2,
+.h2 {
+  font-size:2rem;
+  padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #eff2f3;/*背景色*/
+  border-left: solid 5px #db4a48;/*左線（実線 太さ 色）*/
+}
+
+h3,
+.h3 {
+  font-size:1.5rem;
+  padding: 0.5em;/*文字周りの余白*/
+  border-left: solid 5px #db4a48;/*左線（実線 太さ 色）*/
+}
+
+html {
+  scroll-padding-top: 70px; /* height of sticky header */
+}
+
+nav#td-section-nav, nav#TableOfContents {
+  font-size: 0.9rem;
+}

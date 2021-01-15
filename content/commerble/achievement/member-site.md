@@ -4,6 +4,4 @@ weight: 1
 description: 
 ---
 
-# 外部会員サイト
-
 ## SNSログイン

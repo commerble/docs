@@ -4,8 +4,6 @@ weight: 30
 description: 
 ---
 
-# Web API
-
 この章では、Commerbleの管理用Web APIについて説明します。
 
 このAPIは管理用であり、カート処理用のWeb APIでは無いことに留意が必要です。

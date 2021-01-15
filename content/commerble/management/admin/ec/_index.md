@@ -4,8 +4,6 @@ weight: 10
 description: 
 ---
 
-# EC管理サイト
-
 ## EC管理ページ一覧
 - [トップ](top)
 - 受注管理

@@ -1,6 +1,6 @@
 ---
-title: "商品"
-weight: 1
+title: "商品情報について"
+weight: 3
 description: 
 ---
 

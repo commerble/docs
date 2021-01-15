@@ -4,8 +4,6 @@ weight: 1
 description: 
 ---
 
-# システムスコープ
-
 この章では、ECシステム全体の中でのCommerbleの位置付け、システムスコープについて説明します。
 
 ## ECシステム
@@ -134,7 +132,7 @@ Commerble
 
 上記のミニマムECサイトで商品が購入者に届くまでには次のようなフローになるでしょう。
 
-{{<mermaid align="center">}}
+```mermaid
 sequenceDiagram
     participant 購入者
     participant ミニマムECサイト
@@ -153,7 +151,7 @@ sequenceDiagram
     EC事業者->>+配送業者: 配送依頼
     EC事業者->>-購入者: 発送メール
     配送業者->>-購入者: 商品
-{{< /mermaid >}}
+```
 
 ここまで定めることでEC事業者が購入者に受注確定メールを送った際に受注が制約されることがわかります。
 ミニマムECサイト単体では定義を満たしませんがECシステム全体では定義を満たすことになります。ECサイトがその一部分をになうだけで電子商取引になるかどうかは定義の **一部でもコンピュータを介したネットワーク上で行われ…** とあるので問題ないでしょう。
@@ -302,4 +300,4 @@ Commebleでは決済代行の管理機能を提供しておりません。キャ
 [isotc321]: https://www.iso.org/committee/7145156.html "Transaction assurance in E-commerce"
 [denshi]: https://www.meti.go.jp/statistics/tyo/denshi/pdf/21yougo.pdf "消費者向け電子商取引の定義"
 [metisearch]: https://www.meti.go.jp/press/2019/05/20190516002/20190516002-1.pdf "平成 30 年度 我が国におけるデータ駆動型社会に係る基盤整備（電子商取引に関する市場調査）"
-[api]: ../api/ "接続性"
+[api]: ../../development/webapi/ "接続性"
