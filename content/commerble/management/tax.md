@@ -6,11 +6,11 @@ description:
 
 カートでの税率計算式及び請求金額全体の計算式を示します。
 
-$$
-\begin{eqnarray*}
-total &=& S + (D - p_d) + (C - p_c) \\ \\
-S &:=& \sum_{i=1}^N \biggl( u_i a_i + \tau_i a_i - d_i - p_i \biggr) \\ \\
-\tau_i &:=& \begin{cases}
+{{<katex>}}
+\begin{aligned}
+total &= S + (D - p_d) + (C - p_c) \\ \\
+S &:= \sum_{i=1}^N \biggl( u_i a_i + \tau_i a_i - d_i - p_i \biggr) \\ \\
+\tau_i &:= \begin{cases}
     四捨五入(t_i \theta) & (m_i = 四捨五入) \\
     \lfloor t_i \theta \rfloor & (m_i = 切り捨て) \\
     \lceil t_i \theta \rceil & (m_i = 切り上げ) \\
@@ -26,8 +26,8 @@ S &:=& \sum_{i=1}^N \biggl( u_i a_i + \tau_i a_i - d_i - p_i \biggr) \\ \\
     \lceil t_i \cdot 0.10 \rceil & (m_i = 切り上げ10\%) \\
     t_i \cdot 0.10 & (m_i = 丸めなし10\%) 
 \end{cases} 
-\end{eqnarray*} 
-$$
+\end{aligned} 
+{{</katex>}}
 
 |              |                    項目                     |          説明           |
 | :----------: | :------------------------------------------ | :---------------------- |
