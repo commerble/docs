@@ -285,8 +285,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | Id                  | Int32   |        |   O    |    O     |          | 配送ID                                                            |
 | ShipSourceId        | Int32   |        |        |          |          | 配送ソースID                                                      |
 | DeliveryPatternName | String  | 50     |        |          |    O     | 配送パターン名称                                                  |
-| CanMailDelivery     | Boolean |        |        |          |          | メール便可                                                        |
-| TemperatureZone     | Int32   |        |        |          |          | 配送温度帯区分 [TemperatureZone](enum#temperaturezone) |
+| CanMailDivery     | Boolean |        |        |          |          | メール便可                                                        |
+| TemperatureZone     | Int32   |        |        |          |          | 配送温度帯区分 [TemperatureZone](../enum#temperaturezone) |
 
 + Parents
 + Children
@@ -400,7 +400,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | ---------------- | ------- | ---------------- | :----: | :------: | :------: | ----------------------------------------------------------------- |
 | ShipSourceId     | Int32   |                  |   O    |          |          | 配送ソースID                                                      |
 | ZipCode          | String  | 10(fixed length) |   O    |          |          | 郵便番号                                                          |
-| TemperatureZone  | Int32   |                  |   O    |          |          | 配送温度帯区分 [TemperatureZone](enum#temperaturezone) |
+| TemperatureZone  | Int32   |                  |   O    |          |          | 配送温度帯区分 [TemperatureZone](../enum#temperaturezone) |
 | LeadtimeValue    | Int32   |                  |        |          |          | リードタイム[日]                                                  |
 | CanCashOnDeliver | Boolean |                  |        |          |          | 代引き可                                                          |
 | CanCool          | Boolean |                  |        |          |          | クール便可                                                        |
@@ -544,7 +544,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | IsGuest              | Boolean  |                  |        |          |          | ゲストフラグ                                                                   |
 | UserNo               | Int64    |                  |        |          |    O     | ユーザNo                                                                       |
 | MemberRank           | Int32    |                  |        |          |    O     | 会員ランク                                                                     |
-| MemberStatus         | Int32    |                  |        |          |    O     | 会員ステータス [MemberStatus](enum#memberstatus)                 |
+| MemberStatus         | Int32    |                  |        |          |    O     | 会員ステータス [MemberStatus](../enum#memberstatus)                 |
 | OrdererName          | String   | 20(fixed length) |        |          |    O     | 受注者名                                                                       |
 | FirstName            | String   | 50               |        |          |          | 購入者　名                                                                     |
 | LastName             | String   | 50               |        |          |          | 購入者　姓                                                                     |
@@ -563,7 +563,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | OrderedAddressId     | Int64    |                  |        |          |    O     | 購入者 住所ID                                                                  |
 | InvoiceAddressId     | Int64    |                  |        |          |    O     | 請求書 住所ID                                                                  |
 | Birthday             | DateTime |                  |        |          |    O     | 購入者 誕生日                                                                  |
-| Sex                  | Int32    |                  |        |          |    O     | 購入者 性別 [HumanSexes](enum#humansexes)                        |
+| Sex                  | Int32    |                  |        |          |    O     | 購入者 性別 [HumanSexes](../enum#humansexes)                        |
 | OriginalOrderId      | String   | 128              |        |          |    O     | 複製元受注ID                                                                   |
 | PaymentDetail        | String   | 128              |        |          |    O     | 支払詳細                                                                       |
 | PaymentSlipNumber    | String   | 128              |        |          |    O     | 支払票番号                                                                     |
@@ -588,7 +588,7 @@ ECデータは、Web API 経由でアクセス可能です。
 |         列名         |    型    | 最大長 | 主キー | Identity | NULL許容 |                             説明                              |
 | -------------------- | -------- | ------ | :----: | :------: | :------: | ------------------------------------------------------------- |
 | Id                   | Int64    |        |   O    |    O     |          | 受注明細ID                                                    |
-| OrderLineType        | Int32    |        |        |          |          | 受注明細タイプ [OrderLineType](enum#orderlinetype) |
+| OrderLineType        | Int32    |        |        |          |          | 受注明細タイプ [OrderLineType](../enum#orderlinetype) |
 | OrderId              | Int64    |        |        |          |          | 受注ID                                                        |
 | ReserveId            | Int64    |        |        |          |    O     | 予約ID                                                        |
 | ArriveNoticeId       | Int64    |        |        |          |    O     | 着荷ID                                                        |
@@ -663,7 +663,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | TransactionNo   | Int64    |                  |   O    |          |          | ポイントトランザクションNo                            |
 | UserNo          | Int64    |                  |        |          |          | ユーザNo                                              |
 | BankCode        | String   | 32(fixed length) |        |          |          | バンクコード="Modd"                                   |
-| PointType       | Int32    |                  |        |          |          | ポイントタイプ [PointType](enum#pointtype) |
+| PointType       | Int32    |                  |        |          |          | ポイントタイプ [PointType](../enum#pointtype) |
 | PointValue      | Int64    |                  |        |          |          | ポイント値                                            |
 | CreateDate      | DateTime |                  |        |          |          | 作成日時                                              |
 | ActivateDate    | DateTime |                  |        |          |    O     | アクティベート日時                                    |
@@ -718,7 +718,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | TransactionNo   | Int64    |                  |   O    |    O     |          | ポイントトランザクションID                            |
 | UserNo          | Int64    |                  |        |          |          | ユーザNo                                              |
 | BankCode        | String   | 32(fixed length) |        |          |          | バンクコード=Modd                                     |
-| PointType       | Int32    |                  |        |          |          | ポイントタイプ [PointType](enum#pointtype) |
+| PointType       | Int32    |                  |        |          |          | ポイントタイプ [PointType](../enum#pointtype) |
 | PointValue      | Int64    |                  |        |          |          | ポイント値                                            |
 | CreateDate      | DateTime |                  |        |          |          | 作成日時                                              |
 | ActivateDate    | DateTime |                  |        |          |    O     | 本付与日時                                            |
@@ -798,7 +798,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | ----------------- | -------- | ---------------- | :----: | :------: | :------: | --------------------------------------------------------- |
 | Id                | Int32    |                  |   O    |    O     |          | 商品ID                                                    |
 | Name              | String   | 200              |        |          |          | 商品名                                                    |
-| ProductType       | Int32    |                  |        |          |          | 商品タイプ [ProductType](enum#producttype)     |
+| ProductType       | Int32    |                  |        |          |          | 商品タイプ [ProductType](../enum#producttype)     |
 | SalesStart        | DateTime |                  |        |          |          | 販売開始日時                                              |
 | SalesEnd          | DateTime |                  |        |          |    O     | 販売終了日時                                              |
 | ReleaseDate       | DateTime |                  |        |          |    O     | 発売日                                                    |
@@ -813,7 +813,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | SetOnly           | Boolean  |                  |        |          |    O     | セット販売のみ可                                          |
 | Cero              | Int32    |                  |        |          |    O     | CERO区分                                                  |
 | MemoId            | Int64    |                  |        |          |    O     | メモID                                                    |
-| SalesStatus       | Int32    |                  |        |          |    O     | 販売ステータス [SalesStatus](enum#salesstatus) |
+| SalesStatus       | Int32    |                  |        |          |    O     | 販売ステータス [SalesStatus](../enum#salesstatus) |
 | TaxationPrice     | Decimal  |                  |        |          |    O     | 課税対象単価                                              |
 | OrderedProduct    | Boolean  |                  |        |          |    O     | 受注生産品フラグ                                          |
 
@@ -904,15 +904,15 @@ ECデータは、Web API 経由でアクセス可能です。
 |             列名              |    型    |     最大長      | 主キー | Identity | NULL許容 |                               説明                               |
 | ----------------------------- | -------- | --------------- | :----: | :------: | :------: | ---------------------------------------------------------------- |
 | Id                            | Int64    |                 |   O    |    O     |          | 受注ID                                                           |
-| OrderType                     | Int32    |                 |        |          |    O     | 受注タイプ [OrderType](enum#ordertype)                |
-| OrderStatus                   | Int32    |                 |        |          |          | 受注ステータス [OrderStatus](enum#orderstatus)        |
+| OrderType                     | Int32    |                 |        |          |    O     | 受注タイプ [OrderType](../enum#ordertype)                |
+| OrderStatus                   | Int32    |                 |        |          |          | 受注ステータス [OrderStatus](../enum#orderstatus)        |
 | OrderDate                     | DateTime |                 |        |          |          | 受注日時                                                         |
 | ShipRequestDate               | DateTime |                 |        |          |    O     | 配送要求日時                                                     |
 | ShipDate                      | DateTime |                 |        |          |    O     | 配送日時                                                         |
 | DeliveryCompleteDate          | DateTime |                 |        |          |    O     | 着荷日時                                                         |
 | CustomerId                    | Int32    |                 |        |          |          | 購入者ID                                                         |
-| PaymentMethod                 | Int32    |                 |        |          |          | 支払方法 [PaymentMethod](enum#paymentmethod)          |
-| PaymentStatus                 | Int32    |                 |        |          |          | 支払ステータス [PaymentStatus](enum#paymentstatus)    |
+| PaymentMethod                 | Int32    |                 |        |          |          | 支払方法 [PaymentMethod](../enum#paymentmethod)          |
+| PaymentStatus                 | Int32    |                 |        |          |          | 支払ステータス [PaymentStatus](../enum#paymentstatus)    |
 | TaxRate                       | Int32    |                 |        |          |          | 税率                                                             |
 | DeliveryCharge                | Decimal  |                 |        |          |          | 税込送料                                                         |
 | PointPaymentForDeliveryCharge | Decimal  |                 |        |          |          | TotalUsagePointの内、送料に使用した量                            |
@@ -963,7 +963,7 @@ ECデータは、Web API 経由でアクセス可能です。
 |   列名    |  型   | 最大長 | 主キー | Identity | NULL許容 |                                  説明                                   |
 | --------- | ----- | ------ | :----: | :------: | :------: | ----------------------------------------------------------------------- |
 | ProductId | Int32 |        |   O    |          |          | 商品ID                                                                  |
-| Status    | Int32 |        |   O    |          |          | ステータス [ReserveRequestStatus](enum#reserverequeststatus) |
+| Status    | Int32 |        |   O    |          |          | ステータス [ReserveRequestStatus](../enum#reserverequeststatus) |
 | Count     | Int32 |        |        |          |    O     | 数量                                                                    |
 
 + Parents
@@ -981,7 +981,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | UserNo         | Int64    |        |        |          |          | ユーザNo                                                                |
 | ProductId      | Int32    |        |        |          |          | 商品ID                                                                  |
 | Amount         | Int32    |        |        |          |          | 数量                                                                    |
-| Status         | Int32    |        |        |          |          | ステータス [ReserveRequestStatus](enum#reserverequeststatus) |
+| Status         | Int32    |        |        |          |          | ステータス [ReserveRequestStatus](../enum#reserverequeststatus) |
 | OrderId        | Int64    |        |        |          |    O     | 受注ID                                                                  |
 | ReserveStockId | Int64    |        |        |          |    O     | 仮予約在庫ID                                                            |
 | MailAddress    | String   | 128    |        |          |    O     | メールアドレス                                                          |
@@ -1028,7 +1028,7 @@ ECデータは、Web API 経由でアクセス可能です。
 |         列名         |    型    | 最大長 | 主キー | Identity | NULL許容 |                           説明                            |
 | -------------------- | -------- | ------ | :----: | :------: | :------: | --------------------------------------------------------- |
 | Id                   | Int64    |        |   O    |    O     |          | 返品ID                                                    |
-| OrderLineType        | Int32    |        |        |          |          | 明細タイプ [OrderLineType](enum#orderlinetype) |
+| OrderLineType        | Int32    |        |        |          |          | 明細タイプ [OrderLineType](../enum#orderlinetype) |
 | OrderId              | Int64    |        |        |          |          | 受注ID                                                    |
 | ReserveId            | Int64    |        |        |          |    O     | 予約ID                                                    |
 | ArriveNoticeId       | Int64    |        |        |          |    O     | 着荷ID                                                    |
@@ -1071,15 +1071,15 @@ ECデータは、Web API 経由でアクセス可能です。
 |             列名              |    型    | 最大長 | 主キー | Identity | NULL許容 |                           説明                            |
 | ----------------------------- | -------- | ------ | :----: | :------: | :------: | --------------------------------------------------------- |
 | Id                            | Int64    |        |   O    |    O     |          | 受注ID                                                    |
-| OrderType                     | Int32    |        |        |          |    O     | 受注タイプ [OrderType](enum#ordertype)         |
-| OrderStatus                   | Int32    |        |        |          |          | 受注ステータス [OrderStatus](enum#orderstatus) |
+| OrderType                     | Int32    |        |        |          |    O     | 受注タイプ [OrderType](../enum#ordertype)         |
+| OrderStatus                   | Int32    |        |        |          |          | 受注ステータス [OrderStatus](../enum#orderstatus) |
 | OrderDate                     | DateTime |        |        |          |          | 受注日時                                                  |
 | ShipRequestDate               | DateTime |        |        |          |    O     | 配送要求日時                                              |
 | ShipDate                      | DateTime |        |        |          |    O     | 配送日時                                                  |
 | DeliveryCompleteDate          | DateTime |        |        |          |    O     | 着荷日時                                                  |
 | CustomerId                    | Int32    |        |        |          |          | 購入者ID                                                  |
-| PaymentMethod                 | Int32    |        |        |          |          | 支払方法 [PaymentMethod](enum#paymentmethod)   |
-| PaymentStatus                 | Int32    |        |        |          |          | 支払状況 [PaymentStatus](enum#paymentstatus)   |
+| PaymentMethod                 | Int32    |        |        |          |          | 支払方法 [PaymentMethod](../enum#paymentmethod)   |
+| PaymentStatus                 | Int32    |        |        |          |          | 支払状況 [PaymentStatus](../enum#paymentstatus)   |
 | TaxRate                       | Int32    |        |        |          |          | 税率                                                      |
 | DeliveryCharge                | Decimal  |        |        |          |          | 送料                                                      |
 | PointPaymentForDeliveryCharge | Decimal  |        |        |          |          | 使用ポイント 送料分                                       |
@@ -1176,7 +1176,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | MaxPurchasePerOrder     | Int32   |        |        |          |    O     | 受注毎最大購入数                                          |
 | InternalStockPriority   | Int32   |        |        |          |    O     | 内部在庫優先順序                                          |
 | EnableUserCancel        | Boolean |        |        |          |    O     | ユーザキャンセル許可                                      |
-| TaxRoundMode            | Int32   |        |        |          |    O     | 税丸めモード [TaxRoundMode](enum#taxroundmode) |
+| TaxRoundMode            | Int32   |        |        |          |    O     | 税丸めモード [TaxRoundMode](../enum#taxroundmode) |
 | EnableReserveOrder      | Boolean |        |        |          |    O     | 仮予約可                                                  |
 | MaxMailDeliveryPerOrder | Int32   |        |        |          |    O     | 受注毎最大メール便数                                      |
 
@@ -1208,7 +1208,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | MaxPurchasePerOrder     | Int32   |        |        |          |    O     |                                              |
 | InternalStockPriority   | Int32   |        |        |          |    O     |                                              |
 | EnableUserCancel        | Boolean |        |        |          |    O     |                                              |
-| TaxRoundMode            | Int32   |        |        |          |    O     | [TaxRoundMode](enum#taxroundmode) |
+| TaxRoundMode            | Int32   |        |        |          |    O     | [TaxRoundMode](../enum#taxroundmode) |
 | EnableReserveOrder      | Boolean |        |        |          |    O     |                                              |
 | MaxMailDeliveryPerOrder | Int32   |        |        |          |    O     |                                              |
 

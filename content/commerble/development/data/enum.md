@@ -5,7 +5,7 @@ description:
 ---
 
 # 定義値(Enum)
-[ECデータ](ec) で利用される定義値の一覧です。
+[ECデータ](../ec) で利用される定義値の一覧です。
 
 ## HumanSexes
 
@@ -17,7 +17,7 @@ description:
 |    9 | NotApplicable | 適用不能 |      |
 
 対象カラム  
-[OrderCustomer.Sex](ec#ordercustomers)
+[OrderCustomer.Sex](../ec#ordercustomers)
 
 ## OrderLineType
 
@@ -33,8 +33,8 @@ description:
 |    7 | Additional       | 追加商品   |      |
 
 対象カラム  
-[OrderLine.OrderType](ec#orderlines), 
-[ReturnOrderLine.OrderType](ec#returnorderlines)
+[OrderLine.OrderType](../ec#orderlines), 
+[ReturnOrderLine.OrderType](../ec#returnorderlines)
 
 ## OrderType
 
@@ -47,8 +47,8 @@ description:
 |    4 | ReSend  | 返品再送   |      |
 
 対象カラム  
-[PurchaseOrder.OrderType](ec#purchaseorders), 
-[ReturnOrder.OrderType](ec#returnorders)
+[PurchaseOrder.OrderType](../ec#purchaseorders), 
+[ReturnOrder.OrderType](../ec#returnorders)
 
 ## OrderStatus
 
@@ -67,8 +67,8 @@ description:
 |   12 | WorkerProcessing | バッチ処理中 |      |
 
 対象カラム  
-[PurchaseOrder.OrderStatus](ec#purchaseorders), 
-[ReturnOrder.OrderStatus](ec#returnorders)
+[PurchaseOrder.OrderStatus](../ec#purchaseorders), 
+[ReturnOrder.OrderStatus](../ec#returnorders)
 
 ## PaymentMethod
 
@@ -85,8 +85,8 @@ description:
 |   -1 | None           | None             |                                                                 |
 
 対象カラム  
-[PurchaseOrder.PaymentMethod](ec#purchaseorders), 
-[ReturnOrder.PaymentMethod](ec#returnorders)
+[PurchaseOrder.PaymentMethod](../ec#purchaseorders), 
+[ReturnOrder.PaymentMethod](../ec#returnorders)
 
 ## DeliveryMethod
 
@@ -121,8 +121,8 @@ description:
 |    4 | Cancel     | キャンセル |      |
 
 対象カラム  
-[PurchaseOrder.PaymentStatus](ec#purchaseorders),
-[ReturnOrder.PaymentStatus](ec#returnorders)
+[PurchaseOrder.PaymentStatus](../ec#purchaseorders),
+[ReturnOrder.PaymentStatus](../ec#returnorders)
 
 ## ProductType
 
@@ -133,7 +133,7 @@ description:
 |    3 | Benefit | 副資材その他 |      |
 
 対象カラム  
-[Product.ProductType](ec#products)
+[Product.ProductType](../ec#products)
 
 ## SalesStatus
 
@@ -144,7 +144,7 @@ description:
 |    2 | End  | 販売終了 |      |
 
 対象カラム  
-[Product.SalesStatus](ec#products)
+[Product.SalesStatus](../ec#products)
 
 ## StockOperation
 
@@ -155,7 +155,7 @@ description:
 |    2 |      | 不良在庫戻し       |      |
 
 対象カラム  
-[ReturnReason.StockOperation](ec#returnreasons)
+[ReturnReason.StockOperation](../ec#returnreasons)
 
 ## TaxRoundMode
 
@@ -180,7 +180,7 @@ description:
 
 
 対象カラム  
-[SalesProduct.TaxRoundMode](ec#salesproducts)
+[SalesProduct.TaxRoundMode](../ec#salesproducts)
 
 ## PointType
 
@@ -194,8 +194,8 @@ description:
 |    5 | Lapsed         | 失効           |      |
 
 対象カラム  
-[PointBankTransaction.PointType](ec#pointbanktransactions),
-[PointBankAllocates.PointType](ec#pointbankallocates)
+[PointBankTransaction.PointType](../ec#pointbanktransactions),
+[PointBankAllocates.PointType](../ec#pointbankallocates)
 
 ## MemberStatus
 
@@ -206,7 +206,7 @@ description:
 |    2 | Warning   | 警告 |      |
 
 対象カラム  
-[OrderCustomers.MemberStatus](ec#ordercustomers)
+[OrderCustomers.MemberStatus](../ec#ordercustomers)
 
 ## TemperatureZone
 
@@ -218,8 +218,8 @@ description:
 |    4 | Ice    | アイス |      |
 
 対象カラム  
-[DeliveryPatterns.TemperatureZone](ec#deliverypatterns),
-[Leadtime.TemperatureZone](ec#temperaturezone)
+[DeliveryPatterns.TemperatureZone](../ec#deliverypatterns),
+[Leadtime.TemperatureZone](../ec#temperaturezone)
 
 ## ReserveRequestStatus
 
@@ -231,8 +231,8 @@ description:
 |    3 | Cancel    | キャンセル |                                                                              |
 
 対象カラム  
-[ReserveRequests.Status](ec#reserverequests),
-[ReserveRequestStatusCounts.Status](ec#reserverequeststatuscounts)
+[ReserveRequests.Status](../ec#reserverequests),
+[ReserveRequestStatusCounts.Status](../ec#reserverequeststatuscounts)
 
 ## MailType
 
@@ -245,5 +245,5 @@ description:
 
 対象カラム  
 
-[MailRequests.MailType](ec#mailrequests),
-[MailHistory.MailType](ec#mailhistory)
+[MailRequests.MailType](../ec#mailrequests),
+[MailHistory.MailType](../ec#mailhistory)
