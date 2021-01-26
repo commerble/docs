@@ -32,11 +32,11 @@ URLを定義する際、**種別**に**テンプレート**を指定すること
 
 |       URL書式       |                                             URL                                              |                   説明                   |
 | ------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| (未入力)            | https://www.example.com/ <br/>https://www.example.com/?x=1                                   | ルートページで使用                       |
-| landing             | https://www.example.com/landing <br/>https://www.example.com/landing?x=1                     | 単一の固定URLのページで使用              |
-| items/{Code}        | https://www.example.com/items/blue_jacket <br/>https://www.example.com/items/cool_shirt      | 商品詳細ページなどで使用                 |
-| shops/{Pref}/{Name} | https://www.example.com/shops/tokyo/ningyocho <br/>https://www.example.com/kanagawa/shonan   | 階層構造が固定のファイル構造の場合に使用 |
-| images/{Path*}      | https://www.example.com/images/hero.png <br/>https://www.example.com/images/special/hero.png | 階層構造が可変のファイル構造の場合に使用 |
+| (未入力)            | `https://www.example.com/` <br/>`https://www.example.com/?Nx=1`                                   | ルートページで使用                       |
+| landing             | `https://www.example.com/landing` <br/>`https://www.example.com/landing?x=1`                     | 単一の固定URLのページで使用              |
+| items/{Code}        | `https://www.example.com/items/blue_jacket` <br/>`https://www.example.com/items/cool_shirt`      | 商品詳細ページなどで使用                 |
+| shops/{Pref}/{Name} | `https://www.example.com/shops/tokyo/ningyocho` <br/>`https://www.example.com/kanagawa/shonan`   | 階層構造が固定のファイル構造の場合に使用 |
+| images/{Path*}      | `https://www.example.com/images/hero.png` <br/>`https://www.example.com/images/special/hero.png` | 階層構造が可変のファイル構造の場合に使用 |
 
 URL書式の中でプレースホルダー `{xxx}`, `{xxx*}` を定義することが出来ます。  
 プレースホルダー `{xxx}` の場合は、 xxx がプレースホルダーの名前になります。  

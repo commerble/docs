@@ -162,4 +162,4 @@ Content-Type: application/json; charset=utf-8
 
 [Razor構文]: https://docs.microsoft.com/aspnet/mvc/mvc3#the-razor-view-engine "Razor"
 [C# Scripting]: https://docs.microsoft.com/archive/msdn-magazine/2016/january/essential-net-csharp-scripting "C# Scripting"
-[Meta Feed API]: ./data/#meta-feed "Meta Feed"
+[Meta Feed API]: ../data/#meta-feed "Meta Feed"
