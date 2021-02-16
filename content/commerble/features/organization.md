@@ -33,6 +33,6 @@ GOLDパートナー。
 
 - 物流コンサル＝[Infinity October社]※バックオフィスと物流改善を⾏います。
 
-```
+
 [シグマコンサルティング]: https://www.sigmact.com/service/e-commerce/ "シグマコンサルティング"
 [Infinity October社]: https://eczine.jp/author/114 "Infinity October社"
