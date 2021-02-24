@@ -13,9 +13,9 @@ description:
 ![検索](search.png)
 
 ## 会員情報
-{{< hint info >}}
+{{% alert color="primary" %}}
 会員システムとして外部の会員システムを利用している場合、一部の情報のみが会員情報として閲覧できます。
-{{< /hint >}}
+{{% /alert %}}
 会員一覧で選択を行うと会員の関連情報が表示されます。  
 関連情報は以下の順番で表示されます。
 
@@ -58,9 +58,9 @@ description:
 ![会員情報編集](customer-edit.png)
 
 ## ポイントの調整
-{{< hint info >}}
+{{% alert color="primary" %}}
 Commerble標準のポイント機能を利用している場合に使用します。
-{{< /hint >}}
+{{% /alert %}}
 会員のポイント情報の失効期限の変更、ポイントレコードの作成を行いポイント数の調整が可能です。
 
 ![ポイント管理](point-manage.png)

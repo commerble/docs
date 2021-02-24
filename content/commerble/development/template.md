@@ -2,10 +2,9 @@
 title: "テンプレート"
 weight: 1
 description: 
-draft: true
 ---
 
-# テンプレート
+TODO: 
 
 この章では、テンプレートについて説明します。
 

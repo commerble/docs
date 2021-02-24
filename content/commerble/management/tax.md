@@ -45,7 +45,7 @@ S &:= \sum_{i=1}^N \biggl( u_i a_i + \tau_i a_i - d_i - p_i \biggr) \\ \\
 |  \\(p_i\\)   | OrderLine.PointUsage                        | 明細分使用ポイント      |
 |  \\(d_i\\)   | OrderLine.DiscountPrice                     | 明細分割引額            |
 
-割引額はキャンペーンの適用によって決定されます。割引額の詳しい計算方法は[Campaignsページ](../campaigns/)を参照ください。
+割引額はキャンペーンの適用によって決定されます。割引額の詳しい計算方法は[キャンペーンページ](../campaign/)を参照ください。
 
 使用ポイントに標準の計算式は[ポイントページ](../point/)を参照ください
 
