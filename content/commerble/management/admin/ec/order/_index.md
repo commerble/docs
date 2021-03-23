@@ -264,72 +264,72 @@ TSVファイル名は固定で、受注情報は**Order.txt**という名前の[
 
 ### 受注TSVファイル
 
-|          カラム名          | 必須  |                                    フォーマット                                     |                                            説明                                            |
-| :------------------------- | :---: | :---------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| OriginalOrderId            |   O   | 数値                                                                                | 受注シーケンス番号、受注明細CSVでの明細のグルーピングに使用する                            |
-| IsGuest                    |   O   | 真偽値                                                                              | ゲスト購入フラグ                                                                           |
-| MemberRank                 |       | 数値                                                                                | 会員ランク [MemberStatus](../../../../development/data/enum#memberstatus)       |
-| OrdererName                |   O   | [PersonName](../../../../development/validation#personname)              | 受注者                                                                                     |
-| FirstName                  |   O   | [PersonName](../../../../development/validation#personname)              | 名                                                                                         |
-| LastName                   |   O   | [PersonName](../../../../development/validation#personname)              | 姓                                                                                         |
-| FirstNameKana              |   O   | [PersonNameKana](../../../../development/validation#personnamekana)      | メイ                                                                                       |
-| LastNameKana               |   O   | [PersonNameKana](../../../../development/validation#personnamekana)      | セイ                                                                                       |
-| EmailAddr                  |   O   |                                                                                     | 注文者メールアドレス                                                                       |
-| Birthday                   |       | 日付                                                                                | 注文者誕生日                                                                               |
-| Sex                        |   O   | 数値                                                                                | 性別 [HumanSexes](../../../../development/data/enum#humansexes)                 |
-| UserNo                     |       | 数値                                                                                | ユーザ番号                                                                                 |
-| UserName                   |       | 文字列                                                                              |                                                                                            |
-| OrderType                  |   O   | 数値                                                                                | 受注タイプ [OrderType](../../../../development/data/enum#ordertype)             |
-| OrderStatus                |   O   | 数値                                                                                | 受注ステータス [OrderStatus](../../../../development/data/enum#orderstatus)     |
-| OrderDate                  |       | 日付時間                                                                            | 受注日時                                                                                   |
-| AllocationCompleteDate     |       | 日付時間                                                                            | 引当完了日                                                                                 |
-| ShipRequestDate            |       | 日付時間                                                                            | 出荷指示日                                                                                 |
-| EstimateShipDate           |       | 日付時間                                                                            | 出荷予定日                                                                                 |
-| ShipDate                   |       | 日付時間                                                                            | 出荷日                                                                                     |
-| DeliveryCompleteDate       |       | 日付時間                                                                            | 着荷日                                                                                     |
-| DeliveryReportDate         |       | 日付時間                                                                            | 報告着荷日                                                                                 |
-| ReturnDate                 |       | 日付時間                                                                            | 返品日                                                                                     |
-| ShipBookAt                 |       | 日付時間                                                                            | 出荷計上日                                                                                 |
-| DeliveryBookAt             |       | 日付時間                                                                            | 着荷計上日                                                                                 |
-| PaymentMethod              |       | 数値                                                                                | 決済方法 [PaymentMethod](../../../../development/data/enum#paymentmethod)       |
-| PaymentStatus              |       | 数値                                                                                | 決済ステータス [PaymentStatus](../../../../development/data/enum#paymentstatus) |
-| TaxRate                    |   O   | 数値                                                                                | 税率                                                                                       |
-| DeliveryCharge             |   O   | 数値                                                                                | 配送料                                                                                     |
-| PointPaymentForDelivCharge |   O   | 数値                                                                                | 使用ポイント（配送料分）                                                                   |
-| TotalPayment               |   O   | 数値                                                                                | 支払総額                                                                                   |
-| TotalUsagePoint            |   O   | 数値                                                                                | 使用ポイント                                                                               |
-| ReturnPrice                |   O   | 数値                                                                                | 返金額                                                                                     |
-| PaymentCharge              |   O   | 数値                                                                                | 手数料                                                                                     |
-| ExtraPoint                 |   O   | 数値                                                                                | 特別ポイント（受注分）                                                                     |
-| ExtraPointSummary          |   O   | 数値                                                                                | 特別ポイント計                                                                             |
-| ChargePointSummary         |   O   | 数値                                                                                | 付与ポイント計                                                                             |
-| DiscountPrice              |   O   | 数値                                                                                | 値引額                                                                                     |
-| SiteId                     |   O   | 数値                                                                                | 販売ショップID                                                                             |
-| HourRange                  |   O   | `{0-9}{4}`                                                                          | 配送希望時間帯 (8時から12時='0812'、14時から16時='1416')                                   |
-| WrappingType               |   O   | `[1,2]`                                                                             | ラッピング種別（1:明細書へ金額印字しない, 2:明細書へ金額印字する）                         |
-| SenderName                 |       | `.{20}`                                                                             | ラッピング種別（1:明細書へ金額印字しない, 2:明細書へ金額印字する）                         |
-| DeliveryNo                 |       | `^\w{0,20}$`                                                                        | ラッピング種別（1:明細書へ金額印字しない, 2:明細書へ金額印字する）                         |
-| DeliveryMailAddr           |   O   | メールアドレス                                                                      | 配送先メールアドレス                                                                       |
-| RecipientFirstName         |   O   | [PersonName](../../../../development/validation#personname)              | 配送先 名                                                                                  |
-| RecipientFirstNameKana     |   O   | [PersonNameKana](../../../../development/validation#personnamekana)      | 配送先 メイ                                                                                |
-| RecipientLastName          |   O   | [PersonName](../../../../development/validation#personname)              | 配送先 姓                                                                                  |
-| RecipientLastNameKana      |   O   | [PersonNameKana](../../../../development/validation#personnamekana)      | 配送先 セイ                                                                                |
-| CountryCode                |   O   | `^[A-Za-z]{2}$`                                                                     | 配送先国 (例：JP)                                                                          |
-| ZipCode                    |   O   | `^\d{7}$`                                                                           | 配送先郵便番号                                                                             |
-| Pref                       |   O   | [AddressPart](../../../../development/validation#addresspart)  1-10文字  | 配送先都道府県                                                                             |
-| City                       |   O   | [AddressPart](../../../../development/validation#addresspart)  1-128文字 | 配送先市区町村名                                                                           |
-| Street                     |   O   | [AddressPart](../../../../development/validation#addresspart)  1-128文字 | 配送先番地                                                                                 |
-| Building                   |       | [AddressPart](../../../../development/validation#addresspart)  1-128文字 | 配送先ビル名等                                                                             |
-| Tel                        |       | `^[0-9]{0,11}$`                                                                     | 配送先電話番号                                                                             |
-| ShipSourceId               |       | 数値                                                                                | 配送元ID                                                                                   |
-| AuthorizeNo                |       | 文字列 最大128文字                                                                  | 承認番号                                                                                   |
-| AuthorizeAt                |       | 日付時間                                                                            | 与信日時                                                                                   |
-| TransactionNo              |       | 文字列 最大128文字                                                                  | 取引ID                                                                                     |
-| PaymentDetail              |       | 文字列 最大128文字                                                                  | 決済種別                                                                                   |
-| PaymentSlipNumber          |       | 文字列 最大128文字                                                                  | 受付番号                                                                                   |
-| PaymentSlipUrl             |       | 文字列 最大128文字                                                                  | 払込票URL                                                                                  |
-| CompletePayment            |   O   | 真偽値                                                                              | 決済完了                                                                                   |
-| PaymentMailAddr            |       | メールアドレス                                                                      | 請求先メールアドレス                                                                       |
+|          カラム名          | 必須  |                               フォーマット                               |                                      説明                                       |
+| :------------------------- | :---: | :----------------------------------------------------------------------- | :------------------------------------------------------------------------------ |
+| OriginalOrderId            |   O   | 数値                                                                     | 受注シーケンス番号、受注明細CSVでの明細のグルーピングに使用する                 |
+| IsGuest                    |   O   | 真偽値                                                                   | ゲスト購入フラグ                                                                |
+| MemberRank                 |       | 数値                                                                     | 会員ランク [MemberStatus](../../../../development/data/enum#memberstatus)       |
+| OrdererName                |   O   | [PersonName](../../../../development/validation#personname)              | 受注者                                                                          |
+| FirstName                  |   O   | [PersonName](../../../../development/validation#personname)              | 名                                                                              |
+| LastName                   |   O   | [PersonName](../../../../development/validation#personname)              | 姓                                                                              |
+| FirstNameKana              |   O   | [PersonNameKana](../../../../development/validation#personnamekana)      | メイ                                                                            |
+| LastNameKana               |   O   | [PersonNameKana](../../../../development/validation#personnamekana)      | セイ                                                                            |
+| EmailAddr                  |   O   |                                                                          | 注文者メールアドレス                                                            |
+| Birthday                   |       | 日付                                                                     | 注文者誕生日                                                                    |
+| Sex                        |   O   | 数値                                                                     | 性別 [HumanSexes](../../../../development/data/enum#humansexes)                 |
+| UserNo                     |       | 数値                                                                     | ユーザ番号                                                                      |
+| UserName                   |       | 文字列                                                                   |                                                                                 |
+| OrderType                  |   O   | 数値                                                                     | 受注タイプ [OrderType](../../../../development/data/enum#ordertype)             |
+| OrderStatus                |   O   | 数値                                                                     | 受注ステータス [OrderStatus](../../../../development/data/enum#orderstatus)     |
+| OrderDate                  |       | 日付時間                                                                 | 受注日時                                                                        |
+| AllocationCompleteDate     |       | 日付時間                                                                 | 引当完了日                                                                      |
+| ShipRequestDate            |       | 日付時間                                                                 | 出荷指示日                                                                      |
+| EstimateShipDate           |       | 日付時間                                                                 | 出荷予定日                                                                      |
+| ShipDate                   |       | 日付時間                                                                 | 出荷日                                                                          |
+| DeliveryCompleteDate       |       | 日付時間                                                                 | 着荷日                                                                          |
+| DeliveryReportDate         |       | 日付時間                                                                 | 報告着荷日                                                                      |
+| ReturnDate                 |       | 日付時間                                                                 | 返品日                                                                          |
+| ShipBookAt                 |       | 日付時間                                                                 | 出荷計上日                                                                      |
+| DeliveryBookAt             |       | 日付時間                                                                 | 着荷計上日                                                                      |
+| PaymentMethod              |       | 数値                                                                     | 決済方法 [PaymentMethod](../../../../development/data/enum#paymentmethod)       |
+| PaymentStatus              |       | 数値                                                                     | 決済ステータス [PaymentStatus](../../../../development/data/enum#paymentstatus) |
+| TaxRate                    |   O   | 数値                                                                     | 税率                                                                            |
+| DeliveryCharge             |   O   | 数値                                                                     | 配送料                                                                          |
+| PointPaymentForDelivCharge |   O   | 数値                                                                     | 使用ポイント（配送料分）                                                        |
+| TotalPayment               |   O   | 数値                                                                     | 支払総額                                                                        |
+| TotalUsagePoint            |   O   | 数値                                                                     | 使用ポイント                                                                    |
+| ReturnPrice                |   O   | 数値                                                                     | 返金額                                                                          |
+| PaymentCharge              |   O   | 数値                                                                     | 手数料                                                                          |
+| ExtraPoint                 |   O   | 数値                                                                     | 特別ポイント（受注分）                                                          |
+| ExtraPointSummary          |   O   | 数値                                                                     | 特別ポイント計                                                                  |
+| ChargePointSummary         |   O   | 数値                                                                     | 付与ポイント計                                                                  |
+| DiscountPrice              |   O   | 数値                                                                     | 値引額                                                                          |
+| SiteId                     |   O   | 数値                                                                     | 販売ショップID                                                                  |
+| HourRange                  |   O   | `{0-9}{4}`                                                               | 配送希望時間帯 (8時から12時='0812'、14時から16時='1416')                        |
+| WrappingType               |   O   | `[1,2]`                                                                  | ラッピング種別（1:明細書へ金額印字しない, 2:明細書へ金額印字する）              |
+| SenderName                 |       | `.{20}`                                                                  | 送り主名                                                                        |
+| DeliveryNo                 |       | `^\w{0,20}$`                                                             | 配送番号                                                                        |
+| DeliveryMailAddr           |   O   | メールアドレス                                                           | 配送先メールアドレス                                                            |
+| RecipientFirstName         |   O   | [PersonName](../../../../development/validation#personname)              | 配送先 名                                                                       |
+| RecipientFirstNameKana     |   O   | [PersonNameKana](../../../../development/validation#personnamekana)      | 配送先 メイ                                                                     |
+| RecipientLastName          |   O   | [PersonName](../../../../development/validation#personname)              | 配送先 姓                                                                       |
+| RecipientLastNameKana      |   O   | [PersonNameKana](../../../../development/validation#personnamekana)      | 配送先 セイ                                                                     |
+| CountryCode                |   O   | `^[A-Za-z]{2}$`                                                          | 配送先国 (例：JP)                                                               |
+| ZipCode                    |   O   | `^\d{7}$`                                                                | 配送先郵便番号                                                                  |
+| Pref                       |   O   | [AddressPart](../../../../development/validation#addresspart)  1-10文字  | 配送先都道府県                                                                  |
+| City                       |   O   | [AddressPart](../../../../development/validation#addresspart)  1-128文字 | 配送先市区町村名                                                                |
+| Street                     |   O   | [AddressPart](../../../../development/validation#addresspart)  1-128文字 | 配送先番地                                                                      |
+| Building                   |       | [AddressPart](../../../../development/validation#addresspart)  1-128文字 | 配送先ビル名等                                                                  |
+| Tel                        |       | `^[0-9]{0,11}$`                                                          | 配送先電話番号                                                                  |
+| ShipSourceId               |       | 数値                                                                     | 配送元ID                                                                        |
+| AuthorizeNo                |       | 文字列 最大128文字                                                       | 承認番号                                                                        |
+| AuthorizeAt                |       | 日付時間                                                                 | 与信日時                                                                        |
+| TransactionNo              |       | 文字列 最大128文字                                                       | 取引ID                                                                          |
+| PaymentDetail              |       | 文字列 最大128文字                                                       | 決済種別                                                                        |
+| PaymentSlipNumber          |       | 文字列 最大128文字                                                       | 受付番号                                                                        |
+| PaymentSlipUrl             |       | 文字列 最大128文字                                                       | 払込票URL                                                                       |
+| CompletePayment            |   O   | 真偽値                                                                   | 決済完了                                                                        |
+| PaymentMailAddr            |       | メールアドレス                                                           | 請求先メールアドレス                                                            |
 
 ### 受注明細TSVファイル
 
