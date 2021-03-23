@@ -333,24 +333,24 @@ TSVファイル名は固定で、受注情報は**Order.txt**という名前の[
 
 ### 受注明細TSVファイル
 
-|       カラム名       | 必須  |    フォーマット    |                             説明                             |
-| :------------------- | :---: | :----------------- | :----------------------------------------------------------- |
-| OriginalOrderId      |   O   | 数値               | 受注シーケンス番号、もしくは、受注番号                       |
+|       カラム名       | 必須  |    フォーマット    |                                    説明                                     |
+| :------------------- | :---: | :----------------- | :-------------------------------------------------------------------------- |
+| OriginalOrderId      |   O   | 数値               | 受注シーケンス番号、もしくは、受注番号                                      |
 | OrderLineType        |   O   | 数値               | 受注タイプ [OrderLineType](../../../../development/data/enum#orderlinetype) |
-| ProductId            |   O   | 数値               | 内部商品ID                                                   |
-| OrderAmount          |   O   | 数値               | 受注数                                                       |
-| AllocateAmount       |   O   | 数値               | 引当数                                                       |
-| UnitPrice            |   O   | 数値               | 単価(税抜)                                                   |
-| UnitPrice            |   O   | 数値               | 計上額(税込)                                                 |
-| UnitPrice            |   O   | 数値               | 小計(税込)                                                   |
-| Tax                  |   O   | 数値               | 税額                                                         |
-| PointUsage           |   O   | 数値               | 使用ポイント                                                 |
-| PointUsageTax        |   O   | 数値               | 使用ポイント(税額分)                                         |
-| PointUsagePrice      |   O   | 数値               | 使用ポイント(商品分)                                         |
-| PointCharge          |   O   | 数値               | 付与ポイント                                                 |
-| PointChargeRate      |   O   | 数値               | ポイント付与率                                               |
-| ExtraPoint           |   O   | 数値               | 特別ポイント                                                 |
-| DiscountPrice        |   O   | 数値               | 値引額                                                       |
-| AllocateCompleteDate |       | 日付時間           | 引当完了日時                                                 |
-| Description          |       | 文字列 最大256文字 | 補足                                                         |
+| ProductId            |   O   | 数値               | 内部商品ID                                                                  |
+| OrderAmount          |   O   | 数値               | 受注数                                                                      |
+| AllocateAmount       |   O   | 数値               | 引当数                                                                      |
+| UnitPrice            |   O   | 数値               | 単価(税抜)                                                                  |
+| ReportPrice          |   O   | 数値               | 計上額(税込)                                                                |
+| LinePrice            |   O   | 数値               | 小計(税込)                                                                  |
+| Tax                  |   O   | 数値               | 税額                                                                        |
+| PointUsage           |   O   | 数値               | 使用ポイント                                                                |
+| PointUsageTax        |   O   | 数値               | 使用ポイント(税額分)                                                        |
+| PointUsagePrice      |   O   | 数値               | 使用ポイント(商品分)                                                        |
+| PointCharge          |   O   | 数値               | 付与ポイント                                                                |
+| PointChargeRate      |   O   | 数値               | ポイント付与率                                                              |
+| ExtraPoint           |   O   | 数値               | 特別ポイント                                                                |
+| DiscountPrice        |   O   | 数値               | 値引額                                                                      |
+| AllocateCompleteDate |       | 日付時間           | 引当完了日時                                                                |
+| Description          |       | 文字列 最大256文字 | 補足                                                                        |
 
