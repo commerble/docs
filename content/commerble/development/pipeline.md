@@ -118,10 +118,10 @@ Commerble標準会員データから購入者情報をコピーします。
 #### PaymentOffsite
 オフサイト決済を処理します。
 
-#### PaymentZero.cs
+#### PaymentZero
 0円決済時に代引きもしくはポイント払いに強制します。
 
-#### PointCharge.cs
+#### PointCharge
 付与ポイントを0で初期化します。
 
 #### PointRate
