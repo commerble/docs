@@ -4,7 +4,7 @@
   "description": "[公開サイト](https://www.commerble.com/docs)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "textlint content"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,11 @@
     "autoprefixer": "^10.1.0",
     "postcss": "^8.2.1",
     "postcss-cli": "^8.3.0"
+  },
+  "devDependencies": {
+    "textlint": "^12.0.2",
+    "textlint-rule-no-todo": "^2.0.1",
+    "textlint-rule-preset-ja-technical-writing": "^7.0.0",
+    "textlint-rule-preset-jtf-style": "^2.3.12"
   }
 }
