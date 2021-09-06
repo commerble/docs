@@ -2,6 +2,8 @@
   "rules": {
     "no-todo": true,
     "preset-ja-technical-writing": true,
-    "preset-jtf-style": true
+    "preset-jtf-style": true,
+    "jtf-style/4.3.1.丸かっこ（）":false,
+    "jtf-style/4.2.7.コロン(：)":false
   }
 }

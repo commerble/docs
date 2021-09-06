@@ -18,7 +18,7 @@ Commerbleでは、お客様の業務体制や規模に合わせて柔軟なデ�
 - Treasure Data
 - Fast for EC
 - EXCEL
-- ⾃作のダッシュボード"
+- ⾃作のダッシュボード
 
 ### データストア
 
