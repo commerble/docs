@@ -55,7 +55,8 @@ sequenceDiagram
 ![カートイン仕様のカスタム2](./3.jpg)
 
 ただし、カスタマーサポートで明細キャンセルを提供している場合は注意が必要です。管理画面から表示・変更できる明細は、標準仕様に則り、商品IDで一意にまとめられたデータです。これらの明細を変更しても、フロントカート情報を変更するにはサービス情報も変更が必要です。変更点が2つになりオペレーションの実行が困難になります。　これらを透過的に実行するには、Web APIを用いてカスタム管理画面を作成する必要があります。
-{{<mermaid align="center">}}
+
+```mermaid
 sequenceDiagram
     ブラウザ->>+FrontCart: カートイン情報
     FrontCart->>FrontCart: カートイン情報をセッションに保存
@@ -74,7 +75,7 @@ sequenceDiagram
     ブラウザ->>+Purchase/Order: 購入
     Purchase/Order->>Purchase/Order: セッションのカートイン情報をサービス情報に保存
     Purchase/Order-->>-ブラウザ: 購入完了画面
-{{< /mermaid >}}
+```
 
 
 [セルフカスタム]: ../../features/customization/#セルフカスタム "セルフカスタム"
