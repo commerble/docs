@@ -1165,7 +1165,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | MemberRank              | Int32   |        |        |          |    O     | 会員ランク                                                |
 | CartId                  | Int32   |        |        |          |          | カートID                                                  |
 | PaymentMethodBits       | Int32   |        |        |          |          | 支払方法 Bits                                             |
-| SinglePurchaseOnly      | Boolean |        |        |          |          | 一括支払のみ                                              |
+| SinglePurchaseOnly      | Boolean |        |        |          |          | 単品購入制限                                              |
 | CanGuestPurchase        | Boolean |        |        |          |          | ゲスト購入可                                              |
 | CanSetDeliveryDate      | Boolean |        |        |          |          | 配送日指定可                                              |
 | CanSetDeliveryHour      | Boolean |        |        |          |          | 配送時間帯指定可                                          |
