@@ -9,7 +9,7 @@ ECデータとは、Commerbleが定義するECシステムの標準データで�
 ECデータのスキーマ仕様は固定でカスタマイズはできません。
 ECデータスキーマでは表現できないテナント要件のデータを用意したい場合は、[CMSデータ](../cms)として定義します。
 
-ECデータは、Web API 経由でアクセス可能です。
+ECデータは、Web API経由でアクセス可能です。
 
 ## ActiveCampaigns
 現在アクティブなキャンペーン。有効期限内かつ付与商品がある場合は在庫が存在する場合。
@@ -68,7 +68,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | LastUpdate | DateTime |        |        |          |    O     | 最終更新日時 |
 
 + Parents
-	- [Address](#addresses)(1) [FK(Id)] 	
+	- [Address](#addresses)(1)[FK(Id)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -81,7 +81,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | ShipmentOperationDate | DateTime |        |   O    |          |          | 配送処理日時 |
 
 + Parents
-	- [Product](#products)(1) [FK(ProductId)] 	
+	- [Product](#products)(1)[FK(ProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -96,8 +96,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | Amount           | Int32 |        |        |          |    O     | 数量           |
 
 + Parents
-	- [Campaign](#campaigns)(1) [FK(CampaignId)] 	
-	- [Product](#products)(1) [FK(BenefitProductId)] 	
+	- [Campaign](#campaigns)(1)[FK(CampaignId)] 	
+	- [Product](#products)(1)[FK(BenefitProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -128,8 +128,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | ConfigParameter  | String | Max    |        |          |          | キャンペーンパラメータ   |
 
 + Parents
-	- [Campaign](#campaigns)(1) [FK(CampaignId)] 	
-	- [CampaignActionMaster](#campaignactionmaster)(1) [FK(CampaignActionId)] 	
+	- [Campaign](#campaigns)(1)[FK(CampaignId)] 	
+	- [CampaignActionMaster](#campaignactionmaster)(1)[FK(CampaignActionId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -144,7 +144,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | MaxUsagePerAccount | Int32  | Max    |        |          |    O     | 1アカウント当たりの最大適用数。NULLの場合は無制限 |
 
 + Parents
-	- [Campaign](#campaigns)(1) [FK(CampaignId)]  	
+	- [Campaign](#campaigns)(1)[FK(CampaignId)]  	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -200,7 +200,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | MemoId                | Int64  |                  |        |          |    O     | メモID             |
 
 + Parents
-	- [CategoryGroup](#categorygroups)(1) [FK(CategoryGroupId)] 	
+	- [CategoryGroup](#categorygroups)(1)[FK(CategoryGroupId)] 	
 + Children
 + Realations
 	- [Campaigns](#campaigns)(*)
@@ -237,7 +237,7 @@ ECデータは、Web API 経由でアクセス可能です。
 ---------------------------------------------------------------------------------------
 
 ## DeliveryCharges
-送料テーブル 配送ソースと都道府県で一意に決まる
+送料テーブル配送ソースと都道府県で一意に決まる
 
 |     列名     |   型    | 最大長 | 主キー | Identity | NULL許容 |     説明     |
 | ------------ | ------- | ------ | :----: | :------: | :------: | ------------ |
@@ -246,8 +246,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | Charge       | Decimal |        |        |          |          | 送料         |
 
 + Parents
-	- [Prefecture](#prefectures)(1) [FK(PrefectureId)] 	
-	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
+	- [Prefecture](#prefectures)(1)[FK(PrefectureId)] 	
+	- [ShipSource](#shipsources)(1)[FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -269,10 +269,10 @@ ECデータは、Web API 経由でアクセス可能です。
 | MailAddress    | String   | 256              |        |          |    O     | メールアドレス                                                                   |
 
 + Parents
-	- [Address](#addresses)(0..1) [FK(AddressId)] 	
-	- [PurchaseOrder](#purchaseorders)(1) [FK(OrderId)] 	
-	- [ShipSource](#shipsources)(0..1) [FK(ShipSourceId)] 	
-	- [WrappingType](#wrappingtypes)(0..1) [FK(WrappingTypeId)] 	
+	- [Address](#addresses)(0..1)[FK(AddressId)] 	
+	- [PurchaseOrder](#purchaseorders)(1)[FK(OrderId)] 	
+	- [ShipSource](#shipsources)(0..1)[FK(ShipSourceId)] 	
+	- [WrappingType](#wrappingtypes)(0..1)[FK(WrappingTypeId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -327,7 +327,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | Remains           | Int32    |        |        |          |    O     | 残量         |
 
 + Parents
-	- [Product](#products)(1) [FK(ProductId)] 	
+	- [Product](#products)(1)[FK(ProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -357,7 +357,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | RegisterAt | DateTime |        |        |          |          | 登録日時 |
 
 + Parents
-	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -373,7 +373,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | EndHour       | Int32  |                 |        |          |          | 到着上限                                  |
 
 + Parents
-	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
+	- [ShipSource](#shipsources)(1)[FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -394,7 +394,7 @@ ECデータは、Web API 経由でアクセス可能です。
 ---------------------------------------------------------------------------------------
 
 ## Leadtimes
-リードタイム 郵便番号別に必要になるリードタイム
+リードタイム郵便番号別に必要になるリードタイム
 
 |       列名       |   型    |      最大長      | 主キー | Identity | NULL許容 |                               説明                                |
 | ---------------- | ------- | ---------------- | :----: | :------: | :------: | ----------------------------------------------------------------- |
@@ -429,7 +429,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | RelateId     | Int64    |        |        |          |    O     | 受注ID               |
 
 + Parents
-	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(0..1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -450,7 +450,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | TemplateData | String   | Max    |        |          |          | テンプレート引数     |
 
 + Parents
-	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(0..1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -499,8 +499,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | MemoId          | Int64    |                  |        |          |    O     | メモID             |
 
 + Parents
-	- [Memo](#memos)(0..1) [FK(MemoId)] 	
-	- [OperationReason](#operationreasons)(1) [FK(Reason)] 	
+	- [Memo](#memos)(0..1)[FK(MemoId)] 	
+	- [OperationReason](#operationreasons)(1)[FK(Reason)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -574,9 +574,9 @@ ECデータは、Web API 経由でアクセス可能です。
 | AutoCancelDate       | DateTime |                  |        |          |    O     | 自動キャンセル日時                                                             |
 
 + Parents
-	- [InvoiceAddress](#addresses)(0..1) [FK(InvoiceAddressId)] 	
-	- [OrderedAddress](#addresses)(0..1) [FK(OrderedAddressId)] 	
-	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
+	- [InvoiceAddress](#addresses)(0..1)[FK(InvoiceAddressId)] 	
+	- [OrderedAddress](#addresses)(0..1)[FK(OrderedAddressId)] 	
+	- [UserAccount](#useraccounts)(0..1)[FK(UserNo)] 	
 + Children
 	- [PurchaseOrders](#purchaseorders)(*)
 + Realations
@@ -614,9 +614,9 @@ ECデータは、Web API 経由でアクセス可能です。
 | Description          | String   | 256    |        |          |    O     | 説明 (カートイン時に付与可能)                                 |
 
 + Parents
-	- [Product](#products)(1) [FK(ProductId)] 	
-	- [PurchaseOrder](#purchaseorders)(1) [FK(OrderId)] 	
-	- [ReserveStock](#reservestocks)(0..1) [FK(ReserveId)] 	
+	- [Product](#products)(1)[FK(ProductId)] 	
+	- [PurchaseOrder](#purchaseorders)(1)[FK(OrderId)] 	
+	- [ReserveStock](#reservestocks)(0..1)[FK(ReserveId)] 	
 + Children
 	- [ReturnOrderLines](#returnorderlines)(*)
 + Realations
@@ -674,7 +674,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | AllocateDate    | DateTime |                  |        |          |    O     | アーカイブ日時                                        |
 
 + Parents
-	- [PointBankAccount](#pointbankaccounts)(1) [FK(UserNo)] 	
+	- [PointBankAccount](#pointbankaccounts)(1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -728,7 +728,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | RelateKey       | String   | 64(fixed length) |        |          |          | 受注Id                                                |
 
 + Parents
-	- [PointBankAccount](#pointbankaccounts)(1) [FK(UserNo)] 	
+	- [PointBankAccount](#pointbankaccounts)(1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -757,7 +757,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | LimitAmount | Int32 |        |        |          |          | 販売可能数 |
 
 + Parents
-	- [Product](#products)(1) [FK(ProductId)] 	
+	- [Product](#products)(1)[FK(ProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -818,8 +818,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | OrderedProduct    | Boolean  |                  |        |          |    O     | 受注生産品フラグ                                          |
 
 + Parents
-	- [DeliveryPattern](#deliverypatterns)(0..1) [FK(DeliveryPatternId)] 	
-	- [SalesPattern](#salespatterns)(0..1) [FK(SalesPatternId)] 	
+	- [DeliveryPattern](#deliverypatterns)(0..1)[FK(DeliveryPatternId)] 	
+	- [SalesPattern](#salespatterns)(0..1)[FK(SalesPatternId)] 	
 + Children
 	- [BeginingSalesControls](#beginingsalescontrols)(*)
 	- [BenefitItems](#benefititems)(*)
@@ -849,7 +849,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | SerializeData | String   | Max    |        |          |          | シリアライズデータ |
 
 + Parents
-	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -877,7 +877,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | Value   | String | Max    |        |          |    O     | 値     |
 
 + Parents
-	- [PurchaseOrder](#purchaseorders)(1) [FK(OrderId)] 	
+	- [PurchaseOrder](#purchaseorders)(1)[FK(OrderId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -941,7 +941,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | PointPaymentForPaymentCharge  | Decimal  |                 |        |          |          | TotalUsagePointの内、決済手数料に使用した量                      |
 
 + Parents
-	- [OrderCustomer](#ordercustomers)(1) [FK(CustomerId)] 	
+	- [OrderCustomer](#ordercustomers)(1)[FK(CustomerId)] 	
 + Children
 	- [DeliveryOrder](#deliveryorders)(0..1)
 	- [OrderLines](#orderlines)(*)
@@ -988,10 +988,10 @@ ECデータは、Web API 経由でアクセス可能です。
 | SiteId         | Int32    |        |        |          |          | サイトID                                                                |
 
 + Parents
-	- [Product](#products)(1) [FK(ProductId)] 	
+	- [Product](#products)(1)[FK(ProductId)] 	
 	- [PurchaseOrder](#purchaseorders)(0..1) 	
-	- [ReserveStock](#reservestocks)(0..1) [FK(ReserveStockId)] 	
-	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
+	- [ReserveStock](#reservestocks)(0..1)[FK(ReserveStockId)] 	
+	- [UserAccount](#useraccounts)(1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1012,9 +1012,9 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 	- [ExternalStockSource](#externalstocksources)(0..1) 	
-	- [Product](#products)(0..1) [FK(ProductId)] 	
+	- [Product](#products)(0..1)[FK(ProductId)] 	
 	- [PurchaseOrder](#purchaseorders)(0..1) 	
-	- [UserAccount](#useraccounts)(0..1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(0..1)[FK(UserNo)] 	
 + Children
 	- [OrderLines](#orderlines)(*)
 	- [ReserveRequests](#reserverequests)(*)
@@ -1055,9 +1055,9 @@ ECデータは、Web API 経由でアクセス可能です。
 | Description          | String   | 256    |        |          |    O     | 説明                                                      |
 
 + Parents
-	- [OrderLine](#orderlines)(0..1) [FK(PurchaseOrderLineId)] 	
-	- [Product](#products)(1) [FK(ProductId)] 	
-	- [ReserveStock](#reservestocks)(0..1) [FK(ReserveId)] 	
+	- [OrderLine](#orderlines)(0..1)[FK(PurchaseOrderLineId)] 	
+	- [Product](#products)(1)[FK(ProductId)] 	
+	- [ReserveStock](#reservestocks)(0..1)[FK(ReserveId)] 	
 	- [ReturnOrder](#returnorders)(1) 	
 + Children
 	- [ParentReturnOrderLine](#returnorderlines)(*)
@@ -1109,8 +1109,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | PointPaymentForPaymentCharge  | Decimal  |        |        |          |          | ポイント使用額　手数料分                                  |
 
 + Parents
-	- [PurchaseOrder](#purchaseorders)(1) [FK(PurchaseOrderId)] 	
-	- [ReturnReason](#returnreasons)(1) [FK(ReturnReasonId)] 	
+	- [PurchaseOrder](#purchaseorders)(1)[FK(PurchaseOrderId)] 	
+	- [ReturnReason](#returnreasons)(1)[FK(ReturnReasonId)] 	
 + Children
 	- [OriginalReturnOrder](#returnorders)(*)
 	- [RelateReturnOrders](#returnorders)(*)
@@ -1181,7 +1181,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | MaxMailDeliveryPerOrder | Int32   |        |        |          |    O     | 受注毎最大メール便数                                      |
 
 + Parents
-	- [StockControl](#stockcontrols)(1) [FK(StockControlMode)] 	
+	- [StockControl](#stockcontrols)(1)[FK(StockControlMode)] 	
 + Children
 	- [Products](#products)(*)
 	- [SalesStockAllocationPriorities](#salesstockallocationpriorities)(*)
@@ -1242,7 +1242,7 @@ ECデータは、Web API 経由でアクセス可能です。
 
 + Parents
 	- [ExternalStockSource](#externalstocksources)(1) 	
-	- [SalesPattern](#salespatterns)(1) [FK(SalesPatternId)] 	
+	- [SalesPattern](#salespatterns)(1)[FK(SalesPatternId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1274,8 +1274,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | DividePrice    | Decimal |        |        |          |          | 分割価格     |
 
 + Parents
-	- [ChildProduct](#products)(1) [FK(ChildProductId)] 	
-	- [ParentProduct](#products)(1) [FK(SetProductId)] 	
+	- [ChildProduct](#products)(1)[FK(ChildProductId)] 	
+	- [ParentProduct](#products)(1)[FK(SetProductId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1289,7 +1289,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | Holiday      | DateTime |        |   O    |          |          | 休日         |
 
 + Parents
-	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
+	- [ShipSource](#shipsources)(1)[FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1304,7 +1304,7 @@ ECデータは、Web API 経由でアクセス可能です。
 | ZipCode         | String | 10(fixed length) |   O    |          |          | 郵便番号       |
 
 + Parents
-	- [ShipSource](#shipsources)(1) [FK(ShipSourceId)] 	
+	- [ShipSource](#shipsources)(1)[FK(ShipSourceId)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1398,8 +1398,8 @@ ECデータは、Web API 経由でアクセス可能です。
 | AddressName | String | 128    |        |          |          | 住所名[AddressName制約](../../validation#addressname) |
 
 + Parents
-	- [Address](#addresses)(1) [FK(AddressId)] 	
-	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
+	- [Address](#addresses)(1)[FK(AddressId)] 	
+	- [UserAccount](#useraccounts)(1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1461,7 +1461,7 @@ Deprecate
 | LastLoginDate    | DateTime |        |        |          |    O     | 最終ログイン日時 |
 
 + Parents
-	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1528,8 +1528,8 @@ Deprecate
 | Token         | String   | 32(fixed length) |        |          |    O     | トークン         |
 
 + Parents
-	- [Address](#addresses)(1) [FK(AddressId)] 	
-	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
+	- [Address](#addresses)(1)[FK(AddressId)] 	
+	- [UserAccount](#useraccounts)(1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1544,7 +1544,7 @@ Deprecate
 | RoleParameter | String | 1024   |        |          |    O     | ロール引数 |
 
 + Parents
-	- [UserAccount](#useraccounts)(1) [FK(UserNo)] 	
+	- [UserAccount](#useraccounts)(1)[FK(UserNo)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1558,7 +1558,7 @@ Deprecate
 | LastUpdate | DateTime |        |        |          |    O     | 最終更新日時 |
 
 + Parents
-	- [UserAccount](#useraccounts)(1) [FK(Id)] 	
+	- [UserAccount](#useraccounts)(1)[FK(Id)] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1589,7 +1589,7 @@ Deprecate
 | Street        | String | 128              |        |          |          | 通り       |
 
 + Parents
-	- [ZipCode](#zipcodes)(1) [FK()] 	
+	- [ZipCode](#zipcodes)(1)[FK()] 	
 + Children
 + Realations
 ---------------------------------------------------------------------------------------
@@ -1604,7 +1604,7 @@ Deprecate
 | PrefectureId | Int32  |                  |        |          |          | 都道府県  |
 
 + Parents
-	- [Prefecture](#prefectures)(1) [FK(PrefectureId)] 	
+	- [Prefecture](#prefectures)(1)[FK(PrefectureId)] 	
 + Children
 	- [DstZipCode](#zipcodes)(0..1)
 	- [SrcZipCode](#zipcodes)(0..1)

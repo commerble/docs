@@ -56,10 +56,10 @@ cascade:
 
 「EC業務特化型クラウド」を提供する株式会社Commerbleは、設立後3年間での30件超にわたる自社EC構築事例をもとに
 これまで受付てきたカスタム部分を「自社EC仕様まとめ」として公開します。
-情報はGitHub上でオープンに公開し、修正や加筆要望もPull requests として受け付けます。
+情報はGitHub上でオープンに公開し、修正や加筆要望もPull requestsとして受け付けます。
 
 現時点では企業からの公開となっていますが、賛同してくださる方が増えた場合はコミュニティとしての公開を考えています。
-賛同してくださる方のコメントやご指摘、Pull requests を待っています。
+賛同してくださる方のコメントやご指摘、Pull requestsを待っています。
 
 ## 「自社ECの仕様を学ぼう」の執筆者について
 
@@ -73,7 +73,7 @@ cascade:
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-CC BY-SA 4.0 で公開します。CC BY-SA 4.0 については以下のURLに詳しく書かれています。
+CC BY-SA 4.0で公開します。CC BY-SA 4.0については以下のURLに詳しく書かれています。
 
 - [CC BY-SA 4.0 について](https://creativecommons.org/licenses/by-sa/4.0/)
 

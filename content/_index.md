@@ -11,7 +11,7 @@ cascade:
 {{< blocks/cover height="min" >}}
 <h1 class="display-1 mt-0 mt-md-5 pb-4">Commerble Docs とは</h1>
 
-Commerble Docs は、Eコマースに特化したクラウドプラットフォームの「Commerble EC PaaS」の特徴・仕様と、自社Eコマースの分析の手引きとなる 「自社のECを学ぼう」という２つのコンテンツを提供しています。
+Commerble Docsは、Eコマースに特化したクラウドプラットフォームの「Commerble EC PaaS」の特徴・仕様と、自社Eコマースの分析の手引きとなる「自社のECを学ぼう」という2つのコンテンツを提供しています。
 
 {{< /blocks/cover >}}
 
