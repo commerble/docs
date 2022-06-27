@@ -4,11 +4,13 @@ weight: 1
 description: 
 ---
 
+<!-- textlint-disable ja-technical-writing/no-exclamation-question-mark -->
+
 この章では、テンプレートヘルパーについて説明します。
 
 テンプレートヘルパーはサイトテンプレートもしくはカートテンプレートで使用できるAPI関数です。
 
-テンプレートヘルパーは標準でいくつかのAPI関数が利用できますが、[オーダーカスタム]で作成することもできます。
+テンプレートヘルパーは標準でいくつかのAPI関数が利用できますが、[オーダーカスタム]で作成できます。
 
 ## SystemTime
 
@@ -568,3 +570,5 @@ SSLを使用するかを真偽値で渡し、ホストURLを取得します。
 ```
 
 [オーダーカスタム]: ../../features/customization/#オーダーカスタム "オーダーカスタム"
+
+<!-- textlint-enable ja-technical-writing/no-exclamation-question-mark -->

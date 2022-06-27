@@ -1,7 +1,6 @@
 ---
 title: "マーケティング"
 weight: 9999
-description: 
+description:
+draft: true 
 ---
-
-TODO:

@@ -4,6 +4,7 @@ weight: 40
 description: 
 ---
 
+<!-- textlint-disable-->
 ECデータの一部のカラムには次の制約が設けられいます。この制約はカスタマイズできますが、配送業者システム、伝票システム、基幹システムで文字化けやエラーが発生しないようにデータが流れるすべて経路の最大公約数をとる必要があります。
 
 ## AddressName
@@ -100,3 +101,4 @@ ECデータの一部のカラムには次の制約が設けられいます。こ
 
 対象カラム  
 [Address.ZipCode](../data/ec#addresses)
+<!-- textlint-enable -->

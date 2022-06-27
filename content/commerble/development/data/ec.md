@@ -3,6 +3,7 @@ title: "ECデータ"
 weight: 40
 description: 
 ---
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period-->
 
 ECデータとは、Commerbleが定義するECシステムの標準データです。  
 受注情報、在庫情報、商品基本情報などがECデータに該当します。
@@ -394,7 +395,7 @@ ECデータは、Web API経由でアクセス可能です。
 ---------------------------------------------------------------------------------------
 
 ## Leadtimes
-リードタイム郵便番号別に必要になるリードタイム
+リードタイム郵便番号別に必要なリードタイムデータ
 
 |       列名       |   型    |      最大長      | 主キー | Identity | NULL許容 |                               説明                                |
 | ---------------- | ------- | ---------------- | :----: | :------: | :------: | ----------------------------------------------------------------- |
@@ -603,7 +604,7 @@ ECデータは、Web API経由でアクセス可能です。
 | Tax                  | Decimal  |        |        |          |          | 税                                                            |
 | PointUsage           | Decimal  |        |        |          |          | ポイント使用額                                                |
 | PointUsageTax        | Decimal  |        |        |          |          | ポイント使用額（税分）                                        |
-| PointUsagePrice      | Decimal  |        |        |          |          | ポイント使用額（単価x数量分）                                 |
+| PointUsagePrice      | Decimal  |        |        |          |          | ポイント使用額（単価&times;数量分）                                 |
 | PointCharge          | Decimal  |        |        |          |          | 付与ポイント                                                  |
 | PointChargeRate      | Int32    |        |        |          |          | ポイント付与率                                                |
 | AllocateCompleteDate | DateTime |        |        |          |    O     | 引当完了日時                                                  |
@@ -1611,3 +1612,5 @@ Deprecate
 	- [ZipCodeAddrs](#zipcodeaddrs)(*)
 + Realations
 ---------------------------------------------------------------------------------------
+
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period-->

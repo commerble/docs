@@ -4,6 +4,8 @@ weight: 40
 description: 
 ---
 
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period-->
+
 メタデータとは、Commerbleが定義するCMSシステムの標準データです。  
 テンプレートやルーティング情報が該当します。メタデータのスキーマ仕様は固定でカスタマイズはできません。
 
@@ -216,3 +218,4 @@ description:
     - [TemplateParameters](#templateparameters)
 + Realations
 ---------------------------------------------------------------------------------------
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period-->

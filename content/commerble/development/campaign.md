@@ -17,7 +17,9 @@ Commerbleにおいて、キャンペーンとフィルターは同一ですが�
 
 ![キャンペーンフロー](campaign_flow.png)
 
+<!-- textlint-disable ja-technical-writing/sentence-length -->
 青色がパイプラインモジュール、橙色がキャンペーンモジュールです。各パイプラインモジュールの実行前に処理するキャンペーンモジュールを各パイプラインモジュールの上、各パイプラインモジュールの実行後に処理するキャンペーンモジュールを各パイプラインモジュールの下に配置されています。
+<!-- textlint-enable ja-technical-writing/sentence-length -->
 
 キャンペーンはパイプラインと異なり、実施するキャンペーンモジュールを管理画面から設定可能です。
 

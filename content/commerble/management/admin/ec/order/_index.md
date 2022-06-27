@@ -4,7 +4,7 @@ weight: 10
 description: 
 ---
 
-受注ページでは、受注情報の閲覧・編集・管理を行います。
+受注ページでは、受注情報の閲覧・編集・管理します。
 
 ## 受注検索
 検索条件を指定して受注を一覧表示します。
@@ -66,7 +66,7 @@ description:
 ![受注明細一覧](detail-list.png)
 
 **セット品の明細**  
-セット品の商品は、親品番/子品番共に明細レコードに表示されます。  
+セット品の商品は、親品番/子品番共の明細レコードに表示されます。  
 子商品レコードにある価格は**按分価格**です。
 
 ![セット商品受注明細一覧](detail-set-list.png)
@@ -89,18 +89,22 @@ description:
 ![メール一覧](mail-list.png)
 
 ## 受注キャンセル
+
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 {{% alert color="primary" %}}
-受注キャンセルは**出荷前の受注**に対して行います。カスタマーからの電話・メールでのキャンセル依頼、
-欠品等により出荷出来ない状況になった時に行います。
+受注キャンセルは**出荷前の受注**に対して行います。
+カスタマーからの電話・メールでのキャンセル依頼、欠品等により出荷出来ない状況になった時、受注キャンセルを行います。
 {{% /alert %}}
+
 {{% alert color="warning" %}}
-クレジット決済、コンビニ決済など受注キャンセル後に、決済サービスで処理が必要な場合があります。
+クレジット決済、コンビニ決済など受注キャンセル後に、決済サービスで処理が必要です。
 
 - 受注キャンセル後に決済サービスの管理機能から手動で決済キャンセルを行う
 - 受注キャンセルに連動して決済サービスのAPIを呼び出しキャンセルを行う機能の開発
 
 など対応を想定してください。
 {{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 
 ### 出荷前「全」キャンセル
 受注基本情報内の**受注キャンセル**ボタンから受注の全キャンセルを行い、キャンセルされた商品の在庫数を指定場所に戻す事が可能です。
@@ -113,21 +117,24 @@ description:
   - 加算しない
   - 通常加算する（出荷可能数へ加算）
   - 予備加算する（予備在庫へ加算）
-- **販売可能数**: 販売可能数として戻すかどうか選択します。
+- **販売可能数**: 販売可能数として戻すか選択します。
   - 加算しない
   - 加算する
 
 オプション設定が済んだら**受注キャンセル**ボタンよりキャンセル処理を実行します。
 
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 {{% alert color="warning" %}}
 セット品の場合、「子商品」は**出荷可能数**、「親商品」は**販売可能数**に在庫戻しが行われます。  
 キャンペーン機能で付与される明細種別が「**特典**（明細印字なし）」の商品に対しては、在庫戻しは行われません。
 {{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 
 受注キャンセルを行うと、受注ステータスは**キャンセル**になり、キャンセル前のステータスが保存されます。
 
 ![キャンセル後](post-cancel-state.png)
 
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period,ja-technical-writing/sentence-length -->
 {{% alert color="warning" %}}
 Commerble標準のポイント機能を利用している場合、*お客様が利用されたポイントは自動返却し、着荷後付与予定となっている仮ポイントは減算されます。*  
 - お客様使用ポイント → 本ポイントへ戻し
@@ -135,6 +142,8 @@ Commerble標準のポイント機能を利用している場合、*お客様が�
 
 ポイントの有効期限を編集する場合は、会員のポイント情報を変更して下さい。 
 {{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period,ja-technical-writing/sentence-length -->
+
 
 ### 出荷前「部分」キャンセル
 受注明細一覧からキャンセルとなった商品を**選択**し、詳細画面の**編集**ボタンを押下します。  
@@ -146,24 +155,28 @@ Commerble標準のポイント機能を利用している場合、*お客様が�
 
 ![明細キャンセル結果](detail-cancel-result.png)
 
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 {{% alert color="warning" %}}
 合計金額が変更された場合、[決済基本情報](.#決済基本情報) の金額も変更する必要があります。  
 Commerble標準のポイント機能を利用している場合、受注に対するポイントの調整を**手動**で行う必要があります。会員のポイント情報を変更して下さい。
 ポイントの有効期限を編集する場合も同様です。
 {{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 
 ## 受注返品
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 {{% alert color="primary" %}}
-受注返品は**出荷後の受注**に対して行います。受け取り拒否や長期不在など商品がお客様に着荷せずに戻ってきた時や、商品に不良がありお客様から返送された時に返品処理を行います。
+受注返品は**出荷後の受注**に対して行います。受け取り拒否や長期不在など商品がお客様に着荷せず戻ってきた時や、商品に不良がありお客様から返送された時に返品処理を行います。
 {{% /alert %}}
 {{% alert color="warning" %}}
-クレジット決済、コンビニ決済など受注返品後に、決済サービスで処理が必要な場合があります。
+クレジット決済、コンビニ決済など受注返品後に、決済サービスで処理が必要となる場合があります。
 
 - 受注返品後に決済サービスの管理機能から手動で決済取消を行う
 - 受注返品に連動して決済サービスのAPIを呼び出し取消処理を行う機能の開発
 
 など対応を想定してください。
 {{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 ### 着荷前「全」返品
 受け取り拒否、長期不在等、着荷前受注の「全」返品処理を行います。  
 受注基本情報内の**受注返品**ボタンから受注の全返品処理を行い、返品された商品の在庫数を指定場所に戻す事が可能です。
@@ -172,18 +185,19 @@ Commerble標準のポイント機能を利用している場合、受注に対�
 
 受注返品時は以下のオプションを指定できます。
 
-- **出荷可能数**: 在庫引当済み商品についての処理を選択します。
+- **出荷可能数**: 在庫引当済み商品についての処理を選択します
   - 加算しない
   - 通常加算する（出荷可能数へ加算）
   - 予備加算する（予備在庫へ加算）
-- **販売可能数**: 販売可能数として戻すかどうか選択します。
+- **販売可能数**: 販売可能数として戻すか選択します
   - 加算しない
   - 加算する
-- **返品理由**: 返品理由を選択し、データに残すことができます。
+- **返品理由**: 返品理由を選択し、データに残すことができます
 
 オプション設定が済んだら**受注返品**ボタンよりキャンセル処理を実行します。  
 受注返品を行うと、[返品一覧](.#返品一覧)に返品レコードが追加され、返品明細が自動作成されます。  
 
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period,ja-technical-writing/sentence-length -->
 {{% alert color="warning" %}}
 Commerble標準のポイント機能を利用している場合、*お客様が利用されたポイントは自動返却し、着荷後付与予定となっている仮ポイントは減算されます。*  
 - お客様使用ポイント → 本ポイントへ戻し
@@ -192,10 +206,13 @@ Commerble標準のポイント機能を利用している場合、*お客様が�
 ポイントの有効期限を編集する場合は、会員のポイント情報を変更して下さい。  
 *着荷前の返品処理は、上記ポイント戻しが有効な場合にご利用下さい。*
 {{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period,ja-technical-writing/sentence-length -->
 
+<!-- textlint-disable ja-technical-writing/sentence-length -->
 *この操作は着荷前の受注（受取拒否、不在返品等）に対してのみ行って下さい。*  
 *着荷後返品された受注に対して「受注返品」は行わないで下さい。*  
 *着荷後返品された受注の返品作業は、画面下の「返品情報の編集」より行って下さい。*
+<!-- textlint-enable ja-technical-writing/sentence-length -->
 
 ### 着荷後返品
 着荷後の返品は、受注情報から返品情報データを手動で作成する必要があります。  
@@ -226,22 +243,26 @@ Commerble標準のポイント機能を利用している場合、*お客様が�
 
 ![返品明細作成後](return-detail-created.png)
 
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period,ja-technical-writing/sentence-length -->
 {{% alert color="warning" %}}
 在庫数の調整は、[在庫](../stock)ページから編集作業を行って下さい。
 
 受注に対するポイントの調整を**手動**で行う必要があります。会員のポイント情報を変更して下さい。
 ポイントの有効期限を編集する場合も同様です。
 {{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period,ja-technical-writing/sentence-length -->
 
 ### 受注複製
 受注基本情報内の**受注複製**ボタンから、受注の複製処理を行います。
 
 ![受注複製ボタン](clone-button.png)
 
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period,ja-technical-writing/sentence-length -->
 {{% alert color="warning" %}}
 複製された注文は、新たな注文番号が振番され、受注ステータスは**保留**でコピーされます。
 複製された注文の受注情報には、複製元の受注IDが保存されます。
 {{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period,ja-technical-writing/sentence-length -->
 
 ![複製受注](clone-order.png)
 

@@ -4,7 +4,7 @@ weight: 80
 description: 
 ---
 
-販売キャンペーンの管理と登録を行います。  
+販売キャンペーンの管理と登録します。  
 購入時にキャンペーンが適用される条件は、指定した**全ての適用条件を満たした**場合に限ります。  
 キャンペーンを複数登録し、1受注で複数のキャンペーン条件を満たした場合、それぞれのキャンペーンが適用されます。
 （但し標準では値引きキャンペーンに関しては、最も値引き率の高いキャンペーンが適用されます）
@@ -26,11 +26,15 @@ description:
 ![基本情報](basic-info.png)
 
 ### 適用カテゴリ
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period-->
 {{% alert color="primary" %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period-->
 適用カテゴリ・適用商品いずれかの指定がある場合は、適用カテゴリが設定された商品、
 または適用商品に登録されている商品がキャンペーンの対象商品になります。
 未登録の場合は、全ての商品が対象になります。
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 {{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 適用対象のカテゴリを表示します。  
 **新規作成**ボタンより、カテゴリを追加することが出来ます。  
 **削除**ボタンより、カテゴリを追加することが出来ます。
@@ -38,11 +42,15 @@ description:
 ![適用カテゴリ](apply-category.png)
 
 ### 適用商品
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 {{% alert color="primary" %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 適用カテゴリ・適用商品いずれかの指定がある場合は、適用カテゴリが設定された商品、
 または適用商品に登録されている商品がキャンペーンの対象商品になります。
 未登録の場合は、全ての商品が対象になります。
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 {{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 適用対象の商品を表示します。  
 **新規作成**ボタンより、商品を追加することが出来ます。  
 **削除**ボタンより、商品を追加することが出来ます。  
@@ -55,7 +63,9 @@ description:
 適用コードが登録されている場合、購入フローで登録されたコードを入力した時にキャンペーンが適用されます。
 未登録の場合、コードの入力をしなくてもキャンペーンは適用されます。  
 最大使用回数の指定がある場合は、その回数まで購入でコードを使用できます。  
+<!-- textlint-disable ja-technical-writing/sentence-length -->
 *最大使用回数の指定がある場合は、ゲストはコードを入力してもキャンペーンは適用されません。（ゲストの購入は使用回数を数えられないため）*
+<!-- textlint-enable ja-technical-writing/sentence-length -->
 {{% /alert %}}
 適用コード（クーポンコード）を表示します。  
 **新規作成**ボタンより、コードを追加することが出来ます。  

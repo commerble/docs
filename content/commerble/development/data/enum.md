@@ -4,6 +4,7 @@ weight: 40
 description: 
 ---
 
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period-->
 # 定義値(Enum)
 [ECデータ](../ec) で利用される定義値の一覧です。
 
@@ -247,3 +248,5 @@ description:
 
 [MailRequests.MailType](../ec#mailrequests),
 [MailHistory.MailType](../ec#mailhistory)
+
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period-->
