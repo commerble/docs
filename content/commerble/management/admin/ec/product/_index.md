@@ -138,26 +138,28 @@ TSVファイルをアップロードして一括でデータを登録します�
 
 ### 商品更新TSVファイル
 
-|     カラム名      | 必須  |       フォーマット       |                                     説明                                     |
-| :---------------- | :---: | :----------------------- | :--------------------------------------------------------------------------- |
-| ProductId         |   O   | 数値                     | 内部商品ID                                                                   |
-| ProductType       |   O   | 数値                     | [ProductType](../../../../development/data/enum#producttype)                 |
-| ExternalId1       |   O   | `^[^\x00-\x1f]{1,32}$`   | 商品型番・商品コード                                                         |
-| ExternalId2       |       | `^[^\x00-\x1f]{1,32}$`   | 商品枝番                                                                     |
-| ExternalId3       |       | `^[^\x00-\x1f]{1,32}$`   | 品目コード                                                                   |
-| ExternalId4       |       | `^[^\x00-\x1f]{1,32}$`   | JANコード                                                                    |
-| ProductName       |   O   | `^[^\x00-\x1f]+{1,128}$` | 商品名                                                                       |
-| SetOnly           |   O   | 真偽値                   | セット専売商品フラグ                                                         |
-| SalesPatternId    |   O   | 数値                     | 販売パターンのID                                                             |
-| DeliveryPatternId |   O   | 数値                     | 配送パターンのID                                                             |
-| UnitPrice         |   O   | 数値                     | 単価（税抜）                                                                 |
-| TaxationPrice     |   O   | 数値                     | 課税単価（税抜）、もしくは、税額。販売パターンの**税丸めモード**により変動。 |
-| SalesStatus       |   O   | 数値                     | [SalesStatus](../../../../development/data/enum#salesstatus)                 |
-| SalesStart        |   O   | 日付日時                 | 販売開始日時                                                                 |
-| SalesEnd          |       | 日付日時                 | 販売終了日時                                                                 |
-| ReleaseDate       |       | 日付日時                 | 発売日                                                                       |
-| ReReleaseDate     |       | 日付日時                 | 再販日                                                                       |
-| Cero              |       | `[0-4]`                  | CEROレベル                                                                   |
+|     カラム名      |  必須   |       フォーマット       |                                     説明                                     |
+| :---------------- | :-----: | :----------------------- | :--------------------------------------------------------------------------- |
+| ProductId         |    O    | 数値                     | 内部商品ID                                                                   |
+| ProductType       | &Delta; | 数値                     | [ProductType](../../../../development/data/enum#producttype)                 |
+| ExternalId1       |         | `^[^\x00-\x1f]{1,32}$`   | 商品型番・商品コード                                                         |
+| ExternalId2       |         | `^[^\x00-\x1f]{1,32}$`   | 商品枝番                                                                     |
+| ExternalId3       |         | `^[^\x00-\x1f]{1,32}$`   | 品目コード                                                                   |
+| ExternalId4       |         | `^[^\x00-\x1f]{1,32}$`   | JANコード                                                                    |
+| ProductName       |         | `^[^\x00-\x1f]+{1,128}$` | 商品名                                                                       |
+| SetOnly           | &Delta; | 真偽値                   | セット専売商品フラグ                                                         |
+| SalesPatternId    | &Delta; | 数値                     | 販売パターンのID                                                             |
+| DeliveryPatternId | &Delta; | 数値                     | 配送パターンのID                                                             |
+| UnitPrice         | &Delta; | 数値                     | 単価（税抜）                                                                 |
+| TaxationPrice     | &Delta; | 数値                     | 課税単価（税抜）、もしくは、税額。販売パターンの**税丸めモード**により変動。 |
+| SalesStatus       | &Delta; | 数値                     | [SalesStatus](../../../../development/data/enum#salesstatus)                 |
+| SalesStart        | &Delta; | 日付日時                 | 販売開始日時                                                                 |
+| SalesEnd          |         | 日付日時                 | 販売終了日時                                                                 |
+| ReleaseDate       |         | 日付日時                 | 発売日                                                                       |
+| ReReleaseDate     |         | 日付日時                 | 再販日                                                                       |
+| Cero              |         | `[0-4]`                  | CEROレベル                                                                   |
+
+&Delta; カラムを用意する場合は必須
 
 ### セット商品追加TSVファイル
 
