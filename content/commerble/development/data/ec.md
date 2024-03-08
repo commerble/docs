@@ -619,8 +619,26 @@ ECデータは、Web API経由でアクセス可能です。
 	- [PurchaseOrder](#purchaseorders)(1)[FK(OrderId)] 	
 	- [ReserveStock](#reservestocks)(0..1)[FK(ReserveId)] 	
 + Children
+	- [OrderLineServices](#orderlineservices)(*)
 	- [ReturnOrderLines](#returnorderlines)(*)
 + Realations
+---------------------------------------------------------------------------------------
+
+## OrderLineServices
+受注明細サービス情報
+
+|    列名     |   型   | 最大長 | 主キー | Identity | NULL許容 |        説明        |
+| ----------- | ------ | ------ | :----: | :------: | :------: | ------------------ |
+| OrderId     | Int64  |        |        |          |          | 受注ID             |
+| OrderLineId | Int64  |        |   O    |          |          | 受注明細ID         |
+| Code        | String | 64     |   O    |          |          | サービス情報コード |
+| Value       | String |        |        |          |    O     | サービス情報値     |
+
++ Parents
+	- [OrderLine](#orderlines)(1)[FK(OrderLineId)]
++ Children
++ Realations
+
 ---------------------------------------------------------------------------------------
 
 ## OrdersLastUpdates
