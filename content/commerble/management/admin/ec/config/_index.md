@@ -30,20 +30,20 @@ description:
 
 CAPTCHAの各設定項目を次に示します。
 
-|    項目    |       CAPTCHA       |                                                説明                                                 |
-| :--------- | :-----------------: | :-------------------------------------------------------------------------------------------------- |
-| CAPTCHA    |          *          | 使用するCAPTCHAサービスを選択します。reCAPTCHA Essentialsの構成にはreCAPTCHA Standardを使用します。 |
-| Targets    |          *          | CAPTCHAチェックを行うエンドポイントを選択します。※対応は次表に示します。                            |
-| Threashold |          *          | リクエストを拒否する閾値を設定します。0に近いほどボットも含めて購入できるようになります。           |
-| Disabled   |          *          | CAPTCHAチェックを無効化します                                                                       |
-| SiteKey    | Standard/Enterprise | reCAPTCHAのサイトキーを設定します。                                                                 |
-| SecretKey  |      Standard       | reCAPTCHAのシークレットキーを設定します。                                                           |
-| ProjectId  |     Enterprise      | Google CloudのProject IDを設定します。                                                              |
-| ApiKey     |     Enterprise      | Google CloudのAPI Keyを設定します。                                                                 |
+|       項目       |       CAPTCHA       |                                                説明                                                 |
+| :--------------- | :-----------------: | :-------------------------------------------------------------------------------------------------- |
+| CAPTCHAサービス  |          *          | 使用するCAPTCHAサービスを選択します。reCAPTCHA Essentialsの構成にはreCAPTCHA Standardを使用します。 |
+| 検証個所         |          *          | CAPTCHAチェックを行うエンドポイントを選択します。※対応は次表に示します。                            |
+| 閾値             |          *          | リクエストを拒否する閾値を設定します。0に近いほどボットも含めて購入できるようになります。           |
+| 無効化           |          *          | CAPTCHAチェックを無効化します                                                                       |
+| サイトキー       | Standard/Enterprise | reCAPTCHAのサイトキーを設定します。                                                                 |
+| シークレットキー |      Standard       | reCAPTCHAのシークレットキーを設定します。                                                           |
+| プロジェクトID   |     Enterprise      | Google CloudのProject IDを設定します。                                                              |
+| APIキー          |     Enterprise      | Google CloudのAPI Keyを設定します。                                                                 |
 
 現在、使用可能なCAPTCHAサービスはGoogle reCAPTCHA V3 Essentials/Standard/Enterpriseとなります。[Cloudflare Turnstile](https://www.cloudflare.com/ja-jp/products/turnstile/) 等、Google reCAPTCHAとは異なるCAPTCHAサービスをご希望される場合はお問い合わせください。
 
-`Targets`には検証対象のエンドポイントを複数設定できます。例として、`Purchase/Create`と`Site/Login`を設定している場合は、注文確認画面の注文ボタンと、内部会員ログイン画面のログインボタンでCAPTCHAによる検証を実施できます。
+`検証個所`には検証対象のエンドポイントを複数設定できます。例として、`Purchase/Create`と`Site/Login`を設定している場合は、注文確認画面の注文ボタンと、内部会員ログイン画面のログインボタンでCAPTCHAによる検証を実施できます。
 
 |         Target         |        エンドポイント(`操作種別`)        |                   説明                   |
 | :--------------------- | :------------------------------------- | :--------------------------------------- |
