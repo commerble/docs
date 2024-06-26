@@ -46,7 +46,7 @@ CAPTCHA検証の結果、閾値を下回った場合は400エラーになり、`
 <!-- ModdErrorsError400 -->
 @{
   var viewMessages = Page.ViewData[BasicController.ViewMessageKey] as ViewMessages;
-  var isCaptchaError = viewMessages.Errors.Contains("AttemptRequest"); 
+  var isCaptchaError = viewMessages.Errors.Contains("AttemptRequest\t\t"); 
 }
 @if (isCaptchaError) {
   <p>ボットと判定されました。</p>
