@@ -571,12 +571,20 @@ SSLを使用するかを真偽値で渡し、ホストURLを取得します。
 
 ## RecaptchaRenderInclude
 reCAPTCHAヘルパースクリプトをレンダリングします。
-#### 型：() => HtmlString
+#### 型：(string? target) => HtmlString
 
 #### 例：
+CAPTCHAが設定されている場合、レンダリングします。
 ```
 @section ScriptBlock {
     @Page.Template.RecaptchaRenderInclude()
+}
+```
+
+`Purchase/Create`が検証個所に設定されており、かつ、無効化されていない場合、レンダリングします。
+```
+@section ScriptBlock {
+    @Page.Template.RecaptchaRenderInclude("Purchase/Create")
 }
 ```
 
