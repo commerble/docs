@@ -24,10 +24,15 @@ CAPTCHAをターゲットとなるエンドポイントの直前のテンプレ�
 この要素はreCAPTCHAにリクエストをするトリガーとなるbutton要素（購入ボタンなど）です。 `[data-cb-recaptcha="trigger"]` を付与してください。
 `button[type="submit"]` 以外に、 `button[type="button"]` や `input[type="submit"]` などクリック可能な要素であれば利用できます。
 
+
 ```
-@Page.Template.RecaptchaRenderInclude()
+@Page.Template.RecaptchaRenderInclude("<検証個所コード>")
 ```
 このテンプレートヘルパーは、reCAPTCHA用のJavaScriptとヘルパー用のJavaScriptのためのscript要素をレンダリングします。body下部等の任意の場所で呼び出し出力されるHTMLにスクリプトを含めます。
+引数には1つ以上の検証個所コードを指定します。検証個所はアプリケーション設定で指定するものと同一値を指定します。
+
+reCAPTCHAに送信するアクション名には、検証個所コードが使用されます。
+同一ページに複数アクション設置する際には、`[data-cb-recaptcha="trigger:Purchase/Create"]`のように`trigger`の後`:<検証コード>`で明示的に指定できます。
 
 
 なお、テンプレート上にSPAを構築している場合は、`RecaptchaRenderInclude` の初期化処理と、実際のDOMのレンダリングのタイミングにずれが生じ得ます。その際はレンダリング後に `window.__cbrecaptcha.mount();` を実行することで初期化できます。
