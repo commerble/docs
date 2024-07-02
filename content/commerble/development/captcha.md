@@ -29,7 +29,7 @@ CAPTCHAをターゲットとなるエンドポイントの直前のテンプレ�
 @Page.Template.RecaptchaRenderInclude("<検証個所コード>")
 ```
 このテンプレートヘルパーは、reCAPTCHA用のJavaScriptとヘルパー用のJavaScriptのためのscript要素をレンダリングします。body下部等の任意の場所で呼び出し出力されるHTMLにスクリプトを含めます。
-引数には1つ以上の検証個所コードを指定します。検証個所はアプリケーション設定で指定するものと同一値を指定します。
+引数には1つ以上の[検証個所コード](../../management/admin/ec/config/#captcha)を指定します。
 
 reCAPTCHAに送信するアクション名には、検証個所コードが使用されます。
 同一ページに複数アクション設置する際には、`[data-cb-recaptcha="trigger:Purchase/Create"]`のように`trigger`の後`:<検証コード>`で明示的に指定できます。
