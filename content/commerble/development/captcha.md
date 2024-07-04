@@ -10,7 +10,7 @@ CAPTCHA機能を有効にするためには、テンプレートに、CAPTCHAに
 
 ### 1. reCAPTCHAのクライアントトークンの生成に必要な処理を実装する
 
-CAPTCHAをターゲットとなるエンドポイントの直前のテンプレートに、以下の3つの要素を実装します。
+検証するエンドポイントの直前のテンプレートに、以下の3つの要素を実装します。
 
 ```
 <input type="hidden" name="CAPTCHA" data-cb-recaptcha="token">
