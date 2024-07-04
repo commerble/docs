@@ -32,8 +32,12 @@ CAPTCHA機能を有効にするためには、テンプレートに、CAPTCHAに
 引数には1つ以上の[検証個所コード](../../management/admin/ec/config/#captcha)を指定します。
 
 reCAPTCHAに送信するアクション名には、検証個所コードが使用されます。
-同一ページに複数アクション設置する際には、`[data-cb-recaptcha="trigger:Purchase/Create"]`のように`trigger`の後`:<検証コード>`で明示的に指定できます。
+同一ページに複数アクション設置する際には、`trigger`の後`:<検証コード>`を付与して明示的に指定できます。
 
+```
+<button type="button" data-cb-recaptcha="trigger:Member/Payments/Create">追加</button>
+<button type="button" data-cb-recaptcha="trigger:Member/Payments/Delete">削除</button>
+```
 
 なお、テンプレート上にSPAを構築している場合は、`RecaptchaRenderInclude` の初期化処理と、実際のDOMのレンダリングのタイミングにずれが生じ得ます。その際はレンダリング後に `window.__cbrecaptcha.mount();` を実行することで初期化できます。
 
