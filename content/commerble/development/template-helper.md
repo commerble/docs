@@ -10,7 +10,7 @@ description:
 
 テンプレートヘルパーはサイトテンプレートもしくはカートテンプレートで使用できるAPI関数です。
 
-テンプレートヘルパーは標準でいくつかのAPI関数が利用できますが、[オーダーカスタム]で作成できます。
+テンプレートヘルパーは標準でいくつかのAPI関数が利用できますが、[オーダーカスタム]にて、カスタムヘルパーを作成できます。
 
 ## SystemTime
 
@@ -566,6 +566,18 @@ SSLを使用するかを真偽値で渡し、ホストURLを取得します。
 ```
 @{
     var tokyo = Page.Template.GetPrefecture(13); // 東京都
+}
+```
+
+## RecaptchaRenderInclude
+reCAPTCHAヘルパースクリプトをレンダリングします。引数に1つ以上の検証個所を指定します。
+#### 型：(string firstTarget, params string[] otherTargets) => HtmlString
+
+#### 例：
+`Purchase/Create`が検証個所に設定されており、かつ、無効化されていない場合、レンダリングします。
+```
+@section ScriptBlock {
+    @Page.Template.RecaptchaRenderInclude("Purchase/Create")
 }
 ```
 
