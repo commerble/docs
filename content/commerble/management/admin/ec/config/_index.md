@@ -47,17 +47,17 @@ CAPTCHAの各設定項目を次に示します。
 
 `検証個所`には検証対象のエンドポイントを複数設定できます。例として、`Purchase/Create`と`Site/Login`を設定している場合は、注文確認画面の注文ボタンと、内部会員ログイン画面のログインボタンでCAPTCHAによる検証を実施できます。
 
-|     検証個所コード     |    エンドポイント(`操作種別`)     |                   説明                   |
-| :--------------------- | :-------------------------------- | :--------------------------------------- |
-| Purchase/Create        | Purchase/{cart-id}                | 確認画面での購入ボタン押下時             |
-| Purchase/Payment       | Purchase/{cart-id}/Payment        | 決済入力ページから確認画面への遷移時     |
-| Site/Login             | Site/Login                        | 内部ログイン画面でのログインボタン押下時 |
-| Site/Account/Confirm   | Site/Account (`confirm`)          | 内部会員登録ページから確認画面への遷移時 |
-| Site/Account/Create    | Site/Account (`create`)           | 内部会員登録確認画面での登録ボタン押下時 |
-| Site/Activate/Request  | Site/Activate (`request`)         | アクティベーションURL再送ボタン押下時    |
-| Site/Recovery/Request  | Site/Recovery (`request`)         | パスワード再設定URL送信ボタン押下時      |
-| Site/Inquiry/Confirm   | Site/Inquiry/{model} (`confirm`)  | お問い合わせページから確認画面への遷移時 |
-| Site/Inquiry/Create    | Site/Inquiry/{model} (`create`)   | お問い合わせ確認画面での送信ボタン押下時 |
-| Member/Payments/Create | Member/Payments/{type} (`create`) | 決済方法管理画面での登録ボタン押下時     |
-| Member/Payments/Delete | Member/Payments/{type} (`delete`) | 決済方法管理画面での削除ボタン押下時     |
+|     検証個所コード     |       エンドポイント(`操作種別`)       |                   説明                   |
+| :--------------------- | :------------------------------------- | :--------------------------------------- |
+| Purchase/Create        | POST Purchase/{cart-id}                | 確認画面での購入ボタン押下時             |
+| Purchase/Payment       | POST Purchase/{cart-id}/Payment        | 決済入力ページから確認画面への遷移時     |
+| Site/Login             | POST Site/Login                        | 内部ログイン画面でのログインボタン押下時 |
+| Site/Account/Confirm   | POST Site/Account (`confirm`)          | 内部会員登録ページから確認画面への遷移時 |
+| Site/Account/Create    | POST Site/Account (`create`)           | 内部会員登録確認画面での登録ボタン押下時 |
+| Site/Activate/Request  | POST Site/Activate (`request`)         | アクティベーションURL再送ボタン押下時    |
+| Site/Recovery/Request  | POST Site/Recovery (`request`)         | パスワード再設定URL送信ボタン押下時      |
+| Site/Inquiry/Confirm   | POST Site/Inquiry/{model} (`confirm`)  | お問い合わせページから確認画面への遷移時 |
+| Site/Inquiry/Create    | POST Site/Inquiry/{model} (`create`)   | お問い合わせ確認画面での送信ボタン押下時 |
+| Member/Payments/Create | POST Member/Payments/{type} (`create`) | 決済方法管理画面での登録ボタン押下時     |
+| Member/Payments/Delete | POST Member/Payments/{type} (`delete`) | 決済方法管理画面での削除ボタン押下時     |
 
