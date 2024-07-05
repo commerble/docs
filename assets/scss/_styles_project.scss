@@ -22,3 +22,18 @@ html {
 nav#td-section-nav, nav#TableOfContents {
   font-size: 0.9rem;
 }
+
+table {
+  width: 100%;
+  overflow-x: auto;
+}
+thead, tbody {
+  width: max-content;
+}
+th, td {
+  text-wrap: nowrap;
+}
+th:last-of-type, td:last-of-type {
+  min-width: 240px;
+  text-wrap: wrap;
+}
