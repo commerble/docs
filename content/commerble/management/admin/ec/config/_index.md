@@ -8,6 +8,7 @@ description:
 
 この操作には[BO.Administrators](../../#ec管理サイトのロール)権限が必要になります。
 
+
 ## 設定項目の選択
 
 設定可能な項目は、「設定項目」ドロップダウンに表示されます。
@@ -16,11 +17,16 @@ description:
 
 設定値を変更するには、ドロップダウンから設定項目を設定し、設定値を入力して「保存」します。
 
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period-->
+{{% alert color="primary" %}}
+設定保存後、フロントに変更を反映させるには、CMS管理画面から[再起動](../../cms/restart/)が必要です。
+{{% /alert %}}
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period-->
+
 ※ 設定項目によって表示される入力フォームが異なります。
 
 ![設定変更](schemaless.jpg)
 
-設定変更後、フロントに設定値を反映させるには、CMS管理画面から[再起動](../../cms/restart/)が必要です。
 
 ## CAPTCHA
 
