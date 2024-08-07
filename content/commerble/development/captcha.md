@@ -49,15 +49,12 @@ reCAPTCHAに送信するアクション名には、検証個所コードが使�
 
 ### 2. CAPTCHAエラーをハンドルする 
 
-CAPTCHA検証の結果、閾値を下回った場合は400エラーになり、`ViewMessage`に`AttemptRequest`エラーコードが渡されます。このエラーコードを使うことで表示をコントロールできます。
+CAPTCHA検証の結果、閾値を下回った場合は400エラーになり、`Page.IsCaptchaError()`が`true`を返します。このエラーコードを使うことで表示をコントロールできます。
 
 ```
 <!-- ModdErrorsError400 -->
-@{
-  var viewMessages = Page.ViewData[BasicController.ViewMessageKey] as ViewMessages;
-  var isCaptchaError = viewMessages.Errors.Contains("AttemptRequest\t\t"); 
-}
-@if (isCaptchaError) {
+
+@if (Page.IsCaptchaError()) {
   <p>ボットと判定されました。</p>
 }
 ```
