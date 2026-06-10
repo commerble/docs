@@ -5,7 +5,8 @@
     "preset-jtf-style": true,
     "jtf-style/4.3.1.丸かっこ（）":false,
     "jtf-style/4.2.7.コロン(：)":false,
-    "ja-technical-writing/max-kanji-continuous-len":false
+    "ja-technical-writing/max-kanji-continuous-len":false,
+    "@textlint-ja/preset-ai-writing": true
   },
   "filters": {
     "comments": true
