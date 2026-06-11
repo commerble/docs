@@ -36,6 +36,17 @@
 {{ if $displayDate.IsZero }}
   {{ $displayDate = .Lastmod }}
 {{ end }}
+{{ $breadcrumbAncestors := slice }}
+{{ with .CurrentSection }}
+  {{ range .Ancestors.Reverse }}
+    {{ if ne .RelPermalink $root.RelPermalink }}
+      {{ $breadcrumbAncestors = $breadcrumbAncestors | append . }}
+    {{ end }}
+  {{ end }}
+  {{ if ne .RelPermalink $.RelPermalink }}
+    {{ $breadcrumbAncestors = $breadcrumbAncestors | append . }}
+  {{ end }}
+{{ end }}
 
 <article class="single-post">
   {{/* パンくずナビ */}}
@@ -48,10 +59,9 @@
         <li class="breadcrumb__item">
           <a href="{{ "/docs/" | relURL }}" class="breadcrumb__link">ドキュメント</a>
         </li>
-        {{ if .Section }}
+        {{ range $breadcrumbAncestors }}
         <li class="breadcrumb__item">
-          {{ $sectionPage := .Site.GetPage "section" .Section }}
-          <a href="{{ .Section | relURL }}" class="breadcrumb__link">{{ $sectionPage.Title }}</a>
+          <a href="{{ .RelPermalink }}" class="breadcrumb__link">{{ .LinkTitle }}</a>
         </li>
         {{ end }}
         <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">

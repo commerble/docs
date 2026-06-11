@@ -1,4 +1,16 @@
 {{ define "main" }}
+{{ $root := .Site.GetPage "section" "" }}
+{{ $breadcrumbAncestors := slice }}
+{{ with .CurrentSection }}
+  {{ range .Ancestors.Reverse }}
+    {{ if ne .RelPermalink $root.RelPermalink }}
+      {{ $breadcrumbAncestors = $breadcrumbAncestors | append . }}
+    {{ end }}
+  {{ end }}
+  {{ if ne .RelPermalink $.RelPermalink }}
+    {{ $breadcrumbAncestors = $breadcrumbAncestors | append . }}
+  {{ end }}
+{{ end }}
 <div class="list-page">
   <div class="list-page__container">
     {{/* パンくずナビ */}}
@@ -10,6 +22,11 @@
         <li class="breadcrumb__item">
           <a href="{{ "/docs/" | relURL }}" class="breadcrumb__link">ドキュメント</a>
         </li>
+        {{ range $breadcrumbAncestors }}
+        <li class="breadcrumb__item">
+          <a href="{{ .RelPermalink }}" class="breadcrumb__link">{{ .LinkTitle }}</a>
+        </li>
+        {{ end }}
         <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
           {{ .Title }}
         </li>
