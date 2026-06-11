@@ -84,16 +84,6 @@
   {{/* 記事フッター */}}
   <footer class="single-post__footer">
     <div class="single-post__container">
-      {{/* お問い合わせCTA */}}
-      <div class="contact-cta">
-        <h3 class="contact-cta__title">お問い合わせ</h3>
-        <p class="contact-cta__description">この記事に関するご質問やサービスについて詳しく知りたい方は、お気軽にお問い合わせください。</p>
-        <div class="contact-cta__actions">
-          <a href="{{ "/contact/" | relURL }}" class="button button--primary" aria-label="お問い合わせページへ移動">
-            お問い合わせ
-          </a>
-        </div>
-      </div>
 
       {{/* 関連記事（有効な場合） */}}
       {{ if site.Params.features.relatedPosts }}
