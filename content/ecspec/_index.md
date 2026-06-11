@@ -1,7 +1,6 @@
 ---
 title: "自社のECを学ぼう"
-cascade:
-  type: docs
+weight: 80
 ---
 
 ![自社のECを学ぼう](../ecspec_hero.jpeg)

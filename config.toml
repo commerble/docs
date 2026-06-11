@@ -10,38 +10,12 @@ enableGitInfo = true
 defaultContentLanguage = "ja"
 defaultContentLanguageInSubdir = false
 
-googleAnalytics = "UA-58587912-1"
-
-# Highlighting config
-pygmentsCodeFences = true
-pygmentsUseClasses = false
-# Use the new Chroma Go highlighter in Hugo.
-pygmentsUseClassic = false
-#pygmentsOptions = "linenos=table"
-# See https://help.farbox.com/pygments.html
-pygmentsStyle = "tango"
-
-## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
-[blackfriday]
-plainIDAnchors = true
-hrefTargetBlank = true
-angledQuotes = false
-latexDashes = true
-
-
-[services]
-[services.googleAnalytics]
-id = "UA-58587912-1"
-
-# Google Custom Search Engine ID. Remove or comment out to disable search.
-# gcs_engine_id = "011737558837375720776:fsdu1nryfng"
-gcs_engine_id = "f468d8f73b829f44e"
-
 [params]
   description = "Commerbleは、Eコマースシステムが顧客ごとに異なる業務設計で運用されていることを前提に設計された、顧客固有の要件に柔軟かつ短納期で対応できるカスタマイズ性の高いECプラットフォームです。"
   author = "Commerble Inc."
   keywords = ["EC", "ecommerce", "B2C", "B2B", "D2C", "基幹連携"]
   image = "/images/ogp.png"
+  gcs_engine_id = "f468d8f73b829f44e"
 
   [params.contact]
     email = "info@commerble.com"
