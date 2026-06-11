@@ -42,10 +42,10 @@
       </p>
       {{ end }}
     </header>
-
     <div class="list-page__wrapper">
       {{/* 記事一覧 */}}
       <main class="list-page__content">
+        {{ .Content }}
         {{ if .Pages }}
         <div class="posts-list">
           {{ range .Paginator.Pages }}
