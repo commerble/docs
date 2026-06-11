@@ -1,4 +1,4 @@
 ---
-title: "Commerbleについて"
+title: "Commerble EC PaaS"
 weight: 10
 ---
