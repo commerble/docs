@@ -36,7 +36,7 @@ Commerbleのカートは商品IDが明細において一意である必要があ
 
 このカスタムを実現するには、カートインの前にカート内のすべての明細をクリアし、対象商品を加算した明細データを丸ごと入れ直す必要があります。
 
-```mermaid
+{{% mermaid %}}
 sequenceDiagram
     ブラウザ->>+Order/Cart: POST itemclear, AntiForgeryToken, returnUrl=全明細カートイン 
     Order/Cart->>Order/Cart: カートクリア
@@ -46,7 +46,7 @@ sequenceDiagram
     deactivate ブラウザ
     Order/Cart->>Order/Cart: 加算された全明細を入れ直し
     Order/Cart-->>-ブラウザ: 200 カート画面 
-```
+{{% /mermaid %}}
 
 ## カスタマイズ実績2 フロントカート方式
 
@@ -56,7 +56,7 @@ sequenceDiagram
 
 ただし、カスタマーサポートで明細キャンセルを提供している場合は注意が必要です。管理画面から表示・変更できる明細は、標準仕様に則り、商品IDで一意にまとめられたデータです。これらの明細を変更しても、フロントカート情報を変更するにはサービス情報も変更する必要があります。変更点が2つになり、オペレーションの実行が困難になります。これらを透過的に実行するには、Web APIを用いてカスタム管理画面を作成する必要があります。
 
-```mermaid
+{{% mermaid %}}
 sequenceDiagram
     ブラウザ->>+FrontCart: カートイン情報
     FrontCart->>FrontCart: カートイン情報をセッションに保存
@@ -75,7 +75,7 @@ sequenceDiagram
     ブラウザ->>+Purchase/Order: 購入
     Purchase/Order->>Purchase/Order: セッションのカートイン情報をサービス情報に保存
     Purchase/Order-->>-ブラウザ: 購入完了画面
-```
+{{% /mermaid %}}
 
 
 [セルフカスタム]: ../../features/customization/#セルフカスタム "セルフカスタム"
