@@ -1,11 +1,11 @@
 ---
-title: "FAQ(よくあるお問い合わせ)"
+title: "FAQ（よくあるお問い合わせ）"
 weight: 30
 no_list: false
 description: 
 ---
 
-この章では、CommerbleのFAQ(よくあるお問い合わせ)について説明します。
+この章では、CommerbleのFAQ（よくあるお問い合わせ）について説明します。
 
 ## サポート時間
 

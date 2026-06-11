@@ -27,7 +27,7 @@ Commerbleにおけるテンプレートの種類と説明を下表に示しま�
 |        | Template                 | テンプレート内容(String)            |
 |        | WithViews                | 共通テンプレートを結合する(Boolean) |
 
-**例**  
+検証結果が正常な場合の例です。
 ```
 --- リクエスト:検証結果OK ---
 POST ~/data/template/validate HTTP/1.1
@@ -72,7 +72,7 @@ Content-Type: application/json; charset=utf-8
 | Body   | JSON オブジェクト    |                          |
 |        | Template             | テンプレート内容(String) |
 
-**例**  
+検証結果が正常な場合の例です。
 ```
 --- リクエスト:検証結果OK ---
 POST ~/data/mail/validate HTTP/1.1
@@ -120,7 +120,7 @@ Content-Type: application/json; charset=utf-8
 | Body   | JSON オブジェクト     |                          |
 |        | Script                | テンプレート内容(String) |
 
-**例**  
+検証結果が正常な場合の例です。
 ```
 --- リクエスト:検証結果OK ---
 POST ~/data/query/validate HTTP/1.1

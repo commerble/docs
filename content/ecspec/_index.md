@@ -63,7 +63,7 @@ cascade:
 
 ## 「自社ECの仕様を学ぼう」の執筆者について
 
-- 名称：株式会社Commerble　(コマーブル)
+- 名称：株式会社Commerble（コマーブル）
 - URL：https://www.commerble.com/
 - MAIL：info@commerble.com
 - 担当者：橋本圭一（はしもと・けいいち）
@@ -83,7 +83,7 @@ CC BY-SA 4.0で公開します。CC BY-SA 4.0については以下のURLに詳�
 
 誤字脱字から、加筆、議論に取り上げたいことなど、些細なことからディープなことまで様々なコントリビューションをお待ちしております。
 
-リポジトリ: [https://github.com/commerble/ecspec/](https://github.com/commerble/ecspec/)
+リポジトリ： [https://github.com/commerble/ecspec/](https://github.com/commerble/ecspec/)
 
 ## スペシャルサンクス
 

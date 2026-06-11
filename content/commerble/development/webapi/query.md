@@ -20,7 +20,7 @@ description:
 | Query  | x-www-form-urlencoded |                |
 |        | name                  | テンプレート名 |
 
-**例**  
+テンプレートを作成して取得する例です。
 ```
 --- テンプレートの作成---
 POST ~/data/meta/Templates HTTP/1.1
@@ -53,7 +53,7 @@ Content-Type: application/json; charset=utf-8
 | Body   | JSON オブジェクト   |                          |
 |        | Script              | テンプレート内容(String) |
 
-**例** 
+テンプレートを渡して実行する例です。
 ```
 --- リクエスト ---
 POST ~/data/query/render HTTP/1.1
@@ -79,7 +79,7 @@ Content-Type: application/json; charset=utf-8
 
 このCSVファイルはExcelで開くために、BOM付きUTF8エンコードとして出力されます。
 
-**例** 
+CSV形式で取得する例です。
 ```
 --- リクエスト:Acceptヘッダフィールド ---
 GET ~/data/query/render?name=QuerySample HTTP/1.1

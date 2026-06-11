@@ -6,7 +6,7 @@ description:
 
 カートでの税率計算式及び請求金額全体の計算式を示します。
 
-<!-- textlint-disable ja-technical-writing/sentence-length -->
+<!-- textlint-disable ja-technical-writing/sentence-length jtf-style/3.3.かっこ類と隣接する文字の間のスペースの有無 jtf-style/4.3.1.丸かっこ（） -->
 {{<katex>}}
 \begin{aligned}
 total &= S + (D - p_d) + (C - p_c) \\ \\
@@ -32,7 +32,7 @@ S &:= \sum_{i=1}^N \biggl( u_i a_i + \tau_i a_i - d_i - p_i \biggr) \\ \\
 
 |              |                    項目                     |          説明           |
 | :----------: | :------------------------------------------ | :---------------------- |
-|   \\(i\\)    |                                             | カート内の商品  (1...N) |
+|   \\(i\\)    |                                             | カート内の商品（1...N） |
 |   \\(S\\)    |                                             | 小計                    |
 |   \\(D\\)    | PurchaseOrder.DeliveryCharge                | 送料                    |
 |   \\(C\\)    | PurchaseOrder.CashOnDeliveryCharge          | 代引き手数料            |
@@ -41,18 +41,18 @@ S &:= \sum_{i=1}^N \biggl( u_i a_i + \tau_i a_i - d_i - p_i \biggr) \\ \\
 |  \\(u_i\\)   | Product.UnitPrice                           | 商品単価                |
 |  \\(t_i\\)   | Product.TaxationPrice                       | 課税単価                |
 |  \\(a_i\\)   | OrderLine.OrderAmount                       | 数量                    |
-| \\(\theta\\) | TaxRates.Where(t=>t.StartDate<=now).Last()  | 税率                    |
+| \\(\theta\\) | TaxRates.Where(t=>t.StartDate<=now).Last() | 税率                    |
 |  \\(m_i\\)   | SalesPattern.TaxRoundMode                   | 税計算モード            |
 |  \\(p_i\\)   | OrderLine.PointUsage                        | 明細分使用ポイント      |
 |  \\(d_i\\)   | OrderLine.DiscountPrice                     | 明細分割引額            |
 
-<!-- textlint-enable ja-technical-writing/sentence-length -->
+<!-- textlint-enable ja-technical-writing/sentence-length jtf-style/3.3.かっこ類と隣接する文字の間のスペースの有無 jtf-style/4.3.1.丸かっこ（） -->
 
 割引額はキャンペーンの適用によって決定されます。割引額の詳しい計算方法は[キャンペーンページ](../campaign/)を参照ください。
 
 使用ポイントに標準の計算式は[ポイントページ](../point/)を参照ください。
 
-**その他保存項目**
+## その他保存項目
 
 |           項目            |                            計算式                             |
 | :------------------------ | :------------------------------------------------------------ |

@@ -133,7 +133,7 @@ description:
 | Value         | String  | 128    |        |          |          | 値                       |
 | HasValue      | Boolean | 128    |        |          |          | 値フラグ                 |
 
-※ パラメータ種類 (1:ルートパラメータ、 2:クエリパラメータ、3:カスタムヘッダ)
+※ パラメータ種類 （1:ルートパラメータ、 2:クエリパラメータ、3:カスタムヘッダ）
 
 
 + Parents
@@ -211,7 +211,7 @@ description:
 | Text | String | MAX    |        |          |          | テンプレート        |
 | Type | String | 16     |        |          |          | テンプレートタイプ※ |
 
-※テンプレートタイプ: template,cshtml,mail,csx
+※テンプレートタイプ： template,cshtml,mail,csx
 
 + Parents
 + Children

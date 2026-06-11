@@ -22,7 +22,7 @@ CAPTCHA機能を有効にするためには、テンプレートに、CAPTCHAに
 <button type="submit" data-cb-recaptcha="trigger">購入</button>
 ```
 この要素はreCAPTCHAにリクエストをするトリガーとなるbutton要素（購入ボタンなど）です。 `[data-cb-recaptcha="trigger"]` を付与してください。
-`button[type="submit"]` 以外に、 `button[type="button"]` や `input[type="submit"]` などクリック可能な要素であれば利用できます。
+`button[type="submit"]` 以外に、 `button[type="button"]` や `input[type="submit"]` など、クリック可能な要素は利用できます。
 
 
 ```
@@ -45,7 +45,7 @@ reCAPTCHAに送信するアクション名には、検証個所コードが使�
 また、`[data-cb-recaptcha="trigger"]`の代わりにJavaScript上で`window.__cbrecaptcha.execute();//Promise<void>`を使用することで、任意のタイミングで`[data-cb-recaptcha="token"]`にレスポンストークンを埋めることができます。
 <!-- textlint-enable ja-technical-writing/sentence-length -->
 
-これらのヘルパーを使用せずに、Google reCAPTCHA js APIをそのまま利用し開発しても問題ありません。その際、取得したレスポンストークンは必ず"CAPTCHA"のキーでサーバーに送信するよう実装します。
+これらのヘルパーを使用せずに、Google reCAPTCHA js APIをそのまま利用する形での構築も行えます。その際、取得したレスポンストークンは必ず"CAPTCHA"のキーでサーバーに送信するよう実装します。
 
 ### 2. CAPTCHAエラーをハンドルする 
 
