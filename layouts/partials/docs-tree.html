@@ -1,0 +1,48 @@
+{{ $current := . }}
+{{ $root := .Site.GetPage "section" "" }}
+
+{{ define "partials/docs-tree-node.html" }}
+  {{ $page := .page }}
+  {{ $current := .current }}
+  {{ $children := slice }}
+  {{ if $page.IsSection }}
+    {{ $children = $page.Pages.ByWeight.ByTitle }}
+  {{ end }}
+  {{ $isCurrent := eq $page.RelPermalink $current.RelPermalink }}
+  {{ $isAncestor := and (ne $page.RelPermalink $current.RelPermalink) ($page.IsAncestor $current) }}
+  <li class="docs-tree__item{{ if $page.IsSection }} docs-tree__item--section{{ end }}{{ if or $isCurrent $isAncestor }} docs-tree__item--open{{ end }}">
+    {{ if gt (len $children) 0 }}
+    <details class="docs-tree__details{{ if or $isCurrent $isAncestor }} docs-tree__details--active{{ end }}" {{ if or $isCurrent $isAncestor }}open{{ end }}>
+      <summary class="docs-tree__summary">
+        <span class="docs-tree__summary-icon" aria-hidden="true"></span>
+        <a href="{{ $page.RelPermalink }}" class="docs-tree__link{{ if $isCurrent }} docs-tree__link--current{{ end }}{{ if $isAncestor }} docs-tree__link--ancestor{{ end }}{{ if or $isCurrent $isAncestor }} docs-tree__link--section-current{{ end }}">
+          <span class="docs-tree__label">{{ $page.LinkTitle }}</span>
+        </a>
+      </summary>
+      <ul class="docs-tree__list" role="list">
+        {{ range $children }}
+          {{ template "partials/docs-tree-node.html" (dict "page" . "current" $current) }}
+        {{ end }}
+      </ul>
+    </details>
+    {{ else }}
+    <a href="{{ $page.RelPermalink }}" class="docs-tree__link{{ if $isCurrent }} docs-tree__link--current{{ end }}{{ if $isAncestor }} docs-tree__link--ancestor{{ end }}">
+      <span class="docs-tree__label">{{ $page.LinkTitle }}</span>
+    </a>
+    {{ end }}
+  </li>
+{{ end }}
+
+<aside class="docs-sidebar" aria-labelledby="docs-sidebar-title">
+  <div class="docs-sidebar__inner">
+    <p id="docs-sidebar-title" class="docs-sidebar__eyebrow">Documentation</p>
+    <a href="{{ $root.RelPermalink }}" class="docs-sidebar__home{{ if eq $root.RelPermalink $current.RelPermalink }} docs-sidebar__home--current{{ end }}">{{ $root.LinkTitle }}</a>
+    <nav class="docs-tree" aria-label="ドキュメントツリー">
+      <ul class="docs-tree__list docs-tree__list--root" role="list">
+        {{ range $root.Pages.ByWeight.ByTitle }}
+          {{ template "partials/docs-tree-node.html" (dict "page" . "current" $current) }}
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</aside>

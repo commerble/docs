@@ -751,6 +751,145 @@ button {
   min-height: calc(100vh - 64px - 200px); /* ヘッダーとフッターを除いた最小高さ */
 }
 
+.docs-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  width: min(100%, calc(var(--container-max-width) + 24rem));
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-5xl);
+  align-items: start;
+}
+
+.docs-layout__main {
+  min-width: 0;
+  width: 100%;
+}
+
+.docs-sidebar {
+  width: 100%;
+}
+
+.docs-sidebar__inner {
+  background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-xl);
+}
+
+.docs-sidebar__eyebrow {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.docs-sidebar__home {
+  display: inline-block;
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.docs-sidebar__home--current,
+.docs-sidebar__home:hover {
+  color: var(--color-primary-dark);
+}
+
+.docs-tree__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.docs-tree__list .docs-tree__list {
+  margin-top: var(--spacing-sm);
+  margin-left: var(--spacing-base);
+  padding-left: var(--spacing-base);
+  border-left: 1px solid var(--color-border-light);
+}
+
+.docs-tree__item {
+  margin-bottom: var(--spacing-xs);
+}
+
+.docs-tree__item--section > .docs-tree__link {
+  font-weight: var(--font-weight-semibold);
+}
+
+.docs-tree__details {
+  display: block;
+}
+
+.docs-tree__summary {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  list-style: none;
+}
+
+.docs-tree__summary::-webkit-details-marker {
+  display: none;
+}
+
+.docs-tree__summary-icon {
+  flex: 0 0 auto;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-right: 2px solid var(--color-text-tertiary);
+  border-bottom: 2px solid var(--color-text-tertiary);
+  transform: rotate(-45deg);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  margin-left: var(--spacing-sm);
+}
+
+.docs-tree__details[open] > .docs-tree__summary .docs-tree__summary-icon {
+  transform: rotate(45deg);
+}
+
+.docs-tree__details--active > .docs-tree__summary .docs-tree__summary-icon {
+  border-color: var(--color-primary-dark);
+}
+
+.docs-tree__link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-base);
+  color: var(--color-text-secondary);
+  line-height: 1.35;
+}
+
+.docs-tree__link:hover {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.docs-tree__link--ancestor {
+  color: var(--color-text-primary);
+}
+
+.docs-tree__link--section-current {
+  color: var(--color-primary-dark);
+  font-weight: var(--font-weight-bold);
+}
+
+.docs-tree__link--current {
+  background-color: color-mix(in srgb, var(--color-primary) 12%, var(--color-bg-primary));
+  color: var(--color-primary-dark);
+  font-weight: var(--font-weight-semibold);
+}
+
+.docs-tree__label {
+  flex: 1;
+}
+
 /* ===== フッター ===== */
 .footer {
   background-color: var(--color-bg-secondary);
@@ -1798,6 +1937,25 @@ button {
 
 /* デスクトップレイアウト */
 @media (min-width: 768px) {
+  .docs-layout {
+    display: grid;
+    grid-template-columns: minmax(16rem, 20rem) minmax(0, 1fr);
+    padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-5xl);
+  }
+
+  .docs-layout__main {
+    order: 2;
+  }
+
+  .docs-sidebar {
+    order: 1;
+    position: sticky;
+    top: var(--header-offset);
+    max-height: calc(100vh - var(--header-offset) - var(--spacing-xl));
+    overflow: auto;
+    padding-right: var(--spacing-sm);
+  }
+
   .list-page__container {
     padding: 0 var(--spacing-xl);
   }
@@ -1824,6 +1982,30 @@ button {
 @media (min-width: 1024px) {
   .list-page__wrapper {
     grid-template-columns: 1fr 320px;
+  }
+}
+
+@media (max-width: 899px) {
+  .docs-layout {
+    width: 100%;
+    padding: var(--spacing-lg) var(--spacing-base) var(--spacing-4xl);
+  }
+
+  .docs-sidebar {
+    position: static;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+    order: 2;
+  }
+
+  .docs-layout__main {
+    order: 1;
+  }
+
+  .docs-sidebar__inner {
+    padding: var(--spacing-lg);
   }
 }
 
