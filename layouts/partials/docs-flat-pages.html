@@ -1,6 +1,6 @@
 {{- $page := .page -}}
 {{- $pages := .pages -}}
-{{- if not $page.IsSection -}}
+{{- if or (not $page.IsSection) $page.Content -}}
   {{- $pages = $pages | append $page -}}
 {{- end -}}
 {{- if $page.IsSection -}}
