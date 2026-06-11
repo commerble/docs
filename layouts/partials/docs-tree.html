@@ -14,7 +14,7 @@
   {{ $current := .current }}
   {{ $children := slice }}
   {{ if $page.IsSection }}
-    {{ $children = $page.Sections.ByWeight.ByTitle | append ($page.RegularPages.ByWeight.ByTitle) }}
+    {{ $children = sort (sort ($page.Sections | append $page.RegularPages) "LinkTitle") "Weight" }}
   {{ end }}
   {{ $isCurrent := eq $page.RelPermalink $current.RelPermalink }}
   {{ $isAncestor := and (ne $page.RelPermalink $current.RelPermalink) ($page.IsAncestor $current) }}

@@ -4,7 +4,7 @@
   {{- $pages = $pages | append $page -}}
 {{- end -}}
 {{- if $page.IsSection -}}
-  {{- $children := $page.Sections.ByWeight.ByTitle | append ($page.RegularPages.ByWeight.ByTitle) -}}
+  {{- $children := sort (sort ($page.Sections | append $page.RegularPages) "LinkTitle") "Weight" -}}
   {{- range $children -}}
     {{- $pages = partial "docs-flat-pages.html" (dict "page" . "pages" $pages) -}}
   {{- end -}}
