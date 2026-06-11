@@ -321,6 +321,7 @@ pre {
   border-radius: var(--border-radius-base);
   overflow-x: auto;
   margin-bottom: var(--spacing-base);
+  white-space: pre-wrap;
 }
 
 pre code {
