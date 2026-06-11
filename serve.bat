@@ -1,3 +1,3 @@
 @echo off
 
-hugo server
+hugo server -D --cleanDestinationDir
