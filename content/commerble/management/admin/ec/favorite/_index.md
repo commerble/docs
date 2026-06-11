@@ -1,5 +1,6 @@
 ---
 title: "お気に入り"
+layout: "single"
 weight: 60
 description: 
 ---

@@ -1,7 +1,6 @@
 ---
 title: "BCP（事業継続計画）、BCM（事業継続マネジメント）"
 weight: 20
-headless: true
 description: 
 ---
 

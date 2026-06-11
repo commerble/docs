@@ -1,7 +1,6 @@
 ---
 title: "データ分析"
 weight: 20
-headless: true
 description: 
 ---
 

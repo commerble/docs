@@ -1,5 +1,6 @@
 ---
 title: "在庫"
+layout: "single"
 weight: 90
 description: 
 ---

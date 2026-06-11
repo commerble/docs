@@ -1,5 +1,6 @@
 ---
 title: "仮予約"
+weight: 75
 description: 
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "導入"
 weight: 20
-no_list: false
 description: 
 ---
 

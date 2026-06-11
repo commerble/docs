@@ -1,7 +1,6 @@
 ---
 title: "メール"
-weight: 30
-headless: true
+weight: 82
 description: 
 ---
 

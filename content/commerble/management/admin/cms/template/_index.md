@@ -1,5 +1,6 @@
 ---
 title: "テンプレート"
+layout: "single"
 weight: 20
 description: 
 ---

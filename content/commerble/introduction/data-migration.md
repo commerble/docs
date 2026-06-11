@@ -1,7 +1,6 @@
 ---
 title: "データ移行"
 weight: 20
-headless: true
 description: 
 ---
 

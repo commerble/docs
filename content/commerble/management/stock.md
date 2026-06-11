@@ -1,6 +1,6 @@
 ---
 title: "在庫"
-weight: 10
+weight: 60
 description: 
 ---
 

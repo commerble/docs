@@ -1,7 +1,6 @@
 ---
 title: "システム移行"
 weight: 20
-headless: true
 description: 
 ---
 

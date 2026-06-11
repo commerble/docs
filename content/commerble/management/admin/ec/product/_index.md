@@ -1,5 +1,6 @@
 ---
 title: "商品"
+layout: "single"
 weight: 30
 description: 
 ---

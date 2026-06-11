@@ -1,5 +1,6 @@
 ---
 title: "設定"
+layout: "single"
 weight: 100
 description: 
 ---

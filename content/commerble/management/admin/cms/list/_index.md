@@ -1,5 +1,6 @@
 ---
 title: "リスト管理"
+layout: "single"
 weight: 30
 description: 
 ---

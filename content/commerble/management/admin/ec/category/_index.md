@@ -1,5 +1,6 @@
 ---
 title: "カテゴリ"
+layout: "single"
 weight: 40
 description: 
 ---

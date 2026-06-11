@@ -1,6 +1,6 @@
 ---
 title: "EC管理サイト"
-weight: 10
+weight: 1
 description: 
 ---
 

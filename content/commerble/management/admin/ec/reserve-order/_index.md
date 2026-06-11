@@ -1,5 +1,6 @@
 ---
 title: "仮予約"
+layout: "single"
 weight: 20
 description: 
 ---

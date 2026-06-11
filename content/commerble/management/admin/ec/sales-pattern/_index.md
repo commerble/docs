@@ -1,5 +1,6 @@
 ---
 title: "販売パターン"
+layout: "single"
 weight: 50
 description: 
 ---

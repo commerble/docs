@@ -1,7 +1,6 @@
 ---
 title: "セキュリティ"
 weight: 20
-headless: true
 description: 
 ---
 

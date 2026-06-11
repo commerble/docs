@@ -1,5 +1,6 @@
 ---
 title: "受注"
+layout: "single"
 weight: 10
 description: 
 ---

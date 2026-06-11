@@ -1,7 +1,6 @@
 ---
 title: "ポイント"
-weight: 30
-headless: true
+weight: 81
 description: 
 ---
 

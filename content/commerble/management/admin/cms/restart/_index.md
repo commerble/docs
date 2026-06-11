@@ -1,7 +1,8 @@
 ---
 title: "再起動"
+layout: "single"
 weight: 60
-description: 
+description:
 ---
 
 再起動は、ルーティング（URL情報）、CIDR、共通テンプレート変更時には再起動が必要になります。  

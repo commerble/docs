@@ -1,7 +1,6 @@
 ---
 title: "要件定義の進め方"
 weight: 20
-headless: true
 description: 
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "トップ"
+layout: "single"
 weight: 1
 description: 
 ---

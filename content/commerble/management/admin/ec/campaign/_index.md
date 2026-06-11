@@ -1,5 +1,6 @@
 ---
 title: "キャンペーン"
+layout: "single"
 weight: 80
 description: 
 ---

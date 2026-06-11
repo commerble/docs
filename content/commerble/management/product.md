@@ -1,6 +1,6 @@
 ---
 title: "商品"
-weight: 9999
+weight: 1
 description: 
 draft: true
 ---

@@ -1,5 +1,6 @@
 ---
 title: "会員"
+layout: "single"
 weight: 70
 description: 
 ---
