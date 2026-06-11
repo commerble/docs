@@ -117,16 +117,6 @@
         <div class="content">
           {{ .Content }}
         </div>
-
-        {{/* 目次（有効な場合） */}}
-        {{ if and site.Params.features.toc (.TableOfContents) }}
-        <aside class="toc" aria-labelledby="toc-title">
-          <h2 id="toc-title" class="toc__title">目次</h2>
-          <div class="toc__content">
-            {{ .TableOfContents }}
-          </div>
-        </aside>
-        {{ end }}
       </div>
     </div>
   </div>
