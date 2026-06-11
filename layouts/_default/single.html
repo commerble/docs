@@ -1,0 +1,147 @@
+{{ define "main" }}
+<article class="single-post">
+  {{/* パンくずナビ */}}
+  <div class="single-post__container">
+    <nav class="breadcrumb" aria-label="パンくずナビ">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item">
+          <a href="https://www.commerble.com/" class="breadcrumb__link">ホーム</a>
+        </li>
+        <li class="breadcrumb__item">
+          <a href="{{ "/docs/" | relURL }}" class="breadcrumb__link">ドキュメント</a>
+        </li>
+        {{ if .Section }}
+        <li class="breadcrumb__item">
+          {{ $sectionPage := .Site.GetPage "section" .Section }}
+          <a href="{{ .Section | relURL }}" class="breadcrumb__link">{{ $sectionPage.Title }}</a>
+        </li>
+        {{ end }}
+        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+          {{ .Title }}
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  {{/* 記事ヘッダー */}}
+  <header class="single-post__header">
+    <div class="single-post__container">
+      <h1 class="single-post__title">{{ .Title }}</h1>
+      
+      {{/* メタ情報 */}}
+      <div class="single-post__meta">
+        <time class="single-post__date" datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "2006年1月2日" }}
+        </time>
+        {{ if .Params.author }}
+        <span class="single-post__author">{{ .Params.author }}</span>
+        {{ end }}
+        {{ if .ReadingTime }}
+        <span class="single-post__reading-time">読了時間: {{ .ReadingTime }}分</span>
+        {{ end }}
+      </div>
+
+      {{/* タグ */}}
+      {{ if .Params.tags }}
+      <div class="single-post__tags">
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="single-post__tag"># {{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{/* アイキャッチ画像 */}}
+      {{ if .Params.image }}
+      <div class="single-post__image">
+        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="single-post__image-element">
+      </div>
+      {{ end }}
+    </div>
+  </header>
+
+  {{/* 記事本文 */}}
+  <div class="single-post__content">
+    <div class="single-post__container">
+      <div class="single-post__body">
+        {{/* 記事内容 */}}
+        <div class="content">
+          {{ .Content }}
+        </div>
+
+        {{/* 目次（有効な場合） */}}
+        {{ if and site.Params.features.toc (.TableOfContents) }}
+        <aside class="toc" aria-labelledby="toc-title">
+          <h2 id="toc-title" class="toc__title">目次</h2>
+          <div class="toc__content">
+            {{ .TableOfContents }}
+          </div>
+        </aside>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  {{/* 記事フッター */}}
+  <footer class="single-post__footer">
+    <div class="single-post__container">
+      {{/* お問い合わせCTA */}}
+      <div class="contact-cta">
+        <h3 class="contact-cta__title">お問い合わせ</h3>
+        <p class="contact-cta__description">この記事に関するご質問やサービスについて詳しく知りたい方は、お気軽にお問い合わせください。</p>
+        <div class="contact-cta__actions">
+          <a href="{{ "/contact/" | relURL }}" class="button button--primary" aria-label="お問い合わせページへ移動">
+            お問い合わせ
+          </a>
+        </div>
+      </div>
+
+      {{/* 関連記事（有効な場合） */}}
+      {{ if site.Params.features.relatedPosts }}
+      {{ $related := .Site.RegularPages.Related . | first 3 }}
+      {{ if $related }}
+      <section class="related-posts" aria-labelledby="related-title">
+        <h3 id="related-title" class="related-posts__title">関連記事</h3>
+        <div class="related-posts__grid">
+          {{ range $related }}
+          <article class="post-card post-card--compact">
+            {{ if .Params.image }}
+            <div class="post-card__image">
+              <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
+                <img src="{{ .Params.image | relURL }}" alt="" class="post-card__image-element">
+              </a>
+            </div>
+            {{ end }}
+            <div class="post-card__content">
+              <h4 class="post-card__title">
+                <a href="{{ .RelPermalink }}" class="post-card__title-link">{{ .Title }}</a>
+              </h4>
+              <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "2006年1月2日" }}
+              </time>
+            </div>
+          </article>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+      {{ end }}
+
+      {{/* ページナビゲーション */}}
+      <nav class="post-nav" aria-label="記事ナビゲーション">
+        {{ if .PrevInSection }}
+        <a href="{{ .PrevInSection.RelPermalink }}" class="post-nav__link post-nav__link--prev">
+          <span class="post-nav__label">前の記事</span>
+          <span class="post-nav__title">{{ .PrevInSection.Title }}</span>
+        </a>
+        {{ end }}
+        {{ if .NextInSection }}
+        <a href="{{ .NextInSection.RelPermalink }}" class="post-nav__link post-nav__link--next">
+          <span class="post-nav__label">次の記事</span>
+          <span class="post-nav__title">{{ .NextInSection.Title }}</span>
+        </a>
+        {{ end }}
+      </nav>
+    </div>
+  </footer>
+</article>
+{{ end }}

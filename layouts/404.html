@@ -1,0 +1,132 @@
+{{ define "main" }}
+<div class="error-page">
+  <div class="error-page__container">
+    <div class="error-page__content">
+      <div class="error-page__code">404</div>
+      <h1 class="error-page__title">ページが見つかりません</h1>
+      <p class="error-page__description">
+        お探しのページは存在しないか、移動または削除された可能性があります。
+      </p>
+      <div class="error-page__actions">
+        <a href="{{ "/" | relURL }}" class="button button--primary">ホームに戻る</a>
+        <button type="button" onclick="history.back()" class="button button--secondary">前のページに戻る</button>
+      </div>
+      
+      {{/* 最新記事のサジェスト */}}
+      {{ $posts := where .Site.RegularPages "Section" "posts" | first 3 }}
+      {{ if $posts }}
+      <div class="error-page__suggestions">
+        <h2 class="error-page__suggestions-title">おすすめの記事</h2>
+        <div class="error-page__suggestions-grid">
+          {{ range $posts }}
+          <article class="post-card post-card--compact">
+            {{ if .Params.image }}
+            <div class="post-card__image">
+              <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
+                <img src="{{ .Params.image | relURL }}" alt="" class="post-card__image-element">
+              </a>
+            </div>
+            {{ end }}
+            <div class="post-card__content">
+              <h3 class="post-card__title">
+                <a href="{{ .RelPermalink }}" class="post-card__title-link">{{ .Title }}</a>
+              </h3>
+              <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "2006年1月2日" }}
+              </time>
+            </div>
+          </article>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<style>
+/* 404エラーページ専用スタイル */
+.error-page {
+  padding: var(--spacing-5xl) 0;
+  min-height: calc(100vh - 64px - 200px);
+  display: flex;
+  align-items: center;
+}
+
+.error-page__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-base);
+}
+
+.error-page__content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-page__code {
+  font-size: 8rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--spacing-base);
+}
+
+.error-page__title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.error-page__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-3xl);
+  line-height: var(--line-height-relaxed);
+  word-break: keep-all;
+}
+
+.error-page__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-5xl);
+}
+
+.error-page__suggestions {
+  text-align: left;
+}
+
+.error-page__suggestions-title {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.error-page__suggestions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 640px) {
+  .error-page__actions {
+    flex-direction: row;
+  }
+  
+  .error-page__code {
+    font-size: 12rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .error-page__container {
+    padding: 0 var(--spacing-xl);
+  }
+  .error-page__description {
+    white-space: nowrap;
+  }
+}
+</style>
+{{ end }}

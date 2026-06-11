@@ -1,0 +1,74 @@
+{{/* メタデータとSEO設定 */}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{{/* 基本メタ情報 */}}
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+<meta name="description" content="{{ .Summary | default site.Params.description | plainify | htmlEscape }}">
+<meta name="author" content="{{ .Params.author | default site.Params.author }}">
+{{ if .Params.tags }}
+<meta name="keywords" content="{{ delimit .Params.tags ", " }}">
+{{ else if site.Params.keywords }}
+<meta name="keywords" content="{{ delimit site.Params.keywords ", " }}">
+{{ end }}
+
+{{/* canonical URL */}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{/* RSS */}}
+{{ with .OutputFormats.Get "rss" -}}
+<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">
+{{ end -}}
+
+{{/* OGP設定 */}}
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ .Summary | default site.Params.description | plainify | htmlEscape }}">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+{{ $ogImage := .Params.image | default site.Params.image }}
+{{ if $ogImage }}
+<meta property="og:image" content="{{ $ogImage | absURL }}">
+{{ end }}
+
+{{/* Twitter Card */}}
+<meta name="twitter:card" content="summary{{ if .Params.image }}_large_image{{ end }}">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta name="twitter:description" content="{{ .Summary | default site.Params.description | plainify | htmlEscape }}">
+{{ if site.Params.social.twitter }}
+<meta name="twitter:site" content="@{{ site.Params.social.twitter }}">
+{{ end }}
+{{ $twitterImage := .Params.image | default site.Params.image }}
+{{ if $twitterImage }}
+<meta name="twitter:image" content="{{ $twitterImage | absURL }}">
+{{ end }}
+
+{{/* favicon */}}
+<link rel="icon" type="image/x-icon" href="{{ "images/favicon.ico" | relURL }}">
+
+{{/* CSS読み込み */}}
+{{ $css := resources.Get "css/main.css" }}
+{{ if $css }}
+  {{ if hugo.IsProduction }}
+    {{ $css = $css | minify | fingerprint }}
+  {{ end }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $css.Data.Integrity }}"{{ end }}>
+{{ end }}
+
+{{/* プリロード設定（パフォーマンス最適化） */}}
+<link rel="preload" href="{{ "css/main.css" | relURL }}" as="style">
+
+{{/* 構造化データ */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ if .IsHome }}Organization{{ else }}WebPage{{ end }}",
+  "name": "{{ site.Title }}",
+  "url": "{{ site.BaseURL }}",
+  {{ if site.Params.contact.email }}"email": "{{ site.Params.contact.email }}",{{ end }}
+  {{ if site.Params.contact.phone }}"telephone": "{{ site.Params.contact.phone }}",{{ end }}
+  {{ if site.Params.contact.address }}"address": "{{ site.Params.contact.address }}",{{ end }}
+  "description": "{{ site.Params.description }}"
+}
+</script>

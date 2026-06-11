@@ -1,0 +1,131 @@
+{{ define "main" }}
+<div class="list-page">
+  <div class="list-page__container">
+    {{/* パンくずナビ */}}
+    <nav class="breadcrumb" aria-label="パンくずナビ">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item">
+          <a href="https://www.commerble.com/" class="breadcrumb__link">ホーム</a>
+        </li>
+        <li class="breadcrumb__item">
+          <a href="{{ "/docs/" | relURL }}" class="breadcrumb__link">ドキュメント</a>
+        </li>
+        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+          {{ .Title }}
+        </li>
+      </ol>
+    </nav>
+
+    {{/* ページヘッダー */}}
+    <header class="list-page__header">
+      <h1 class="list-page__title">{{ .Title }}</h1>
+      {{ if gt (len .Pages) 0 }}
+      <p class="list-page__count">
+        {{ len .Pages }}件の記事があります
+      </p>
+      {{ end }}
+    </header>
+
+    <div class="list-page__wrapper">
+      {{/* 記事一覧 */}}
+      <main class="list-page__content">
+        {{ if .Pages }}
+        <div class="posts-list">
+          {{ range .Paginator.Pages }}
+          <article class="post-card">
+            {{ if .Params.image }}
+            <div class="post-card__image">
+              <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
+                <img src="{{ .Params.image | relURL }}" alt="" class="post-card__image-element">
+              </a>
+            </div>
+            {{ end }}
+            <div class="post-card__content">
+              <h2 class="post-card__title">
+                <a href="{{ .RelPermalink }}" class="post-card__title-link">{{ .Title }}</a>
+              </h2>
+              {{ if .Params.description }}
+              <p class="post-card__summary">{{ .Params.description | truncate 120 }}</p>
+              {{ else if .Summary }}
+              <p class="post-card__summary">{{ .Summary | plainify | truncate 120 }}</p>
+              {{ end }}
+              <div class="post-card__meta">
+                <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">
+                  {{ .Date.Format "2006年1月2日" }}
+                </time>
+                <span class="post-card__reading-time">{{ .ReadingTime }}分</span>
+                {{ if .Params.tags }}
+                <div class="post-card__tags">
+                  {{ range first 2 .Params.tags }}
+                  <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="post-card__tag"># {{ . }}</a>
+                  {{ end }}
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </article>
+          {{ end }}
+        </div>
+
+        {{/* ページネーション */}}
+        {{ if gt .Paginator.TotalPages 1 }}
+        <nav class="pagination" aria-label="ページナビゲーション">
+          <ul class="pagination__list">
+            {{ if .Paginator.HasPrev }}
+            <li class="pagination__item">
+              <a href="{{ .Paginator.Prev.URL | relURL }}" class="pagination__link pagination__link--prev" aria-label="前のページ">
+                ❮ 前へ
+              </a>
+            </li>
+            {{ end }}
+
+            {{ range .Paginator.Pagers }}
+            <li class="pagination__item">
+              {{ if eq . $.Paginator }}
+              <span class="pagination__link pagination__link--current" aria-current="page">{{ .PageNumber }}</span>
+              {{ else }}
+              <a href="{{ .URL | relURL }}" class="pagination__link">{{ .PageNumber }}</a>
+              {{ end }}
+            </li>
+            {{ end }}
+
+            {{ if .Paginator.HasNext }}
+            <li class="pagination__item">
+              <a href="{{ .Paginator.Next.URL | relURL }}" class="pagination__link pagination__link--next" aria-label="次のページ">
+                次へ ❯
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </nav>
+        {{ end }}
+
+        {{ else }}
+        {{/* 記事がない場合 */}}
+        <div class="list-page__empty">
+          <p class="list-page__empty-message">記事がありません。</p>
+          <a href="{{ "/" | relURL }}" class="button button--primary">ホームに戻る</a>
+        </div>
+        {{ end }}
+      </main>
+
+      {{/* サイドバー（タグ表示） */}}
+      <aside class="list-page__sidebar">
+        {{/* タグ一覧 */}}
+        {{ if .Site.Taxonomies.tags }}
+        <section class="sidebar-widget">
+          <h3 class="sidebar-widget__title">タグ</h3>
+          <div class="tag-list">
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}" class="tag-list__item">
+              {{ $name | upper }} ({{ len $taxonomy }})
+            </a>
+            {{ end }}
+          </div>
+        </section>
+        {{ end }}
+      </aside>
+    </div>
+  </div>
+</div>
+{{ end }}

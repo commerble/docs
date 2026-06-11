@@ -1,39 +1,77 @@
-{{ $links := .Site.Params.links }}
-<footer class="-bg-primary py-5 row d-print-none">
-  <div class="container-fluid mx-sm-5">
-    <div class="row">
-      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
-        {{ with $links }}
-        {{ with index . "user"}}
-        {{ template "footer-links-block"  . }}
-        {{ end }}
+{{/* メインフッター */}}
+<footer class="footer" role="contentinfo">
+  <div class="footer__container">
+    {{/* フッター上部 */}}
+    <div class="footer__top">
+      {{/* 会社情報 */}}
+      <div class="footer__section">
+        <div class="footer__logo">
+          {{ if fileExists "static/images/logo.svg" }}
+            <img src="{{ "images/logo.svg" | relURL }}" alt="{{ site.Title }}" class="footer__logo-image">
+          {{ else }}
+            <span class="footer__logo-text">{{ site.Title }}</span>
+          {{ end }}
+        </div>
+        {{ if site.Params.description }}
+        <p class="footer__description">{{ site.Params.description }}</p>
         {{ end }}
       </div>
-      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
-        {{ with $links }}
-        {{ with index . "developer"}}
-        {{ template "footer-links-block"  . }}
-        {{ end }}
-        {{ end }}
+
+      {{/* ナビゲーションリンク */}}
+      <div class="footer__section">
+        <h3 class="footer__section-title">サイトマップ</h3>
+        <ul class="footer__nav-list">
+          {{ range site.Menus.main }}
+          <li class="footer__nav-item">
+            <a href="{{ .URL | relURL }}" class="footer__nav-link">{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
       </div>
-      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        {{ with .Site.Params.copyright }}<small class="text-white">&copy; {{ now.Year}} {{ .}} {{ T "footer_all_rights_reserved" }}</small>{{ end }}
-        {{ with .Site.Params.privacy_policy }}<small class="ml-1"><a href="{{ . }}" target="_blank">{{ T "footer_privacy_policy" }}</a></small>{{ end }}
-	{{ if not .Site.Params.ui.footer_about_disable }}
-		{{ with .Site.GetPage "about" }}<p class="mt-2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>{{ end }}
-	{{ end }}
+
+      {{/* 連絡先情報 */}}
+      {{ if or site.Params.contact.email site.Params.contact.phone site.Params.contact.address }}
+      <div class="footer__section">
+        <h3 class="footer__section-title">お問い合わせ</h3>
+        <address class="footer__contact">
+          {{ if site.Params.contact.email }}
+          <p class="footer__contact-item">
+            <a href="mailto:{{ site.Params.contact.email }}" class="footer__contact-link">
+              {{ site.Params.contact.email }}
+            </a>
+          </p>
+          {{ end }}
+          {{ if site.Params.contact.phone }}
+          <p class="footer__contact-item">
+            <a href="tel:{{ site.Params.contact.phone }}" class="footer__contact-link">
+              {{ site.Params.contact.phone }}
+            </a>
+          </p>
+          {{ end }}
+          {{ if site.Params.contact.address }}
+          <p class="footer__contact-item">{{ site.Params.contact.address }}</p>
+          {{ end }}
+        </address>
+      </div>
+      {{ end }}
+    </div>
+
+    {{/* フッター下部 */}}
+    <div class="footer__bottom">
+      <div class="footer__bottom-content">
+        <p class="footer__copyright">
+          © {{ now.Format "2006" }} {{ site.Title }}. All rights reserved.
+        </p>
+        
+        {{/* 法的ページへのリンク */}}
+        <nav class="footer__legal-nav" aria-label="法的情報">
+          <ul class="footer__legal-list">
+            <li class="footer__legal-item">
+              <a href="{{ "/privacy/" | relURL }}" class="footer__legal-link">プライバシーポリシー</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
 </footer>
-{{ define "footer-links-block" }}
-<ul class="list-inline mb-0">
-  {{ range . }}
-  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="{{ .name }}" aria-label="{{ .name }}">
-    <a class="text-white" target="_blank" rel="noopener noreferrer" href="{{ .url }}">
-      <i class="{{ .icon }}"></i>
-    </a>
-  </li>
-  {{ end }}
-</ul>
-{{ end }}

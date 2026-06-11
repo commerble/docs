@@ -1,0 +1,19 @@
+{{/* JavaScript読み込み */}}
+{{ $js := resources.Get "js/main.js" }}
+{{ if $js }}
+  {{ if hugo.IsProduction }}
+    {{ $js = $js | minify | fingerprint }}
+  {{ end }}
+  <script src="{{ $js.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
+{{ end }}
+
+{{/* その他のスクリプト（必要に応じて） */}}
+{{ if site.Params.features.search }}
+  {{ $searchJS := resources.Get "js/search.js" }}
+  {{ if $searchJS }}
+    {{ if hugo.IsProduction }}
+      {{ $searchJS = $searchJS | minify | fingerprint }}
+    {{ end }}
+    <script src="{{ $searchJS.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $searchJS.Data.Integrity }}"{{ end }}></script>
+  {{ end }}
+{{ end }}

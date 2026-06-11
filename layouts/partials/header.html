@@ -1,0 +1,79 @@
+{{/* メインヘッダー */}}
+<header class="header" role="banner">
+  <div class="header__container">
+    {{/* ロゴ */}}
+    <div class="header__logo">
+      <a href="{{ "/" | relURL }}" class="header__logo-link" aria-label="ホームに戻る">
+        {{ if and (fileExists "static/images/logo_mono_dark.svg") (fileExists "static/images/logo_mono_light.svg") }}
+          {{/* ダークモード対応ロゴ */}}
+          <img src="{{ "images/logo_mono_dark.svg" | relURL }}" 
+               alt="{{ site.Title }}" 
+               class="header__logo-image header__logo-image--light">
+          <img src="{{ "images/logo_mono_light.svg" | relURL }}" 
+               alt="{{ site.Title }}" 
+               class="header__logo-image header__logo-image--dark">
+        {{ else if fileExists "static/images/logo.svg" }}
+          {{/* フォールバック：通常のロゴ */}}
+          <img src="{{ "images/logo.svg" | relURL }}" alt="{{ site.Title }}" class="header__logo-image">
+        {{ else }}
+          <span class="header__logo-text">{{ site.Title }}</span>
+        {{ end }}
+      </a>
+    </div>
+
+    {{/* メインナビゲーション */}}
+    <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+      <ul class="header__nav-list">
+        {{ range site.Menus.main }}
+        <li class="header__nav-item">
+          <a href="{{ .URL | relURL }}" 
+             class="header__nav-link{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} header__nav-link--active{{ end }}"
+             {{ if .Pre }}aria-label="{{ .Pre }}"{{ end }}>
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    {{/* モバイルメニューボタン */}}
+    <button class="header__menu-toggle" 
+            aria-label="メニューを開く" 
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+      <span class="header__menu-toggle-bar"></span>
+      <span class="header__menu-toggle-bar"></span>
+      <span class="header__menu-toggle-bar"></span>
+    </button>
+
+    {{/* ダークモード切替ボタン（有効な場合） */}}
+    {{ if site.Params.features.darkMode }}
+    <button class="header__theme-toggle" 
+            aria-label="ダークモードを切り替え" 
+            title="テーマを切り替え">
+      <span class="header__theme-toggle-icon header__theme-toggle-icon--auto" aria-hidden="true">
+        <span class="header__theme-toggle-icon-part header__theme-toggle-icon-part--sun">☀️</span>
+        <span class="header__theme-toggle-icon-part header__theme-toggle-icon-part--moon">🌙</span>
+      </span>
+      <span class="header__theme-toggle-icon header__theme-toggle-icon--light" aria-hidden="true">☀️</span>
+      <span class="header__theme-toggle-icon header__theme-toggle-icon--dark" aria-hidden="true">🌙</span>
+    </button>
+    {{ end }}
+  </div>
+
+  {{/* モバイルメニュー */}}
+  <div class="header__mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="header__mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
+      <ul class="header__mobile-nav-list">
+        {{ range site.Menus.main }}
+        <li class="header__mobile-nav-item">
+          <a href="{{ .URL | relURL }}" 
+             class="header__mobile-nav-link{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} header__mobile-nav-link--active{{ end }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

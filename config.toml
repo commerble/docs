@@ -1,7 +1,6 @@
 baseURL = "https://www.commerble.com/docs/"
 languageCode = "ja-JP"
 title = "Commerble Docs"
-theme = "docsy"
 
 enableRobotsTXT = true
 
@@ -34,55 +33,60 @@ latexDashes = true
 [services.googleAnalytics]
 id = "UA-58587912-1"
 
-[params]
-time_format_default = "2006-01-02"
-copyright = "Commerble Inc. "
-
-baseUrl = "https://www.commerble.com/docs/"
-
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 # gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 gcs_engine_id = "f468d8f73b829f44e"
 
-# Enable Algolia DocSearch
-algolia_docsearch = false
+[params]
+  description = "Commerbleは、Eコマースシステムが顧客ごとに異なる業務設計で運用されていることを前提に設計された、顧客固有の要件に柔軟かつ短納期で対応できるカスタマイズ性の高いECプラットフォームです。"
+  author = "Commerble Inc."
+  keywords = ["EC", "ecommerce", "B2C", "B2B", "D2C", "基幹連携"]
+  image = "/images/ogp.png"
 
-# Enable Lunr.js offline search
-offlineSearch = false
+  [params.contact]
+    email = "info@commerble.com"
+    phone = "03-6661-1334"
+    address = "東京都中央区日本橋蛎殻町1-12-9 カモツル日本橋ビル 3F"
 
-prism_syntax_highlighting = true
+  [params.features]
+    darkMode = true
 
-# User interface configuration
-[params.ui]
-# Enable to show the side bar menu in its compact state.
-sidebar_menu_compact = false
-#  Set to true to disable breadcrumb navigation.
-breadcrumb_disable = false
-#  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
-sidebar_search_disable = false
-#  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
-navbar_logo = false
-# Set to true to disable the About link in the site footer
-footer_about_disable = false
+  [params.mermaid]
+    enable = true
+    theme = "neutral"
 
 
-[params.mermaid]
-enable = true
-theme = "neutral"
-
+[menu]
+  [[menu.main]]
+    name = "会社概要"
+    url = "https://www.commerble.com/about/"
+    weight = 45
+  [[menu.main]]
+    name = "サービス"
+    url = "https://www.commerble.com/features/"
+    weight = 30
+  [[menu.main]]
+    name = "利用料金"
+    url = "https://www.commerble.com/pricing/"
+    weight = 35
+  [[menu.main]]
+    name = "最新情報"
+    url = "https://www.commerble.com/contents/"
+    weight = 40
+  [[menu.main]]
+    name = "お問い合わせ"
+    url = "https://www.commerble.com/contact/"
+    weight = 50
+  [[menu.main]]
+    name = "ドキュメント"
+    url = "/"
+    weight = 32
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
   [markup.highlight]
-      # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
-      style = "tango"
-      # Uncomment if you want your chosen highlight style used for code blocks without a specified language
-      # guessSyntax = "true"
-
-
-[[menu.main]]
-  name = "HOME"
-  weight = 50
-  url = "https://www.commerble.com/"
+    style = "github"
+    lineNos = true
+    codeFences = true

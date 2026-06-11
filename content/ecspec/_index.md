@@ -1,9 +1,5 @@
 ---
 title: "自社のECを学ぼう"
-weight: 20
-menu:
-  main:
-    weight: 10
 cascade:
   type: docs
 ---
