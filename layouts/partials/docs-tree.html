@@ -43,8 +43,7 @@
 
 <aside class="docs-sidebar" aria-labelledby="docs-sidebar-title">
   <div class="docs-sidebar__inner">
-    <p id="docs-sidebar-title" class="docs-sidebar__eyebrow">Documentation</p>
-    <a href="{{ $root.RelPermalink }}" class="docs-sidebar__home{{ if eq $root.RelPermalink $current.RelPermalink }} docs-sidebar__home--current{{ end }}">{{ $root.LinkTitle }}</a>
+    <p id="docs-sidebar-title" class="docs-sidebar__eyebrow">Documentation Index</p>
     <nav class="docs-tree" aria-label="ドキュメントツリー">
       <ul class="docs-tree__list docs-tree__list--root" role="list">
         {{ range sort (sort $rootChildren "LinkTitle") "Weight" }}
