@@ -1,7 +1,5 @@
 ---
 title: "仮予約"
-weight: 30
-headless: true
 description: 
 ---
 
