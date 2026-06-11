@@ -2032,7 +2032,7 @@ img[loading="lazy"].loaded {
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    /* transition-duration: 0.01ms !important; */
     scroll-behavior: auto !important;
   }
 }
@@ -3546,4 +3546,16 @@ select.form-control {
   background-color: var(--color-bg-tertiary);
   color: var(--color-text-primary);
   border-color: var(--color-text-primary);
+}
+
+pre.mermaid {
+  width: 100% !important;
+  overflow-x: auto !important; 
+  display: block !important;
+}
+
+pre.mermaid svg {
+  width: 100% !important;      
+  max-width: none !important;    
+  height: auto !important;      
 }
