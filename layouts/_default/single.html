@@ -1,4 +1,37 @@
 {{ define "main" }}
+{{ $root := .Site.GetPage "section" "" }}
+{{ $rootPages := where .Site.RegularPages "Parent.RelPermalink" $root.RelPermalink }}
+{{ $rootChildren := slice }}
+{{ range $root.Sections }}
+  {{ $rootChildren = $rootChildren | append . }}
+{{ end }}
+{{ range $rootPages }}
+  {{ $rootChildren = $rootChildren | append . }}
+{{ end }}
+
+{{ $flatPages := slice }}
+{{ range sort (sort $rootChildren "LinkTitle") "Weight" }}
+  {{ $flatPages = partial "docs-flat-pages.html" (dict "page" . "pages" $flatPages) }}
+{{ end }}
+
+{{ $currentIndex := -1 }}
+{{ range $index, $page := $flatPages }}
+  {{ if eq $page.RelPermalink $.RelPermalink }}
+    {{ $currentIndex = $index }}
+  {{ end }}
+{{ end }}
+
+{{ $prevPage := dict }}
+{{ $nextPage := dict }}
+{{ if ge $currentIndex 0 }}
+  {{ if gt $currentIndex 0 }}
+    {{ $prevPage = index $flatPages (sub $currentIndex 1) }}
+  {{ end }}
+  {{ if lt (add $currentIndex 1) (len $flatPages) }}
+    {{ $nextPage = index $flatPages (add $currentIndex 1) }}
+  {{ end }}
+{{ end }}
+
 <article class="single-post">
   {{/* パンくずナビ */}}
   <div class="single-post__container">
@@ -118,16 +151,16 @@
 
       {{/* ページナビゲーション */}}
       <nav class="post-nav" aria-label="記事ナビゲーション">
-        {{ if .PrevInSection }}
-        <a href="{{ .PrevInSection.RelPermalink }}" class="post-nav__link post-nav__link--prev">
+        {{ if $prevPage }}
+        <a href="{{ $prevPage.RelPermalink }}" class="post-nav__link post-nav__link--prev">
           <span class="post-nav__label">前の記事</span>
-          <span class="post-nav__title">{{ .PrevInSection.Title }}</span>
+          <span class="post-nav__title">{{ $prevPage.Title }}</span>
         </a>
         {{ end }}
-        {{ if .NextInSection }}
-        <a href="{{ .NextInSection.RelPermalink }}" class="post-nav__link post-nav__link--next">
+        {{ if $nextPage }}
+        <a href="{{ $nextPage.RelPermalink }}" class="post-nav__link post-nav__link--next">
           <span class="post-nav__label">次の記事</span>
-          <span class="post-nav__title">{{ .NextInSection.Title }}</span>
+          <span class="post-nav__title">{{ $nextPage.Title }}</span>
         </a>
         {{ end }}
       </nav>

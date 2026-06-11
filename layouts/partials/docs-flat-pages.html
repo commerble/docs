@@ -1,0 +1,12 @@
+{{- $page := .page -}}
+{{- $pages := .pages -}}
+{{- if not $page.IsSection -}}
+  {{- $pages = $pages | append $page -}}
+{{- end -}}
+{{- if $page.IsSection -}}
+  {{- $children := $page.Sections.ByWeight.ByTitle | append ($page.RegularPages.ByWeight.ByTitle) -}}
+  {{- range $children -}}
+    {{- $pages = partial "docs-flat-pages.html" (dict "page" . "pages" $pages) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $pages -}}
