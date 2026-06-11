@@ -33,6 +33,10 @@
         <div class="posts-list">
           {{ range .Paginator.Pages }}
           <article class="post-card">
+            {{ $pageDate := .Date }}
+            {{ if $pageDate.IsZero }}
+              {{ $pageDate = .Lastmod }}
+            {{ end }}
             {{ if .Params.image }}
             <div class="post-card__image">
               <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
@@ -50,9 +54,11 @@
               <p class="post-card__summary">{{ .Summary | plainify | truncate 120 }}</p>
               {{ end }}
               <div class="post-card__meta">
-                <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">
-                  {{ .Date.Format "2006年1月2日" }}
+                {{ if not $pageDate.IsZero }}
+                <time class="post-card__date" datetime="{{ $pageDate.Format "2006-01-02" }}">
+                  {{ $pageDate.Format "2006年1月2日" }}
                 </time>
+                {{ end }}
                 <span class="post-card__reading-time">{{ .ReadingTime }}分</span>
                 {{ if .Params.tags }}
                 <div class="post-card__tags">
