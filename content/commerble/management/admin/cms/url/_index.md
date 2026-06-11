@@ -1,5 +1,6 @@
 ---
 title: "URL"
+layout: single
 weight: 10
 description: 
 ---

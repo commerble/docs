@@ -1,7 +1,6 @@
 ---
 title: "特徴"
 weight: 10
-no_list: false
 description: 
 ---
 

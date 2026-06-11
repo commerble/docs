@@ -1,7 +1,7 @@
 ---
 title: "商品検索"
+layout: single
 weight: 30
-headless: true
 description: 
 ---
 
