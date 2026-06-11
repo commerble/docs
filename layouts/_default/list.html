@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $root := .Site.GetPage "section" "" }}
+{{ $listPages := sort (sort (.Sections | append .RegularPages) "LinkTitle") "Weight" }}
 {{ $breadcrumbAncestors := slice }}
 {{ with .CurrentSection }}
   {{ range .Ancestors.Reverse }}
@@ -36,9 +37,9 @@
     {{/* ページヘッダー */}}
     <header class="list-page__header">
       <h1 class="list-page__title">{{ .Title }}</h1>
-      {{ if gt (len .Pages) 0 }}
+      {{ if gt (len $listPages) 0 }}
       <p class="list-page__count">
-        {{ len .Pages }}件の記事があります
+        {{ len $listPages }}件の記事があります
       </p>
       {{ end }}
     </header>
@@ -46,9 +47,9 @@
       {{/* 記事一覧 */}}
       <main class="list-page__content">
         {{ .Content }}
-        {{ if .Pages }}
+        {{ if $listPages }}
         <div class="posts-list">
-          {{ range .Paginator.Pages }}
+          {{ range $listPages }}
           <article class="post-card">
             {{ $pageDate := .Date }}
             {{ if $pageDate.IsZero }}
@@ -89,39 +90,6 @@
           </article>
           {{ end }}
         </div>
-
-        {{/* ページネーション */}}
-        {{ if gt .Paginator.TotalPages 1 }}
-        <nav class="pagination" aria-label="ページナビゲーション">
-          <ul class="pagination__list">
-            {{ if .Paginator.HasPrev }}
-            <li class="pagination__item">
-              <a href="{{ .Paginator.Prev.URL | relURL }}" class="pagination__link pagination__link--prev" aria-label="前のページ">
-                ❮ 前へ
-              </a>
-            </li>
-            {{ end }}
-
-            {{ range .Paginator.Pagers }}
-            <li class="pagination__item">
-              {{ if eq . $.Paginator }}
-              <span class="pagination__link pagination__link--current" aria-current="page">{{ .PageNumber }}</span>
-              {{ else }}
-              <a href="{{ .URL | relURL }}" class="pagination__link">{{ .PageNumber }}</a>
-              {{ end }}
-            </li>
-            {{ end }}
-
-            {{ if .Paginator.HasNext }}
-            <li class="pagination__item">
-              <a href="{{ .Paginator.Next.URL | relURL }}" class="pagination__link pagination__link--next" aria-label="次のページ">
-                次へ ❯
-              </a>
-            </li>
-            {{ end }}
-          </ul>
-        </nav>
-        {{ end }}
 
         {{ else }}
         {{/* 記事がない場合 */}}
