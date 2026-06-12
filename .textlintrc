@@ -7,6 +7,9 @@
         "preferInBody": "ですます",
         "preferInList": "ですます",
         "strict": true
+      },
+      "max-kanji-continuous-len": {
+        "max": 8
       }
     },
     "preset-jtf-style": true,
