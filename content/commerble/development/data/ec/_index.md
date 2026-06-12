@@ -951,7 +951,7 @@ ECデータは、Web API経由でアクセス可能です。
 | BookingEnable                 | Boolean  |                 |        |          |    O     | 計上許可                                                         |
 | ChargePointSummary            | Decimal  |                 |        |          |    O     | 計付与ポイント                                                   |
 | OriginalOrderId               | Int64    |                 |        |          |    O     | 複製元受注ID                                                     |
-| EstimateShipDate              | DateTime |                 |        |          |    O     | 着日指定から算出される出荷予定日、nullの場合出荷準備出来次第出荷 |
+| EstimateShipDate              | DateTime |                 |        |          |    O     | 着日指定から算出される出荷予定日                                 |
 | AllocationCompleteDate        | DateTime |                 |        |          |    O     | 引当完了日時                                                     |
 | DeliveryReportDate            | DateTime |                 |        |          |    O     | 配送報告日時                                                     |
 | ShipBookAt                    | DateTime |                 |        |          |    O     | 出荷計上日時                                                     |

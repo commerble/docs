@@ -7,7 +7,7 @@ description:
 
 カートでの税率計算式及び請求金額全体の計算式を示します。
 
-<!-- textlint-disable ja-technical-writing/sentence-length jtf-style/3.3.かっこ類と隣接する文字の間のスペースの有無 jtf-style/4.3.1.丸かっこ（） -->
+<!-- textlint-disable ja-technical-writing/sentence-length, jtf-style/3.3.かっこ類と隣接する文字の間のスペースの有無, jtf-style/4.3.1.丸かっこ（） -->
 {{<katex>}}
 \begin{aligned}
 total &= S + (D - p_d) + (C - p_c) \\ \\
@@ -47,7 +47,7 @@ S &:= \sum_{i=1}^N \biggl( u_i a_i + \tau_i a_i - d_i - p_i \biggr) \\ \\
 |  \\(p_i\\)   | OrderLine.PointUsage                        | 明細分使用ポイント      |
 |  \\(d_i\\)   | OrderLine.DiscountPrice                     | 明細分割引額            |
 
-<!-- textlint-enable ja-technical-writing/sentence-length jtf-style/3.3.かっこ類と隣接する文字の間のスペースの有無 jtf-style/4.3.1.丸かっこ（） -->
+<!-- textlint-enable ja-technical-writing/sentence-length, jtf-style/3.3.かっこ類と隣接する文字の間のスペースの有無, jtf-style/4.3.1.丸かっこ（） -->
 
 割引額はキャンペーンの適用によって決定されます。割引額の詳しい計算方法は[キャンペーンページ](../campaign/)を参照ください。
 
