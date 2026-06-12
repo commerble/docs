@@ -1,7 +1,7 @@
 ---
 title: "CAPTCHA"
 layout: single
-weight: 2
+weight: 10
 description:
 ---
 
