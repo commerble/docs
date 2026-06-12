@@ -4,7 +4,7 @@ weight: 80
 headless: true
 ---
 
-![自社のECを学ぼう](../ecspec_hero.jpeg)
+![自社のECを学ぼう](./_hero.jpg)
 
 ## はじめに
 
