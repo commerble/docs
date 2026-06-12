@@ -4,6 +4,4 @@ weight: 20
 description: 
 ---
 
-![導入](introduction.jpeg)
-
 この章では、Commerbleのシステム導入について説明します。
