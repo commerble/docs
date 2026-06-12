@@ -48,7 +48,7 @@
       <main class="list-page__content">
         {{ .Content }}
         {{ if $listPages }}
-        <div class="posts-list">
+        <div class="posts-grid">
           {{ range $listPages }}
           <article class="post-card">
             {{ $pageDate := .Date }}
@@ -98,23 +98,6 @@
         </div>
         {{ end }}
       </main>
-
-      {{/* サイドバー（タグ表示） */}}
-      <aside class="list-page__sidebar">
-        {{/* タグ一覧 */}}
-        {{ if .Site.Taxonomies.tags }}
-        <section class="sidebar-widget">
-          <h3 class="sidebar-widget__title">タグ</h3>
-          <div class="tag-list">
-            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-            <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}" class="tag-list__item">
-              {{ $name | upper }} ({{ len $taxonomy }})
-            </a>
-            {{ end }}
-          </div>
-        </section>
-        {{ end }}
-      </aside>
     </div>
   </div>
 </div>
