@@ -46,7 +46,12 @@
     <div class="list-page__wrapper">
       {{/* 記事一覧 */}}
       <main class="list-page__content">
-        {{ .Content }}
+        {{ if .Content }}
+        <div class="content">
+          {{ .Content }}
+        </div>
+        <hr>
+        {{ end }}
         {{ if $listPages }}
         <div class="posts-grid">
           {{ range $listPages }}

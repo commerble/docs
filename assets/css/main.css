@@ -235,11 +235,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { font-size: var(--font-size-4xl); }
-h2 { font-size: var(--font-size-3xl); }
-h3 { font-size: var(--font-size-2xl); }
-h4 { font-size: var(--font-size-xl); }
+h2 { font-size: var(--font-size-3xl); margin-top: var(--spacing-5xl); }
+h3 { font-size: var(--font-size-2xl); margin-top: var(--spacing-xl); }
+h4 { font-size: var(--font-size-xl); margin-top: var(--spacing-lg); }
 h5 { font-size: var(--font-size-lg); }
 h6 { font-size: var(--font-size-base); }
+
+hr {
+  margin: var(--spacing-5xl) 0;
+  border: none;
+  outline: none;
+  height: 0;
+}
 
 /* 段落・テキスト */
 p {
