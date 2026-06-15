@@ -24,6 +24,7 @@ defaultContentLanguageInSubdir = false
 
   [params.features]
     darkMode = true
+    relatedPosts = true
 
   [params.mermaid]
     enable = true

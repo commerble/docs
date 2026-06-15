@@ -127,13 +127,20 @@
 
       {{/* 関連記事（有効な場合） */}}
       {{ if site.Params.features.relatedPosts }}
-      {{ $related := .Site.RegularPages.Related . | first 3 }}
+      {{ $related := slice }}
+      {{ with .Params.related }}
+        {{ range . }}
+          {{ with $.Site.GetPage . }}
+            {{ $related = $related | append . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
       {{ if $related }}
       <section class="related-posts" aria-labelledby="related-title">
-        <h3 id="related-title" class="related-posts__title">関連記事</h3>
+        <h2 id="related-title" class="related-posts__title">関連情報</h2>
         <div class="related-posts__grid">
           {{ range $related }}
-          <article class="post-card post-card--compact">
+          <article class="post-card">
             {{ if .Params.image }}
             <div class="post-card__image">
               <a href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">

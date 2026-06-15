@@ -1,13 +1,16 @@
 ---
-title: "システム接続性"
+title: "システム連携について"
 layout: single
-weight: 1
+weight: 10
 description: 
+related:
+  - /commerble/achievement/member-site/
+  - /commerble/achievement/oms/
+  - /commerble/achievement/external-point/
+  - /commerble/achievement/pms/
+  - /commerble/achievement/custom-admin/
+  - /commerble/achievement/delivery-charge/
 ---
-
-この章ではCommerbleの接続性について説明します。
-
-## 外部システムと柔軟な連携を実現
 
 Commerbleには、充実したAPI群、各種機能があり、他システムとの連携を柔軟に組み上げることが可能です。
 Commerbleで外部システムと連携するために接続ポイントは以下の4つがあります。
@@ -50,15 +53,6 @@ HTTPリクエストやAMQPを用いた通知をご希望の場合は、カスタ
 このカスタマイズにより、決済プロバイダ内に保存された登録カードの取得などを実現できます。
 
 詳しくは、[カスタマイズ：テンプレートヘルパー]をご参照ください。
-
-## 実績
-
-- [テナント独自の会員サイトと連携する](../../achievement/member-site/)
-- [基幹システムに受注連携する](../../achievement/oms/)
-- [基幹システムとポイント連携する](../../achievement/external-point/)
-- [商品登録バッチを作成する](../../achievement/pms/)
-- [カスタム商品管理画面を作成する](../../achievement/custom-admin/)
-- [送料計算外部システムと連携する](../../achievement/delivery-charge/)
 
 [カスタマイズ実績：カートのWeb API化]: ../../achievement/cartapi/ "カートのWeb API化"
 [Azure Storage Queue]: https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction "Azure Storage Queue"
